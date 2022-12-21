@@ -5,18 +5,108 @@
 }
 body{
     position: relative;
-    background-image: radial-gradient(#2A475E, #1B2838 );
+    
+    background-image: radial-gradient(#194766, #0d2740);
     min-height: 100vh;
+}
+header{       
+    margin:0;
+    height: 200px;
+}
+h1{
+    color: aliceblue;
+}
+.borde{
+    height: 3px;
+    width: 80%;
+    margin-left: 10%;
+    display: flex;
+    background: linear-gradient(90deg,transparent, #194766, #206487, #194766,transparent);
+    justify-content: center;
+    align-items: center;
 }
 .cabeza{
     height: 100px;
-    background-color: #003147;
-    padding: 20px;
+    
     margin-left: 10px;
     margin-right: 10px;
 }
-.sesion{
+.perfil{
+    margin-left: 5%;
+    margin-right: 5%;
+    height: 200px;
     display: flex;
-    justify-content: right;
+    justify-content: space-between;
+    align-items: center;
+}
+.curso{
+    display: flex;
+    height: 200px;
+    align-items: flex-start;
+}
+.boton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 100px;
+    color: white                                                                                            ;
+    background-image: linear-gradient(90deg, #00BBFF,#1A9FFF);
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.3);
+    border: none;
+    text-decoration: none;
+}
+.boton:hover{
+    background-image: linear-gradient(90deg, #4eccfa,#4ec5ff);
+    color: white;
+}
+.info{
+    display: flex;
+    justify-content: center;
+    max-height: 50%;
+
+}
+.info .proyectos{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 1%;
+    height: 150px;
+    width: 300px;
+    background-color: #206487;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.info .experiencia{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 1%;
+    height: 150px;
+    width: 300px;
+    background-color: #206487;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.info .educacion{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 1%;
+    margin-right: 1%;
+    height: 150px;
+    width: 300px;
+    background-color: #206487;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.enter:hover{
+   
+    background-image: linear-gradient(90deg, #4eccfa,#4ec5ff);
+  
+}
+.banner{
+    position: relative;
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    
     
 }
