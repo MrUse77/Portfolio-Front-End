@@ -6,11 +6,13 @@
 body{
     position: relative;
     background-image: radial-gradient(#194766, #0d2740);
+
     min-height: 100vh;
 }
 header{       
     margin:0;
     height: 200px;
+    margin-bottom: 5%;
 }
 h1{
     color: aliceblue;
@@ -18,14 +20,15 @@ h1{
 h2{
     color: aliceblue;
 }
-h5{
+h1, h2, h3, h4,h5, h6{
     color: aliceblue;
 }
 .borde{
     height: 3px;
     width: 80%;
     margin-left: 10%;
-    margin-bottom: 5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
     display: flex;
     background: linear-gradient(90deg,transparent, #194766, #206487, #194766,transparent);
     justify-content: center;
@@ -33,9 +36,11 @@ h5{
 }
 .cabeza{
     height: 100px;
-    
     margin-left: 10px;
     margin-right: 10px;
+}
+.contacto{
+    display: flex;
 }
 .perfil{
     margin-left: 5%;
@@ -47,8 +52,32 @@ h5{
 }
 .curso{
     display: flex;
+    height: max-content;
+    align-items: center;
+    justify-content: center;
+    padding-left: 100px
+}
+.yoprogramo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.red{
     height: 200px;
-    align-items: flex-start;
+}
+.redes{
+    height: 144px;
+    display: flex;
+    align-items: flex-end;
+}
+.icons{
+    display: flex;
+    width: max-content;
+}
+svg{
+    color: white;
+    margin-right: 10px;
 }
 .boton{
     display: flex;
@@ -69,13 +98,11 @@ h5{
 .info{
     display: flex;
     justify-content: center;
-    max-height: 50%;
+    
 
 }
 .info .enter{
-    margin-top: 5%;
-    margin-bottom: 5%;
-    margin-left: 1%;
+    margin-left:1%;
     margin-right: 1%;
     height: 150px;
     width: 300px;
@@ -88,40 +115,45 @@ h5{
     
 }
 .enter:hover{
-    background-image: linear-gradient(90deg, #4eccfa,#4ec5ff);
-}
-.banner{
-    display: flex;
-    margin-left: 10%;
-    margin-right: 10%;  
-    margin-bottom: 5%; 
-    
+    background-image:linear-gradient(90deg, #4eccfa,#4ec5ff);
 }
 .acerca_de{
-    display: flex;
-   position: relative;
-   flex-wrap: wrap;
-   
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+
 }
 .nombre{
     height: max-content;
     text-align: center;
     width: max-content;
     margin-right: 0;
+    padding: 0;
 }
-.img_perfil{
-    margin-left: 10%;
-    height: 200px;
+.img_perfil {
+    margin-left: 5%;
+    height: 250px;
+    width: max-content;
 }
 .about_me{
-    
-    height: max-content;
-    width: 100%;
+    display: flex;
     justify-content: center;
-    text-align: center;
+    padding-right: 25%;
+    margin-bottom:10px;
 }
 .desc{
     margin-left: 10px;
     height: max-content;
     justify-content: center;
+}
+.img_perfil img{
+    padding-left: 5%;
+    margin-bottom:%;
+    display: flex;
+    align-items: center;
+    justify-content:  center;
+    height: 250px;
+}
+.perf{
+  height: 250px;
 }

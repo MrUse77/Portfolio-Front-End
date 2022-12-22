@@ -5,19 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilo_login.css">
+    <script src="prueba.js"></script>
     <title>Log In</title>
 </head>
 <body>
     <h1>Formulario de registro</h1>
-    <form class="session" action="" method="get">
+    <form class="session" action="" method="post ">
            <p>
             Nombre:
            </p>
-           <input class="relleno" type="text" name="nombre" maxlength="50" />
+           <input class="relleno" type="text" name="nombre" maxlength="50" id="nombre" required=""/>
            <p>
            Apellidos:
            </p>
-           <input class="relleno" type="text" name="apellidos" maxlength="50" />
+           <input class="relleno" type="text" name="apellidos" maxlength="50" id="apellido" required=""/>
     <p>
        Sexo:
     </p>
@@ -25,15 +26,15 @@
     <p>
        Correo:
     </p>
-    <input class="relleno" type="text" name="correo" maxlength="100" />
+    <input class="relleno form-control" type="text" name="correo" maxlength="100" id="mail"/>
     <p class="box">
        <input type="checkbox" name="info" checked="checked" /> Deseo recibir información sobre novedades y ofertas
     </p>
     <p class="box">
-       <input type="checkbox" name="condiciones" /> Declaro haber leido y aceptar las condiciones generales del programa y la normativa sobre protección de datos
+       <input type="checkbox" name="condiciones" required=""/> Declaro haber leido y aceptar las condiciones generales del programa y la normativa sobre protección de datos
     </p>
     <p>
-       <a href="index.html" class="boton">Enviar</a>
+       <input type="button" value="Log In" id="boton" onclick="login()"/>
     </p>
     </form>
 </body>
