@@ -6,8 +6,53 @@
 body{
     position: relative;
     background-image: radial-gradient(#194766, #0d2740);
-
     min-height: 100vh;
+}
+.intro{
+}
+.load{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: radial-gradient(#194766, #0d2740);
+        transition: opacity 0.75s, visibility 0.75s;
+}
+.load-hidden{
+    opacity: 0;
+    visibility: hidden;
+    transition-delay: 3s;
+}
+.carga{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.carga::after{
+    content: "";
+    width: 200px;
+    height: 200px;
+    border: 15px solid transparent;
+    border-top-color: #4eccfa;
+    border-radius: 50%;
+    animation: loading 0.75s ease infinite;
+}
+@keyframes loading {
+    from{transform: rotate(0turn);}
+    to{transform: rotate(1turn);}
+}
+.logo{
+    height: 100px;
+    width: 100px;
 }
 header{       
     margin:0;
@@ -112,16 +157,21 @@ svg{
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 300ms;
     
 }
 .enter:hover{
     background-image:linear-gradient(90deg, #4eccfa,#4ec5ff);
+    transform: scale(1.2);
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1%;
+    margin-bottom: 1%;
 }
 .acerca_de{
     align-items: center;
     flex-wrap: wrap;
     width: 100%;
-
 }
 .nombre{
     height: max-content;
@@ -131,14 +181,14 @@ svg{
     padding: 0;
 }
 .img_perfil {
-    margin-left: 5%;
+    margin-left: 1%;
     height: 250px;
     width: max-content;
 }
 .about_me{
     display: flex;
     justify-content: center;
-    padding-right: 25%;
+    align-items: center;
     margin-bottom:25px;
 }
 .desc{
@@ -155,5 +205,6 @@ svg{
     height: 250px;
 }
 .perf{
+    width: max-content;
   height: 250px;
 }
