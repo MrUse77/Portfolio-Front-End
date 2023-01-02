@@ -140,13 +140,13 @@ svg{
     background-image: linear-gradient(90deg, #4eccfa,#4ec5ff);
     color: white;
 }
-.info{
+.info_comp{
     display: flex;
     justify-content: center;
-    
-
+    margin-top: 1%;
+    margin-bottom: 1%;
 }
-.info .enter{
+.info_comp .enter{
     margin-left:1%;
     margin-right: 1%;
     height: 150px;
@@ -165,13 +165,13 @@ svg{
     transform: scale(1.2);
     margin-left: 5%;
     margin-right: 5%;
-    margin-top: 1%;
-    margin-bottom: 1%;
 }
 .acerca_de{
     align-items: center;
     flex-wrap: wrap;
-    width: 100%;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 .nombre{
     height: max-content;
@@ -183,7 +183,7 @@ svg{
 .img_perfil {
     margin-left: 1%;
     height: 250px;
-    width: max-content;
+    width: 300px;
 }
 .about_me{
     display: flex;
@@ -203,8 +203,40 @@ svg{
     align-items: center;
     justify-content:  center;
     height: 250px;
+    width: 250px;
 }
 .perf{
     width: max-content;
-  height: 250px;
+    height: 250px;
+}
+.overlay{
+    background: rgba(0,0,0,0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s ease all;
+    visibility: hidden;
+}
+.eduw {
+    z-index: 1;
+    position: absolute;
+    display: flex;
+    width: max-content;
+    height: max-content;
+    background: #194766;
+    border-style: solid;
+    border-color: #206487;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+    transition: 0.5s ease all;
+    transform: scale(0.5);
+    opacity: 0;
+}
+.cerrar{
+    position: absolute;
+    left: 98%;
 }

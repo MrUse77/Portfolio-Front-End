@@ -7,6 +7,8 @@
         <!--Bootstrap CSS-->
         <link rel="stylesheet" href="bootstrap-5.2.3/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/estilo.css">
+        <link rel="stylesheet" href="css/estilo_educacion.css">
+        <link rel="stylesheet" href="css/estilo_experiencia.css">
         <script defer src="js/app.js"></script>
     </head>
     <body>
@@ -63,27 +65,87 @@
             </div>
           </header>
           <div class="acerca_de row">
-            <div class="col-2 img_perfil">
+            <div class="img_perfil">
                 <img src="imagenes/IMG_20221212_221947_944.jpg" class="rounded-5 img-fluid" alt="perfil">
             </div>
             <div class="col perf">
                 <h1 class="about_me">Sobre mi</h1>
                 <h2 class="nombre">AGUSTIN FRANSICO DORICICH</h2>
+                <h5 class="desc">19 años</h5>
+                <h5 class="desc">Buenos Aires, Argentina</h5>
                 <h5 class="desc">Tecnico electronico y Desarrollador Web Full Stack.</h5>
             </div>
         </div>
         <div class="borde"></div>
-          <div class="info">
-                <a href="proyectos.html" class="proyectos enter">
+          <div class="info_comp">
+                <a href="javascript:abrir(1)" class="enter">
                     <h1>PROYECTOS</h1>
                 </a>
-                <a href="experiencia.html" class="experiencia enter">
+                <a href="javascript:abrir(2)" class="enter">
                     <h1>EXPERIENCIA</h1>
                 </a>
-                <a href="educacion.html" class="educacion enter">
-                    
+                <a href="javascript:abrir(3)" class="enter">
                     <h1>EDUCACION</h1>
                 </a>
+            </div>
+            <div class="overlay" id="overlay">
+            <div class="eduw" id="3">
+                <div class="cerrar">
+                    <a href="javascript:cerrar(3)">X</a>
+                </div>
+                <div class="educacion">
+                    <div class="secundaria">
+                        <img src="" alt="">
+                        <div class="info">
+                            <p>EEST N°8 MORON</p>
+                            <H5>TECNICO EN ELECTRONICA</H5>
+                            <h6>2016-2022</h6>
+                        </div>
+                    </div>
+                    <div class="cursos">
+                        <div class="pc">
+                            <img src="imagenes/th-1794450002.jpg" alt="">
+                            <div class="info">
+                                <p>UTN HAEDO</p>
+                                <H5>CURSO DE REPARACION DE PC</H5>
+                                <h6>Abril 2019 - Septiembre 2019</h6>
+                            </div>
+                        </div>
+                
+                        <div class="argentina_programa">
+                            <img src="imagenes/MINIATURA-ARGEPROGR.jpg" alt="">
+                
+                            <div class="info">
+                               <p>ARGENTINA PROGRAMA</p>
+                                <div class="info1">
+                                    <p>1° ETAPA #SeProgramar</p>
+                                    <h5></h5>
+                                    <h6>Junio 2022</h6>
+                                </div>
+                                <div class="info2">
+                                    <p>2° ETAPA #YoProgramo</p>
+                                    <H5>CURSO DE DESARROLLO WEB FULL STACK</H5>
+                                    <h6>En curso</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="eduw" id="2">
+                <div class="cerrar">
+                    <a href="javascript:cerrar(2)">X</a>
+                </div>
+                <div class="laburo">
+                    <div class="biomedic">
+                        <img src="imagenes/logoBlanco.png" alt="">
+                        <div class="info">
+                            <p>Biomedic</p>
+                            <H5>Servicio Tecnico</H5>
+                        </div>
+                    </div>
+                </div>
+            </div>
             </div>
            <div class="borde"></div>
             <div class="skills"> </div>
