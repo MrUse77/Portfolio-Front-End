@@ -6,6 +6,7 @@ window.addEventListener("load",()=>{
     load.classList.add("load-hidden");
     load.addEventListener("transitionend", () => {
             document.body.removeChild(document.querySelector(load));
+
         });
 });
 function abrir(id){

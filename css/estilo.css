@@ -12,6 +12,7 @@ body{
 }
 .load{
         position: fixed;
+        z-index: 1;
         top: 0;
         left: 0;
         width: 100vw;
@@ -67,6 +68,12 @@ h2{
 }
 h1, h2, h3, h4,h5, h6{
     color: aliceblue;
+}
+.gw{
+    margin-top: 2px;
+}
+.g{
+    margin: 0;
 }
 .borde{
     height: 3px;
@@ -181,7 +188,7 @@ svg{
     padding: 0;
 }
 .img_perfil {
-    margin-left: 1%;
+    padding: 0;
     height: 250px;
     width: 300px;
 }
@@ -197,7 +204,6 @@ svg{
     justify-content: center;
 }
 .img_perfil img{
-    padding-left: 5%;
     margin-bottom: 5%;
     display: flex;
     align-items: center;
@@ -212,6 +218,7 @@ svg{
 .overlay{
     background: rgba(0,0,0,0.3);
     position: fixed;
+    z-index: 1;
     top: 0;
     left: 0;
     bottom: 0;
@@ -231,6 +238,7 @@ svg{
     background: #194766;
     border-style: solid;
     border-color: #206487;
+    min-width: 50%;
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
     transition: 0.5s ease all;
     transform: scale(0.5);
@@ -238,5 +246,89 @@ svg{
 }
 .cerrar{
     position: absolute;
-    left: 98%;
+    left: 97%;
+    right: 0;
+}
+.skills{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    min-height: 50vh;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    color: white;
+}
+.skill{
+    position: relative;
+    background-color: #206487;
+    margin-right: 2.5%;
+    min-width: 20%;
+    width: max-content;
+    margin-bottom: 2%;
+}
+.diseño{
+    width: 96%;
+    margin: 2%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.cat{
+    display: flex;
+    justify-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.menu{
+    position: relative;
+    border: 2px solid #4eccfa;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 10px;
+    border-radius: 20px;
+}
+.menu div{
+    position: relative;
+    width: 0;
+    height: 5px;
+    border-radius: 10px;
+    background-color: #4eccfa;
+}
+#html-menu{
+    animation: html-barra 2s forwards;
+    animation-delay: 4s;
+}
+@keyframes html-barra{
+    100%{
+        width:10%;
+    }
+}
+#css-menu{
+    animation: css-barra 2s forwards;
+    animation-delay: 4s;
+}
+@keyframes css-barra {
+    100%{
+        width:5%;
+    }
+}
+#js-menu{
+    animation: js-barra 2s forwards;
+    animation-delay: 4s;
+}
+@keyframes js-barra {
+    100%{
+        width:1%;
+    }
+}
+#angular-menu{
+    animation: angular-barra 2s forwards;
+    animation-delay: 4s;
+}
+@keyframes angular-barra {
+    100%{
+        width: 0%;
+    }
 }
