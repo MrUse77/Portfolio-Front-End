@@ -1,10 +1,33 @@
 *{  padding: 0;
     margin: 0;
-    box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
 body{
+    margin: 8px;
     position: relative;
     background-image: radial-gradient(#194766, #0d2740);
     min-height: 100vh;
+    display: flex;
+    justify-content:center;
+}
+h5{
+    margin: 5px;
+}
+p{
+    margin: 5px;
+}
+.educacion{
+    border-style: inset;
+    min-height: 50%;
+    min-width: 50%;
+    width: 75%;
+    margin-top: 25px;
+    font-size: 20px;
+    color: #B8BCBF;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+    height: 50%;
+}
+.secundaria{
+    margin:0;
+    width: max-content;
 }
