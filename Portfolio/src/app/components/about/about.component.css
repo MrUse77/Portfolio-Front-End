@@ -1,0 +1,41 @@
+.acerca_de{
+    align-items: center;
+    flex-wrap: wrap;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.nombre{
+    height: max-content;
+    text-align: center;
+    width: max-content;
+    margin-right: 0;
+    padding: 0;
+}
+.img_perfil {
+    padding: 0;
+    height: 250px;
+    width: 300px;
+}
+.about_me{
+    display: flex;
+    width:100%;
+    justify-content: center;
+    margin-bottom:25px;
+    right: 50%;
+}
+.img_perfil img{
+    margin-bottom: 5%;
+    display: flex;
+    align-items: center;
+    justify-content:  center;
+    height: 250px;
+    width: 250px;
+}
+.perf{
+    width: max-content;
+    height: 250px;
+}
+.desc{
+    height: max-content;
+}

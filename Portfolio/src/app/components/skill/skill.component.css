@@ -1,0 +1,83 @@
+.skills{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    min-height: 50vh;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    color: white;
+}
+.skill{
+    position: relative;
+    background-color: #206487;
+    margin-right: 2.5%;
+    min-width: 20%;
+    width: max-content;
+    margin-bottom: 2%;
+}
+.diseño{
+    width: 96%;
+    margin: 2%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.cat{
+    display: flex;
+    justify-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.menu{
+    position: relative;
+    border: 2px solid #4eccfa;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 10px;
+    border-radius: 20px;
+}
+.menu div{
+    position: relative;
+    width: 0;
+    height: 5px;
+    border-radius: 10px;
+    background-color: #4eccfa;
+}
+#html-menu{
+    animation: html-barra 2s forwards;
+    animation-delay: 4s;
+}
+@keyframes html-barra{
+    100%{
+        width:10%;
+    }
+}
+#css-menu{
+    animation: css-barra 2s forwards;
+    animation-delay: 4s;
+}
+@keyframes css-barra {
+    100%{
+        width:5%;
+    }
+}
+#js-menu{
+    animation: js-barra 2s forwards;
+    animation-delay: 4s;
+}
+@keyframes js-barra {
+    100%{
+        width:1%;
+    }
+}
+#angular-menu{
+    animation: angular-barra 2s forwards;
+    animation-delay: 4s;
+}
+@keyframes angular-barra {
+    100%{
+        width: 0%;
+    }
+}

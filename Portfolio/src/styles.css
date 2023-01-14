@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+*{  padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    position: relative;
+    background-image: radial-gradient(#194766, #0d2740);
+    min-height: 100vh;
+}
+h1{
+    color: aliceblue;
+}
+h2{
+    color: aliceblue;
+}
+h1, h2, h3, h4,h5, h6{
+    color: aliceblue;
+}
+.gw{
+    margin-top: 2px;
+}
+.g{
+    margin: 0;
+}
