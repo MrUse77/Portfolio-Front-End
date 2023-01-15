@@ -1,28 +1,52 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {FormsModule} from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EncabezadoComponent } from './components/encabezado/encabezado.component';
-import { BordeComponent } from './components/borde/borde.component';
-import { AboutComponent } from './components/about/about.component';
-import { InfoComponent } from './components/info/info.component';
-import { SkillComponent } from './components/skill/skill.component';
+
+import { RouterModule, Routes } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule, HttpHandler } from  '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PortfolioService } from './service/portfolio.service';
+import { SesionComponent } from './components/sesion/sesion.component';
+
+import { ProyectosComponent } from './components/proyectos/proyectos.component';
+import { ExperienciaComponent } from './components/experiencia/experiencia.component';
+import { EducacionComponent } from './components/educacion/educacion.component';
+
+
+export function LoadConfiguration(configservice: PortfolioService){
+    return() => configservice.loadConfig();
+}
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    EncabezadoComponent,
-    BordeComponent,
-    AboutComponent,
-    InfoComponent,
-    SkillComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        EncabezadoComponent,
+
+         SesionComponent,
+         ProyectosComponent,
+         ExperienciaComponent,
+         EducacionComponent,
+    ],
+    providers: [
+        PortfolioService, 
+        {
+            provide: APP_INITIALIZER,
+            useFactory: LoadConfiguration,
+            deps: [PortfolioService],
+            multi: true,
+        }
+    ],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        HttpClientModule,
+    ]
 })
 export class AppModule { }

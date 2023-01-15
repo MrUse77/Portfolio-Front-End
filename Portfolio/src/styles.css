@@ -2,7 +2,7 @@
 *{  padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family:  sans-serif;
 }
 body{
     position: relative;
@@ -24,3 +24,4 @@ h1, h2, h3, h4,h5, h6{
 .g{
     margin: 0;
 }
+

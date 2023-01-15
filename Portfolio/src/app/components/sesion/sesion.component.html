@@ -1,0 +1,32 @@
+
+<h1>Formulario de registro</h1>
+
+<form class="session" action="" method="post" >
+       <p>
+        Usuario
+       </p>
+       <label for="user"><input class="relleno form-control" type="text" name="user" maxlength="50" id="user"    /></label>
+       <p>
+       Contraseña:
+       </p>
+       <label for="password"><input class="relleno form-control" type="password" name="password" maxlength="50" id="password"   /></label>
+<p>
+   Sexo:
+</p>
+<input type="radio" name="sexo" value="h" /> hombre <input type="radio" name="sexo" value="m" /> mujer
+<p>
+   Correo:
+</p>
+<label for="mail"><input class="relleno form-control" type="email" name="correo" maxlength="100" id="mail"  /></label>
+<p class="box">
+   <input type="checkbox" name="info" checked="checked" /> Deseo recibir información sobre novedades y ofertas
+</p>
+<p class="box">
+   <input type="checkbox" name="condiciones" required=""/> Declaro haber leido y aceptar las condiciones generales del programa y la normativa sobre protección de datos
+</p>
+<p>
+    <button type="submit">
+        <a RouterLink="/"  id="login">Log In</a>
+    </button>
+</p>
+</form>
