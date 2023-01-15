@@ -31,5 +31,10 @@ export class PortfolioService {
   ontoggle(): Observable<any>{
     return this.subject.asObservable();
   }
-
+  
+  
+  
+  
+  
+  
 }

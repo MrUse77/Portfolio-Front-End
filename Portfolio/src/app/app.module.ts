@@ -25,7 +25,6 @@ export function LoadConfiguration(configservice: PortfolioService){
     declarations: [
         AppComponent,
         EncabezadoComponent,
-
          SesionComponent,
          ProyectosComponent,
          ExperienciaComponent,
