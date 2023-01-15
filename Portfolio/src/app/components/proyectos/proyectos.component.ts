@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./proyectos.component.css']
 })
 export class ProyectosComponent {
-
+   github = 'https://github.com/MrUse77';
 }

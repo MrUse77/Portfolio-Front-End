@@ -102,7 +102,7 @@ header{
     text-align: center;
     height: 93px;
     width: 160px;
-
+    visibility: hidden;
     left:25%;
 }
 svg{
