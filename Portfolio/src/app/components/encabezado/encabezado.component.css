@@ -1,6 +1,19 @@
 header{       
     margin:0;
-    height: 200px;
+    height: 800px;
+    background: url(../../../assets/imagenes/6dde3dec99e720a2e38097bfbb1994cc-348116554.jpg);
+    
+}
+header::before{
+    content: "";
+    width: 100%;
+    height: 800px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: black;
+    background-image: radial-gradient(transparent 10%, #0f405b  );
+    opacity: 0.8;
 }
 .icons{
     display: flex;
@@ -13,22 +26,20 @@ svg{
     color: white;
     margin-right: 10px;
 }
-.contacto{
-    display: flex;
-}
 .text{
     display: flex;
    
 }
 .curso{
-    display: flex;
+    top: 0;
+    height: 100px;
     width: 100%;
-    height: max-content;
     align-items: center;
     justify-content: center;
 }
 .yoprogramo{
-    width: 100%;
+    position: absolute;
+    top:0;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -37,9 +48,10 @@ svg{
     height: 200px;
 }
 .redes{
+    position: relative;
     display: flex;
+    align-items: flex-end;
     height: 144px;
-
 }
 .cabeza{
     height: 100px;
@@ -48,70 +60,80 @@ svg{
 }
 
 .perfil{
+    position: relative;
     margin-left: 5%;
     margin-right: 5%;
-    height: 200px;
+    height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 .boton{
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 40px;
     width: 100px;
+    right: 0;
     color: white                                                                                            ;
-    background-image: linear-gradient(90deg, #00BBFF,#1A9FFF);
+    background: rgba(243, 243, 243, 0.1);
     text-shadow: 1px 1px 0px rgba(0,0,0,0.3);
     border: none;
     text-decoration: none;
 }
 .boton:hover{
-    background-image: linear-gradient(90deg, #4eccfa,#4ec5ff);
+    background-image: linear-gradient(90deg, #194766, #206487, #194766);
     color: white;
 }
 .acerca_de{
+    position: relative;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
     width: 90%;
     margin-left: 5%;
     margin-right: 5%;
+    height: 700px;
 }
 .nombre{
-    height: max-content;
-    text-align: center;
-    width: max-content;
-    margin-right: 0;
-    padding: 0;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: 1000;
+    font-size: 50px;
+    top: 0;
+    left: 300px;
+    margin-bottom:25px;
 }
 .img_perfil {
+    position: absolute;
     padding: 0;
     height: 250px;
-    width: 300px;
+    width: 250px;
+    left: 400px;
+    top: 150px;
 }
-.about_me{
-    display: flex;
-    width:100%;
-    justify-content: center;
-    margin-bottom:25px;
-    right: 50%;
-}
+
 .img_perfil img{
     margin-bottom: 5%;
     display: flex;
     align-items: center;
     justify-content:  center;
     height: 250px;
-    width: 250px;
+    width: max-content;
 }
 .perf{
-    width: max-content;
+    position: relative;
     height: 250px;
+    left: 250px;
+    bottom:50px;
 }
 .desc{
+    font-family: 'Courier New', Courier, monospace;
+    position: relative;
     height: max-content;
-}.borde{
+    left: 25px;
+}
+.borde{
     height: 3px;
     width: 80%;
     margin-left: 10%;
@@ -197,12 +219,25 @@ img{
     text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
     height: 50%;
 }
-
+.medio-circulo{
+    position: relative;
+    width: 100%;
+    background-image: linear-gradient(transparent, #0f405b );
+    height: 500px;
+    bottom: 490px;
+    left: 0;
+}
+.cv{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+}
 img {
     width: max-content;
     height: 66px;
 }
-
 .biomedic {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -212,10 +247,12 @@ img {
 .info_comp{
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-top: 1%;
     margin-bottom: 1%;
+    height: 300px;
 }
-.info_comp .enter{
+ .enter{
     margin-left:1%;
     margin-right: 1%;
     height: 150px;
@@ -227,23 +264,24 @@ img {
     align-items: center;
     justify-content: center;
     transition: all 300ms;
-    
+    border-style: none;
 }
 .enter:hover{
     background-image:linear-gradient(90deg, #4eccfa,#4ec5ff);
-    transform: scale(1.2);
-    margin-left: 5%;
-    margin-right: 5%;
+    transform: scale(2);
+    margin-left: 10%;
+    margin-right: 10%;
 }
 .skills{
-    position: absolute;
+    position: relative;
     display: flex;
     justify-content: center;
-    min-height: 50vh;
+    align-items: center;
+    height: 600px;
     width: 90%;
     margin-left: 5%;
     margin-right: 5%;
-    margin-bottom: 5%;
+    margin-bottom: 100px;
     color: white;
 }
 .skill{
@@ -251,8 +289,9 @@ img {
     background-color: #206487;
     margin-right: 2.5%;
     min-width: 20%;
+    height: 500px;
     width: max-content;
-    margin-bottom: 2%;
+    border-radius: 5%;
 }
 .diseño{
     width: 96%;

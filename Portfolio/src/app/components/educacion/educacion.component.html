@@ -12,30 +12,37 @@
     <div class="educacion">
         <h1>Secundario y Universidad</h1>
         <div class="secundaria">
-            
-            <div class="img">
-            <img src="" alt="">
-            <div class="info">
+            <button (hover)="mostrar()" (click)="ShowInfo('')" class="img">
+                <img  src="" alt="">
+                <div class="agregar">
+                    <svg class="agregar" #agregar xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="#1A9FFF" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                      </svg>
+                </div>
+            </button>
+            <button  (click)="ShowInfo('escuela')" class="img">
+            <img #imagen src="" alt="">
+            <div #info1  class="info">
                 <p>EEST N°8 MORON</p>
                 <H5>TECNICO EN ELECTRONICA</H5>
                 <h6>2016-2022</h6>
             </div>
-        </div>
+        </button>
         </div>
         <h1>CURSOS</h1>
         <div class="cursos">
-            <div class="img">
-                <img class="utn "src="../../../assets/imagenes/th-1794450002.jpg" alt="">
-                <div class="info">
+            <button  (click)="ShowInfo('utn')" class="img">
+                <img #imagen2  class="utn" src="../../../assets/imagenes/th-1794450002.jpg" alt="">
+                <div #info2 class="info">
                     <p>UTN HAEDO</p>
                     <H5>CURSO DE REPARACION DE PC</H5>
                     <h6>Abril 2019 - Septiembre 2019</h6>
                 </div>
-            </div>
-            <div class="img">
-                <img class="arg_pro"src="../../../assets/imagenes/MINIATURA-ARGEPROGR.jpg" alt="">
-    
-                <div class="info1">
+            </button>
+            <button  (click)="ShowInfo('arg_pro')" class="img">
+                <img #imagen3  class="arg_pro"src="../../../assets/imagenes/MINIATURA-ARGEPROGR.jpg" alt="">
+                <div #info3  class="info1">
                    <p>ARGENTINA PROGRAMA</p>
                     <div class="info2">
                         <p>1° ETAPA #SeProgramar</p>
@@ -48,12 +55,8 @@
                         <h6>En curso</h6>
                     </div>
                 </div>
-            </div>
+            </button>
         </div>
         </div>
     </div>
-<footer>
-    <div class="footer">
-
-    </div>
-</footer>
+    <app-footer></app-footer>

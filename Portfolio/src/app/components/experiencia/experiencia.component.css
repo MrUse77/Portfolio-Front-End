@@ -8,50 +8,60 @@ h5 {
 p {
     margin: 5px;
 }
+.cerrar{
+    margin: 1%;
+}
 header{
     display: flex;
     margin-bottom: 5%;
+}
+.eduw{
+    margin-bottom: 100px;
+    min-height: 100vh;
 }
 .edu{
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-left: 1%;
 }
 .laburo {
-    min-height: 50%;
+    min-height: 50vh;
     min-width: 50%;
     width: 75%;
     font-size: 20px;
     color: #B8BCBF;
     text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
-    height: 50%;
+    height: 100vh;
     margin-left: 10%;
+    display: flex;
 }
 
 .img .imagen {
     position: absolute;
-
     top: 150px;
     left: 2.5px;
     width: 290px;
     height: 80px;
+    transition: 1s ease all;
 }
-.bi-x-circle-fill{
-    width: 10%;
-}
+
 .biomedic {
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 10px;
     display: flex;
+    
     width: max-content;
+    border-style: none;
+    height: 400px;
 }
 .img{
     position: relative;
     border-style:  solid;
     border-color: #1e80b1;
     width: 300px;
-    height: 400px;
+   
     background-image:radial-gradient( #1e80b1, #206487);
 }
 .img:hover{
@@ -64,14 +74,19 @@ svg:hover{
     fill: #1A9FFF;
 }
 .info{
-    position: absolute;
+    position:absolute;
     display: flex;
     visibility: hidden;
+    opacity: 0;
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
     height: 93px;
     width: 160px;
-    top:107px;
+    top:70%;
     left:25%;
+    transition: 1s ease all;
+}
+.button{
+    height: 400px;
 }

@@ -19,10 +19,4 @@ export class LogInService {
   constructor(
     private http:HttpClient
   ) { }
-  getCredentials(): Observable<Login[]>{
-    return this.http.get<Login[]>(this.apiUrl);
-  }
-  addCredentials(newUsuario: Login): Observable<Login>{
-    return this.http.post<Login>(this.apiUrl, newUsuario, HttpOptions)
-  }
 }

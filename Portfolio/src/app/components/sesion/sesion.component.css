@@ -1,16 +1,16 @@
-body{
+form{
     position: relative;
     margin: 0;
     min-height: 50vh;
-    background-image: radial-gradient(#194766, #0d2740);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: fixed; 
+
 
 }
-h1{
-    margin-top: 25px;
+.form{
+   
     padding-left: 30%;
     padding-right: 10%;
     font-size: 45px;
@@ -27,6 +27,7 @@ form.session {
     color: #B8BCBF;
     text-shadow: 1px 1px 0px rgba(0,0,0,0.3); 
 }
+
 p{
     padding-right: 30%;
     margin-bottom: 0%;
@@ -69,4 +70,25 @@ p{
 button{
     border: none;
 }
-
+svg{
+    fill: #4eccfa;
+}
+svg:hover{
+    fill: #1A9FFF;
+}
+header{
+    display: flex;
+    margin-bottom: 5%;
+}
+.edu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1%;
+}
+.cerrar{
+    margin: 1%;
+}
+.hola{
+    margin-bottom: 210px;
+}

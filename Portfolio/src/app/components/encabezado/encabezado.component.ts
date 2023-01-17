@@ -8,13 +8,16 @@ import { Router } from '@angular/router';
 })
 export class EncabezadoComponent implements OnInit{
   title = 'Portfolio';
-  desc = 'Tecnico electronico y Desarrollador Web Full Stack.'
+  desc = ['Tecnico electronico y desarrollador web full stack'];
+
   
   
   constructor(
   ){
   }
   ngOnInit(): void {
-    
+   console.log('OnInit -> '); 
   }
+
+  
 }

@@ -6,8 +6,9 @@
 }
 body{
     position: relative;
-    background-image: radial-gradient(#194766, #0d2740);
+    background-image: linear-gradient( #144b66, #062d47);
     min-height: 100vh;
+
 }
 h1{
     color: aliceblue;

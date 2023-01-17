@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./proyectos.component.css']
 })
 export class ProyectosComponent {
-   github = 'https://github.com/MrUse77';
+  biomedic!: string;
+  show=0;
+  ShowInfo(){
+    console.log(this.biomedic);
+    this.show++;
+    if(this.show==2){
+     this.show=0;
+    }
+ }
 }
