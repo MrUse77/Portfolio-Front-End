@@ -25,8 +25,8 @@ header{
 .cerrar{
     margin: 1%;
 }
-.laburo {
-    min-height: 50%;
+.proyectos{
+    min-height: 100vh;
     min-width: 50%;
     width: 75%;
     font-size: 20px;
@@ -71,4 +71,16 @@ svg:hover{
     width: 160px;
     top:107px;
     left:25%;
+}
+.agregar{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 100px;
+    left: 50px;
+}
+.agregar svg{
+    fill: #1A9FFF;
+
 }

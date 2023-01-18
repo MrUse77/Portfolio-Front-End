@@ -7,11 +7,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HttpHandler } from  '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PortfolioService } from './service/portfolio.service';
-import { SesionComponent } from './components/sesion/sesion.component';
+import { SignUpComponent } from './components/Sign Up/signup.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { EducacionComponent } from './components/educacion/educacion.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { LogInComponent } from './components/log-in/log-in.component';
 
 
 export function LoadConfiguration(configservice: PortfolioService){
@@ -22,11 +23,12 @@ export function LoadConfiguration(configservice: PortfolioService){
     declarations: [
         AppComponent,
         EncabezadoComponent,
-         SesionComponent,
-         ProyectosComponent,
-         ExperienciaComponent,
-         EducacionComponent,
-         FooterComponent,
+        SignUpComponent,
+        ProyectosComponent,
+        ExperienciaComponent,
+        EducacionComponent,
+        FooterComponent,
+        LogInComponent,
     ],
     providers: [
         PortfolioService, 

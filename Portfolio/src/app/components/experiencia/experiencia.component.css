@@ -1,3 +1,6 @@
+*{
+    color: white;
+}
 h6{
     margin: 5px;
 }
@@ -60,8 +63,9 @@ header{
     position: relative;
     border-style:  solid;
     border-color: #1e80b1;
+    margin-right: 20px;
     width: 300px;
-   
+    height: 400px;
     background-image:radial-gradient( #1e80b1, #206487);
 }
 .img:hover{
@@ -89,4 +93,94 @@ svg:hover{
 }
 .button{
     height: 400px;
+}
+.agregar{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 100px;
+    left: 50px;
+}
+.agregar svg{
+    fill: #1A9FFF;
+}
+.mod{
+    position: absolute;
+    display: flex;
+    top:0;
+    right: 10px;
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+    margin: 10px;
+    z-index: 1;
+    background: transparent;
+    border: none;
+}
+.mod1{
+    position: absolute;
+    display: flex;
+    top:0;
+    right: 0;
+    height: 24px;
+    width: 24px;
+    margin-right: 10px;
+    margin: 10px;
+    z-index: 1;
+    background: transparent;
+    border: none;
+}
+.mod1 svg{
+    display: flex;
+    align-items: center;
+    fill: #1A9FFF;
+    width: 20px;
+    height: 20px;
+}
+.mod svg{
+    display: flex;
+    align-items: center;
+    fill: #1A9FFF;
+    width: 20px;
+    height: 20px;
+}
+.edicion{
+    position: relative;
+    top: 0;
+    left: 0;
+    background-color: #206487;
+    border: none;
+
+}
+.nombre{
+    position: absolute;
+    display: flex;
+    align-items: flex-start;
+    left: 10%;
+    height: 50px;
+    margin-top: 50px;
+    width: 80%;
+    border: solid #1e80b1;
+    border-radius: 5px;
+}
+.trabajo{
+    position: absolute;
+    height: 100px;
+    top: 100px;
+    margin-top: 1px;
+    width: 80%;
+    left: 10%;
+    border: solid #1e80b1;
+    border-radius: 5px;
+}
+.fecha{
+    position: absolute;
+    height: 100px;
+    top: 201px;
+    margin-top: 1px;
+    width: 80%;
+    left: 10%;
+    border: solid #1e80b1;
+    border-radius: 5px;
 }

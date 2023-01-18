@@ -1,4 +1,9 @@
-{
+{   
+    "educacion":[{
+        "id":1,
+        "nombre": "EEST N°8 NORON"
+        }
+        ],
     "sesion":[{
         "id": 1,
         "user": "MrUse",

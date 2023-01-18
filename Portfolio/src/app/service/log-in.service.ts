@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs';
-import { SesionComponent } from '../components/sesion/sesion.component';
+import { SignUpComponent } from '../components/Sign Up/signup.component';
 import { Login } from '../login';
 
 const HttpOptions = {

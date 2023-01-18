@@ -3,15 +3,17 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { EducacionComponent } from './components/educacion/educacion.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
+import { LogInComponent } from './components/log-in/log-in.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
-import { SesionComponent } from './components/sesion/sesion.component';
+import { SignUpComponent } from './components/Sign Up/signup.component';
 
 const routes: Routes = [
   {path: 'home', component:AppComponent},
-  {path: 'sesion', component:SesionComponent},
+  {path: 'SignUp', component:SignUpComponent},
   {path: 'proyectos', component:ProyectosComponent},
   {path: 'experiencia', component:ExperienciaComponent},
-  {path: 'educacion', component:EducacionComponent}
+  {path: 'educacion', component:EducacionComponent},
+  {path: 'LogIn', component:LogInComponent},
 ];
 
 @NgModule({

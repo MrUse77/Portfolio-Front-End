@@ -12,7 +12,7 @@ export class ProyectosComponent {
     console.log(this.biomedic);
     this.show++;
     if(this.show==2){
-     this.show=0;
+    this.show=0;
     }
- }
+  }
 }

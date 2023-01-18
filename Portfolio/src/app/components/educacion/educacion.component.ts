@@ -7,15 +7,23 @@ import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
   styleUrls: ['./educacion.component.css']
 })
 export class EducacionComponent {
+  secu= ["EEST N°8", "TECNICO EN ELECTRONICA", "2016-2022"];
+  curso = [
+    "UTN HAEDO", "CURSO DE REPARACION DE PC","Abril 2019 - Septiembre 2019",
+    "ARGENTINA PROGRAMA", "1° ETAPA #SeProgramar", "junio 2022","","2° ETAPA #YoProgramo", "CURSO DE DESARROLLO WEB FULL STACK","En curso"
+          ];
   show=0;
   show1=0;
   show2=0;
+  show3=0
   @ViewChild('info1')info1!: ElementRef;
   @ViewChild('info2')info2!: ElementRef; 
   @ViewChild('info3')info3!: ElementRef; 
+  @ViewChild('info4')info4!: ElementRef; 
   @ViewChild('imagen') imagen!:ElementRef;
   @ViewChild('imagen2') imagen2!:ElementRef;
   @ViewChild('imagen3') imagen3!:ElementRef;
+  @ViewChild('imagen4') imagen4!:ElementRef;
   @ViewChild('agregar') agregar!:ElementRef;
 
   constructor(private render2: Renderer2,
@@ -26,9 +34,11 @@ export class EducacionComponent {
     const info1 = this.info1.nativeElement;
     const info2 = this.info2.nativeElement;
     const info3 = this.info3.nativeElement;
+    const info4 = this.info4.nativeElement;
     const imagen = this.imagen.nativeElement;
     const imagen2 = this.imagen2.nativeElement;
     const imagen3 = this.imagen3.nativeElement;
+    const imagen4 = this.imagen4.nativeElement;
 
     if(num == 'escuela'){
     
@@ -71,20 +81,38 @@ export class EducacionComponent {
     if(num == 'arg_pro'){
       this.render2.setStyle(info3,'opacity','1');
       this.render2.setStyle(info3,'visibility','visible');
+      this.render2.setStyle(info3,'top','107px');
       this.render2.setStyle(imagen3,'visibility','hidden');
       this.render2.setStyle(imagen3,'opacity','0');
+      this.render2.setStyle(imagen3,'top','70%');
       this.show2 ++;
       if(this.show2 == 2){
         this.render2.setStyle(info3, 'opacity', '0');
         this.render2.setStyle(info3, 'visibility', 'hidden');
+        this.render2.setStyle(info3,'top','60%');
         this.render2.setStyle(imagen3,'opacity','1');
         this.render2.setStyle(imagen3,'visibility','visible');
+        this.render2.setStyle(imagen3,'top','150px');
         this.show2 = 0;
       }
     }
- }
- mostrar(){
-  const agregar = this.agregar.nativeElement;
-  this.render2.setStyle(agregar, 'fill', '#1A9FFF');
- }
+    if(num == 'arg_pro2'){
+      this.render2.setStyle(info4,'opacity','1');
+      this.render2.setStyle(info4,'visibility','visible');
+      this.render2.setStyle(info4,'top','70px');
+      this.render2.setStyle(imagen4,'visibility','hidden');
+      this.render2.setStyle(imagen4,'opacity','0');
+      this.render2.setStyle(imagen4,'top','70%');
+      this.show3 ++;
+      if(this.show3 == 2){
+        this.render2.setStyle(info4, 'opacity', '0');
+        this.render2.setStyle(info4, 'visibility', 'hidden');
+        this.render2.setStyle(info4,'top','60%');
+        this.render2.setStyle(imagen4,'opacity','1');
+        this.render2.setStyle(imagen4,'visibility','visible');
+        this.render2.setStyle(imagen4,'top','150px');
+        this.show3 = 0;
+      }
+    }
+}
 }
