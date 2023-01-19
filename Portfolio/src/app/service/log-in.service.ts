@@ -15,7 +15,6 @@ const HttpOptions = {
 })
 export class LogInService {
   private apiUrl = 'http://localhost:5000/sesion'
-
   constructor(
     private http:HttpClient
   ) { }
