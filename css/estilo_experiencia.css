@@ -1,0 +1,32 @@
+h6{
+    margin: 5px;
+}
+h5 {
+    margin: 5px;
+}
+
+p {
+    margin: 5px;
+}
+
+.laburo {
+    min-height: 50%;
+    min-width: 50%;
+    width: 75%;
+    font-size: 20px;
+    color: #B8BCBF;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+    height: 50%;
+}
+
+img {
+    width: max-content;
+    height: 66px;
+}
+
+.biomedic {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    display: flex;
+}
