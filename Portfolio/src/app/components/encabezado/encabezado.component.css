@@ -1,8 +1,12 @@
+/* variablers globales */
 header{       
     margin:0;
     height: 800px;
     background: url(../../../assets/imagenes/6dde3dec99e720a2e38097bfbb1994cc-348116554.jpg);
-    
+    background-repeat: no-repeat;
+    background-size: 2560px;
+    background-position: 50% 10%;
+    background-attachment: local;
 }
 header::before{
     content: "";
@@ -19,73 +23,104 @@ svg{
     color: white;
     margin-right: 10px;
 }
-.text{
-    display: flex;
+img{
+    width: max-content;
+    height: 85px;
 }
-.curso{
-    display: flex;
-    flex-wrap: wrap;
-    top: 0;
-    height: 100px;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
+ul{
+    list-style: none;
+    padding-right: 32px;
 }
-.yoprogramo{
-    position: absolute;
-    top:0;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    width: 50%;
+li{
+    list-style: none;
+    padding: 0;
 }
-.red{
-    height: 200px;
-}
-.redes{
-    position: relative;
-    display: flex;
-    align-items: flex-end;
-    height: 144px;
-}
-.cabeza{
-    height: 100px;
-    margin-left: 10px;
-    margin-right: 10px;
-}
+/* header */
 .perfil{
     position: relative;
-    margin-left: 5%;
-    margin-right: 5%;
+    display: flex;
+    margin-left: 1%;
+    margin-right: 1%;
     height: 100px;
     justify-content: space-between;
+}
+.curso{
+    position: relative;
+    top: 0;
+    height: 100px;
+}
+.yoprogramo{
+    position: relative;
+    top:0;
+    left: 0;
+}
+.nav-menu{
+    display: flex;
+    list-style: none;
+    margin-top: 20px;
+}
+nav.nav-menu{
+    padding-right: 1%;
+    padding-left: 1%;
+}
+.row.nav-menu{
+    display:none;
+}
+.nav-link{
+    color: white;
+    background: rgba(243, 243, 243, 0.1);
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.3);
+    border: none;
+    text-decoration: none;
+}
+.boton{
+    position: relative;
+    height: 40px;
+    width: 150px;
+    margin-right: 10px;
+}
+.boton:hover{
+    background-image: linear-gradient(90deg, #194766, #206487, #194766);
+}
+.boton-menu{
+    position: relative;
+    display: flex;
     align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 100px;
+}
+.boton-menu:hover{
+    background-image: linear-gradient(90deg, #194766, #206487, #194766);
+}
+.boton-menu svg{
+    position: relative;
+    left: 5px;
 }
 .menu2{
     position: fixed; 
     background-image: linear-gradient(90deg, #194766, #206487, #194766);
+    transform: translateY(-100%);
     visibility: hidden;
-    opacity: 0;
     width: 100vw; 
-    height:  0; 
+    height:100vh; 
     top: 0;
-    flex-wrap: wrap;
     z-index: 1;
-    align-items: center;
-    justify-content: center;
     transition: 0.5s ease all;
 }
-.version{
-    position: absolute;
-    bottom: 0;
-    left: 47.5%;
+.menu2 .container-fluid{
+    margin-top: 90px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 .exit{
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 40px;
+    margin: 20px;
+    width: 50px;
     top: 0;
     right: 0;
     background: transparent;
@@ -98,107 +133,100 @@ svg{
 .options{
     position: relative;
     display: flex;
-    border: none;
     background-image: linear-gradient(90deg, #194766, #206487, #194766);
     height: 100px;
-    top: 200px;
+    border: none;
     align-items: center;
     justify-content: center;
     width: 100%;
+    margin-top: 20px;
 }
 .options:hover{
     background: rgba(243, 243, 243, 0.1);
 }
-.boton{
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    height: 40px;
-    width: 150px;
-    left: 75%;
-    bottom: 100%;
-    margin-top: 20px;
-    margin-right: 10px;
-    color: white;
+.icons{   
+    transform: translateY(-50%) scaleY(0);
+    display: flex;
+    width: 100%;
+    height: 20vh;
     background: rgba(243, 243, 243, 0.1);
-    text-shadow: 1px 1px 0px rgba(0,0,0,0.3);
-    border: none;
-    text-decoration: none;
-}
-.boton:hover{
-    background-image: linear-gradient(90deg, #194766, #206487, #194766);
-    color: white;
-}
-.boton-menu{
-    position: relative;
     justify-content: center;
-    align-items: center;
+    text-align: center;
+    transition: 0.5s ease all;
+}
+.icons svg{
+    width: 50px;
+    height: 50px;
+    margin: 20px;
+}
+.text-center{
+    justify-content: center;
+}
+.text-center svg{
+    margin: 0;
+    margin-top: 10px;
+    padding: 0;
+    width: 40px;
     height: 40px;
-    width: 100px;
-    left: 75%;
-    bottom: 102%;
-    margin-top: 20px;
-    margin-right: 10px;
-    color: white;
-    background: rgba(243, 243, 243, 0.1);
-    text-shadow: 1px 1px 0px rgba(0,0,0,0.3);
-    border: none;
 }
-.boton-menu:hover{
-    background-image: linear-gradient(90deg, #194766, #206487, #194766);
-    color: white;
-}
-.boton-menu svg{
+.famoso{
     position: relative;
-    left: 5px;
-
+    transform: translateY(-80px);
+    width: 100%;
+    transition: 0.5s ease all;
+}
+.proyect{
+    position: relative;
+    transform: translateY(-265px);
+    width: 100%;
+    transition: 0.5s ease all;
+}
+.exp{
+    position: relative;
+    transform: translateY(-265px);
+    width: 100%;
+    transition: 0.5s ease all;
+}
+.education{
+    position: relative;
+    transform: translateY(-265px);
+    width: 100%;
+    transition: 0.5s ease all;
 }
 .acerca_de{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
     height: 700px;
 }
-.nombre{
-    font-family:'Courier New', Courier, monospace;
-    font-weight: 1000;
-    font-size: 50px;
-    top: 0;
-    left: 300px;
-    margin-bottom:25px;
-}
 .img_perfil {
-    position: absolute;
-    padding: 0;
-    height: 250px;
-    width: 250px;
-    left: 400px;
-    top: 150px;
+    position: relative;
 }
-
 .img_perfil img{
-    margin-bottom: 5%;
-    display: flex;
-    align-items: center;
-    justify-content:  center;
     height: 250px;
     width: max-content;
 }
 .perf{
     position: relative;
-    height: 250px;
-    left: 250px;
-    bottom:50px;
+}
+.nombre{
+    font-family:'Courier New', Courier, monospace;
+    font-weight: 1000;
+    font-size: 50px;
+    margin-bottom:25px;
 }
 .desc{
     font-family: 'Courier New', Courier, monospace;
     position: relative;
     height: max-content;
-    left: 25px;
+}
+
+/* separaciones */
+
+.medio-circulo{
+    position: relative;
+    width: 100%;
+    background-image: linear-gradient(transparent, #0f405b );
+    height: 500px;
+    bottom: 490px;
+    left: 0;
 }
 .borde{
     height: 3px;
@@ -211,108 +239,22 @@ svg{
     justify-content: center;
     align-items: center;
 }
-.overlay{
-    background: rgba(0,0,0,0.3);
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
+.borde1{
+    height: 3px;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 2%;
+    margin-bottom: 2%;
     display: flex;
-    align-items: center;
+    background: linear-gradient(90deg,transparent, #194766, #206487, #194766,transparent);
     justify-content: center;
-    transition: 0.5s ease all;
-    visibility: hidden;
-}
-.eduw {
-    z-index: 1;
-    position: absolute;
-    display: flex;
-    width: max-content;
-    height: max-content;
-    background: #194766;
-    border-style: solid;
-    border-color: #206487;
-    min-width: 50%;
-    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
-    transition: 0.5s ease all;
-    transform: scale(0.5);
-    opacity: 0;
-}
-.cerrar{
-    position: absolute;
-    left: 97%;
-    right: 0;
-}
-.educacion{
-    margin: 0;
-    min-height: 50%;
-    min-width: 50%;
-    width: 75%;
-    font-size: 20px;
-    color: #B8BCBF;
-    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
-    height: 50%;
-}
-img{
-    width: max-content;
-    height: 85px;
-}
-.secundaria{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    display: flex;
-    width: max-content;
-}
-.cursos{
-    margin-left: 10px;
-}
-.pc{
-    display: flex;
-    margin-bottom: 10px;
-}
-.argentina_programa{
-    margin-bottom: 10px;
-    display: flex;
-}
-.laburo {
-    min-height: 50%;
-    min-width: 50%;
-    width: 75%;
-    font-size: 20px;
-    color: #B8BCBF;
-    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
-    height: 50%;
-}
-.medio-circulo{
-    position: relative;
-    width: 100%;
-    background-image: linear-gradient(transparent, #0f405b );
-    height: 500px;
-    bottom: 490px;
-    left: 0;
-}
-.cv{
-    position: relative;
-    display: flex;
     align-items: center;
-    justify-content: center;
-    height: 400px;
 }
-img {
-    width: max-content;
-    height: 66px;
-}
-.biomedic {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    display: flex;
-}
+
+/* informacion */
+
 .info_comp{
-    display: flex;
+    display:flex;
     justify-content: center;
     align-items: center;
     margin-top: 1%;
@@ -339,6 +281,9 @@ img {
     margin-left: 10%;
     margin-right: 10%;
 }
+
+/* skills */
+
 .skills{
     position: relative;
     display: flex;
@@ -360,18 +305,18 @@ img {
     width: max-content;
     border-radius: 5%;
 }
+.cat{
+    display: flex;
+    justify-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
 .diseño{
     width: 96%;
     margin: 2%;
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
-}
-.cat{
-    display: flex;
-    justify-content: center;
-    margin-left: 10px;
-    margin-right: 10px;
 }
 .menu{
     position: relative;
@@ -388,6 +333,20 @@ img {
     border-radius: 10px;
     background-color: #4eccfa;
 }
+
+/* CV */
+
+.cv{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+}
+
+
+/* animaciones */
+
 #html-menu{
     animation: html-barra 2s forwards;
     animation-delay: 4s;
@@ -424,48 +383,160 @@ img {
         width: 3%;
     }
 }
-.social2{
-    position: relative;
-    height: 25%;
-    bottom: 10%;
-}
-.social{
-    position: relative;
-    height:25%;
-}
-.icons svg{
-    width: 50px;
-    height: 50px;
-    margin: 20px;
-}
-.icons{
-    position: relative;
-    opacity: 0;
-    visibility: hidden;
-    display: flex;
-    width: 100%;
-    height: 30vh;
-    background: rgba(243, 243, 243, 0.1);
-    justify-content: center;
-    top:70%;
-    text-align: center;
-    transition: 0.5s ease all;
-}
-.icons2{
-    position: relative;
-    opacity: 0;
-    visibility: hidden;
-    display: flex;
-    width: 100%;
-    height: 20vh;
-    background: rgba(243, 243, 243, 0.1);
-    justify-content: center;
-    top:70%;
-    text-align: center;
-    transition: 0.5s ease all;
-}
-.icons2 svg{
-    width: 50px;
-    height: 50px;
-    margin: 20px;
+
+/* RESPONSIVE-CELULAR */
+
+@media (max-width: 500px) {
+    .icons h3{
+        font-size: 10px;
+    }
+    ul.row.nav-menu{
+        display: flex;
+    }
+    .nav-menu{
+        display: flex;
+        margin-top: 20px;
+    }
+    .nav-link{
+        color: white;
+        background: rgba(243, 243, 243, 0.1);
+        text-shadow: 1px 1px 0px rgba(0,0,0,0.3);
+        border: none;
+        text-decoration: none;
+    }
+    .boton{
+        display: none;
+    }
+    .boton-menu{
+        position: relative;
+        display: block;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        width: 100px;
+    }
+    .boton-menu:hover{
+        background-image: linear-gradient(90deg, #194766, #206487, #194766);
+    }
+    .boton-menu svg{
+        position: relative;
+        left: 5px;
+    }
+    .menu2{
+        position: fixed; 
+        background-image: linear-gradient(90deg, #194766, #206487, #194766);
+        transform: translateY(-100%);
+        visibility: hidden;
+        width: 100vw; 
+        height:100vh; 
+        top: 0;
+        z-index: 1;
+        transition: 0.5s ease all;
+    }
+    .menu2 .boton{
+        display: block;
+    }
+    .exit{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+        width: 30px;
+        top: 0;
+        right: 0;
+        background: transparent;
+        border: none;
+        z-index: 1;
+    }
+    .exit svg:hover{
+        fill: #4eccfa;
+    }
+    .options{
+        position: relative;
+        display: flex;
+        border: none;
+        background-image: linear-gradient(90deg, #194766, #206487, #194766);
+        height: 50px;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-top: 20px;
+    }
+    .options:hover{
+        background: rgba(243, 243, 243, 0.1);
+    }
+    .icons{    
+        opacity: 0;
+        visibility: hidden;
+        display:flex;
+        width: 100%;
+        height: 10vh;
+        background: rgba(243, 243, 243, 0.1);
+        justify-content: center;
+        bottom: 30%;
+        transition: 0.5s ease all;
+    }
+    .text-center{
+        justify-content: center;
+    }
+    .text-center svg{
+        margin-top: 10px;
+        padding: 0;
+        width: 30px;
+        height: 30px;
+    }    
+    .famoso{
+        transform: translateY(1fr);
+        width: 100%;
+        transition: 0.5s ease all;
+    }
+    .proyect{
+        transform: translateY(0);
+        width: 100%;
+        transition: 0.5s ease all;
+    }
+    .exp{
+        transform: translateY(0);
+        width: 100%;
+        transition: 0.5s ease all;
+    }
+    .education{
+        transform: translateY(0);
+        width: 100%;
+        transition: 0.5s ease all;
+    }
+    .acerca_de{
+        height: 700px;
+    }
+    .img_perfil {
+        position: relative;
+    }
+    .img_perfil img{
+        height: 250px;
+        width: max-content;
+    }
+    .perf{
+        position: relative;
+    }
+    .nombre{
+        font-family:'Courier New', Courier, monospace;
+        font-weight: 1000;
+        font-size: 50px;
+        margin-bottom:25px;
+    }
+    .desc{
+        font-family: 'Courier New', Courier, monospace;
+        position: relative;
+        height: max-content;
+    }
+    .info_comp{
+        display:none;
+    }
+
+    /* SEPARACIONES */
+    .borde1{
+        display: none;
+    }
+
 }

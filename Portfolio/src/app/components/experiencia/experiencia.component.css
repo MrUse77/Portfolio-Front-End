@@ -28,18 +28,6 @@ header{
     justify-content: center;
     margin-left: 1%;
 }
-.laburo {
-    min-height: 50vh;
-    min-width: 50%;
-    width: 75%;
-    font-size: 20px;
-    color: #B8BCBF;
-    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
-    height: 100vh;
-    margin-left: 10%;
-    display: flex;
-}
-
 .img .imagen {
     position: absolute;
     top: 150px;
@@ -48,13 +36,11 @@ header{
     height: 80px;
     transition: 1s ease all;
 }
-
 .biomedic {
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 10px;
     display: flex;
-    
     width: max-content;
     border-style: none;
     height: 400px;

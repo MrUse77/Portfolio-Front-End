@@ -10,9 +10,9 @@
         <h1 class="edu">EDUCACION</h1>
     </header>
     <div class="educacion">
-        <h1 class="titulo">Secundario y Universidad</h1>
-        <div class="secundaria">
-            <button (click)="ShowInfo('')" class="img">
+        <h1>Secundario y Universidad</h1>
+        <div class="container-fluid" style="margin-bottom: 50px; margin-top: 50px;">
+            <button class="img col">
                 <img  src="" alt="">
                 <div class="agregar">
                     <svg class="agregar" #agregar xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="#1A9FFF" class="bi bi-plus-circle" viewBox="0 0 16 16">
@@ -21,7 +21,7 @@
                     </svg>
                 </div>
             </button>
-            <button  (click)="ShowInfo('escuela')" class="img">
+            <button  (click)="ShowInfo('escuela')" class="img col">
                 <img #imagen src="" alt="">
                 <div #info1  class="info">
                     <p>{{secu[0]}}</p>
@@ -50,9 +50,9 @@
                 </div>
             </button>
         </div>
-        <h1 class="titulo">CURSOS</h1>
-        <div class="cursos">
-            <button class="img">
+        <h1 >CURSOS</h1>
+        <div class="container-fluid" style="margin-bottom: 50px; margin-top: 50px;">
+            <button class="img col">
                 <img  src="" alt="">
                 <div class="agregar">
                     <svg class="agregar" #agregar xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="#1A9FFF" class="bi bi-plus-circle" viewBox="0 0 16 16">
@@ -61,7 +61,7 @@
                     </svg>
                 </div>
             </button>
-            <button  (click)="ShowInfo('utn')" class="img">
+            <button  (click)="ShowInfo('utn')" class="img col">
                 <img #imagen2  class="utn" src="../../../assets/imagenes/th-1794450002.jpg" alt="">
                 <div #info2 class="info">
                     <p>{{curso[0]}}</p>
@@ -89,7 +89,7 @@
                     <input class="edicion fecha" type="text" [(ngModel)]="curso[2]">
                 </div>
             </button>
-            <button  (click)="ShowInfo('arg_pro')" class="img">
+            <button  (click)="ShowInfo('arg_pro')" class="img col">
                 <img #imagen3  class="arg_pro"src="../../../assets/imagenes/MINIATURA-ARGEPROGR.jpg" alt="">
                 <div #info3  class="info1">
                     <p>{{curso[3]}}</p>
@@ -120,7 +120,7 @@
                     <input class="edicion fecha" type="text" [(ngModel)]="curso[5]" style="top: 151px;">
                 </div>
             </button>
-            <button  (click)="ShowInfo('arg_pro2')" class="img">
+            <button  (click)="ShowInfo('arg_pro2')" class="img col">
                 <img #imagen4  class="arg_pro"src="../../../assets/imagenes/MINIATURA-ARGEPROGR.jpg" alt="">
                 <div #info4  class="info1">
                     <p>{{curso[3]}}</p>
@@ -151,8 +151,7 @@
                     <input class="edicion fecha" type="text" [(ngModel)]="curso[9]">
                 </div>
             </button>
-            
-        </div>
         </div>
     </div>
-    <app-footer></app-footer>
+</div>
+<app-footer></app-footer>
