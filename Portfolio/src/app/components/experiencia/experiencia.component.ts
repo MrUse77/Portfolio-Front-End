@@ -6,7 +6,7 @@ import { __values } from 'tslib';
 @Component({
   selector: 'app-experiencia',
   templateUrl: './experiencia.component.html',
-  styleUrls: ['./experiencia.component.css']
+  styleUrls: ['./experiencia.component.scss']
 })
 export class ExperienciaComponent implements OnInit{
   biomedic = ["Biomedic", "Servicio Tecnico", "Dic 2021 - Nov 2022"];

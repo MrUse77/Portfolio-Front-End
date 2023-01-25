@@ -1,17 +1,15 @@
-<header>
-    <nav class="perfil">
-        <div class="curso ">
-            <h1 class="yoprogramo">Curso #YoProgramo</h1>
-        </div>
-        <ul class="nav-menu">
+<header class="header">
+    <nav class="header__nav">
+        <h1 class="nav__yoprogramo">Curso #YoProgramo</h1>
+        <ul class="nav__ul">
             <li>
-                <button routerLink="/SignUp" class="boton nav-link">Registrarse</button>
+                <button routerLink="/SignUp" class="ul__boton">Registrarse</button>
             </li>
             <li>
-                <button routerLink="/LogIn" class="boton nav-link">Iniciar Sesion</button>
+                <button routerLink="/LogIn" class="ul__boton">Iniciar Sesion</button>
             </li>
             <li>
-                <button (click)="showMenu()" class="boton-menu nav-link">
+                <button (click)="showMenu()" class="ul__boton">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
                     </svg>
@@ -19,183 +17,239 @@
             </li>
         </ul>
     </nav>
-        <div #menu class="menu2">
-            <button #menu (click)="hiddenMenu()" class="exit">
+    <section #menu class="header__menu">
+            <button #menu (click)="hiddenMenu()" class="menu__button">
                 <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
                     <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
                 </svg>
             </button>
-            <div class="container-fluid">
-            <ul class="row"> 
-                <li style="transform: translateY(10px);">
-                    <button #options2 (click)="showIcons2()" class="options">
-                        <h1> CONTACTO </h1>
-                    </button>
-                    <div #iconos2 class="icons" style="height: 10vh;">
-                        <div class="row text-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="white" class="bi bi-envelope gw" viewBox="0 0 16 16">
-                                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
-                            </svg>
-                            <h6>agusdor16@gmail.com</h6>
-                        </div>
-                    <div class="row text-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-whatsapp gw" viewBox="0 0 16 16">
-                            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
-                        </svg>
-                        <h6>1144729261</h6>
-                    </div> 
-                    </div>
-                </li>
-                <li #redes class="famoso">
-                    <button #options (click)="showIcons()" class="options"> 
-                        <h1> REDES </h1>
+            <div class="menu__container container-fluid">
+                <ul class="ul"> 
+                    <li #contacto class="container__li col">
+                        <button (click)="showIcons2()" class="li__button">
+                            <h1> CONTACTO </h1>
                         </button>
-                        <div #iconos class="icons">
-                            <div class="col text-center" style="margin-top: 10px;">
+                        <ul #contacto2 class="li__container">
+                            <li class="container__section row">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white" class="bi bi-envelope gw" viewBox="0 0 16 16">
+                                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+                                </svg>
+                                <h4>agusdor16@gmail.com</h4>
+                            </li>
+                            <li class="container__section row">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white" class="bi bi-whatsapp gw" viewBox="0 0 16 16">
+                                    <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+                                </svg>
+                                <h3>1144729261</h3>
+                            </li> 
+                        </ul>
+                    </li>
+                    <li #redes class="container__li col">
+                        <button (click)="showIcons()" class="li__button"> 
+                            <h1> REDES </h1>
+                        </button>
+                        <div #redes2 class="li__container">
+                            <div class="col" style="margin-top: 10px;">
                                 <h3>INSTAGRAM</h3>
                                 <a href="https://www.instagram.com/agus_doricich">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
                                     <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
                                     </svg>
                                 </a>
                             </div>
-                            <div class="col text-center" style="margin-top: 10px;">
+                            <div class="col" style="margin-top: 10px;">
                                 <h3>FACEBOOK</h3>
                                 <a href="https://www.facebook.com/agustin.francisco.1690">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
                                     <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
                                     </svg>
                                 </a>
                             </div>
-                            <div class="col text-center" style="margin-top: 10px;">
+                            <div class="col" style="margin-top: 10px;">
                                 <h3>LINKED IN</h3>
                                 <a href="https://www.linkedin.com/in/agustin-doricich-96891b211">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
                                     <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
                                     </svg>
                                 </a>
                             </div>
-                            <div class="col text-center" style="margin-top: 10px;">
+                            <div class="col" style="margin-top: 10px;">
                                 <h3>GITHUB</h3>
                                 <a href="">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                                    <svg xmlns="http://www.w3.org/2000/svg" wift="40" height="40" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
                                         <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
                                     </svg>
                                 </a>
                             </div>
-                            <div class="col text-center" style="margin-top: 10px;">
+                            <div class="col" style="margin-top: 10px;">
                                 <h3>TWITTER</h3>
                                 <a href="">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+                                    <svg xmlns="http://www.w3.org/2000/svg" wift="40" height="40" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
                                         <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
                                     </svg>
                                 </a>
                             </div>
                         </div>
-                </li>
-                <li #proyectos class="proyect">
-                    <button routerLink="/proyectos" class="options">
-                        <h1> PROYECTOS </h1>
-                    </button>
-                </li>
-                <li #experiencia class="exp">
-                    <button routerLink="/experiencia" class="options">
-                        <h1> EXPERIENCIA </h1>
-                    </button>
-                </li>
-                <li #educacion class="education">
-                    <button routerLink="/educacion" class="options">
-                        <h1> EDUCACION </h1>
-                    </button>
-                </li>
-            </ul>
-            <ul class="row nav-menu">
-            <li class="col" style="width: 150px;">
-                <button routerLink="/SignUp" class="boton nav-link" >Registrarse</button>
-            </li>
-            <li class="col" style="width: 150px;">
-                <button routerLink="/LogIn" class="boton nav-link">Iniciar Sesion</button>
-            </li>
-            </ul>
-        </div>
-        </div>
-    <div class="acerca_de container text-center">
-        <div class="img_perfil row text-center" style="margin-bottom: 20px;">
+                    </li>
+                    <li #info class="container__li col" >
+                        <button routerLink="/proyectos" class="li__button">
+                            <h1> PROYECTOS </h1>
+                        </button>
+                    </li>
+                    <li #info class="container__li col" >
+                        <button routerLink="/experiencia" class="li__button">
+                            <h1> EXPERIENCIA </h1>
+                        </button>
+                    </li>
+                    <li #info class="container__li col" >
+                        <button routerLink="/educacion" class="li__button">
+                            <h1> EDUCACION </h1>
+                        </button>
+                    </li>
+                </ul>
+                <ul class="row nav-menu">
+                    <li class="col" style="width: 150px;">
+                        <button routerLink="/SignUp" class="boton nav-link" >Registrarse</button>
+                    </li>
+                    <li class="col" style="width: 150px;">
+                        <button routerLink="/LogIn" class="boton nav-link">Iniciar Sesion</button>
+                    </li>
+                </ul>
+            </div>
+    </section>
+    <div class="header__perfil container text-center">
+        <div class="perfil__img row text-center" style="margin-bottom: 20px;">
             <img src="../../../assets/imagenes/IMG_20221212_221947_944.png" class="rounded-5 img-fluid  mx-auto d-block">
         </div>
-        <div class="perf row">
-            <h1 class="nombre">AGUSTIN FRANCISCO DORICICH</h1>
-            <h4 class="desc" *ngFor="let descripcion of desc">{{descripcion}}</h4>
+        <div class="perfil__descripcion row">
+            <h1 class="perfil__descripcion--nombre">AGUSTIN FRANCISCO DORICICH</h1>
+            <h4 class="perfil__descripcion--desc" *ngFor="let descripcion of desc">{{descripcion}}</h4>
             <input type="text" [(ngModel)]="desc[2]" style="display: none;">
         </div>
     </div>
     <div class="medio-circulo"></div>
 </header>
-<div class="info_comp">z
-    <a routerLink="/proyectos" class="enter">
+<section class="body">
+    <button routerLink="/proyectos" class="body__button">
         <h1>PROYECTOS</h1>
-    </a>
-    <a routerLink="/experiencia" class="enter">
+    </button>
+    <button routerLink="/experiencia" class="body__button">
         <h1>EXPERIENCIA</h1>
-    </a>
-    <a routerLink="/educacion" class="enter">
+    </button>
+    <button routerLink="/educacion" class="body__button">
         <h1>EDUCACION</h1>
-    </a>
-</div>
-<div class="borde1"></div>
-<div class="skills">
-    <div class="skill">
-        <h2 class="cat"> DISEÑO WEB </h2>
-        <div class="diseño">
+    </button>
+    <button class="body__button">
+        <h2>Descarga mi CV</h2>
+    </button>
+    <div class="borde"></div>
+    <div class="body__title container-fluid text-center">
+        <h1 class="text-center">MIS HABILIDADES</h1>
+    </div>
+    <div class="body__skill">
+        <div class="skill">
+            <div class="skill__title"> 
+                <div class="skill__img">
+                    <img src="../../../assets/imagenes/file_type_html_icon_130541-3236007695.png" alt="HTML" srcset="">
+                </div>
+                <h2>HTML 5</h2>
+            </div>
+            <p class="text-center">Es un estándar que sirve de referencia del software que conecta con la elaboración de páginas web en sus diferentes versiones, define una estructura básica y un código para la definición de contenido de una página web, como texto, imágenes, videos, juegos, entre otros.</p>
+        </div>
+        <div class="skill">
+            <div class="skill__title"> 
+                <div class="skill__img">
+                    <img src="../../../assets/imagenes/css3-logo-png-transparent-308037898.png" alt="HTML" srcset="">
+                </div>
+                <h2>CSS</h2>
+            </div>
+            <p class="text-center">Es un lenguaje de diseño gráfico para definir y crear la presentación de un documento estructurado escrito en un lenguaje de marcado. Es muy usado para establecer el diseño visual de los documentos web, e interfaces de usuario escritas en HTML o XHTML.</p>
+        </div>
+        <div class="skill">
+            <div class="skill__title"> 
+                <div class="skill__img">
+                    <img src="../../../assets/imagenes/javascript-icon-clipart-6-3470004084.png" alt="HTML" srcset="">
+                </div>
+                <h2>JAVASCRIPT</h2>
+            </div>
+            <p class="text-center">JavaScript es un lenguaje de programación interpretado, dialecto del estándar ECMAScript. Se define como orientado a objetos, basado en prototipos, imperativo, débilmente tipado y dinámico.</p>
+        </div>
+        <div class="skill">
+            <div class="skill__title"> 
+                <div class="skill__img">
+                    <img src="../../../assets/imagenes/angular-icon-1-logo-png-transparent-1877748284.png" alt="HTML" srcset="">
+                </div>
+                <h2>ANGULAR</h2>
+            </div>
+            <p class="text-center">Es una herramienta de interfaz de línea de comandos que se utiliza para inicializar, desarrollar, montar y mantener aplicaciones de Angular directamente desde un shell de comandos.</p>
+        </div>
+        <div class="skill">
+            <div class="skill__title"> 
+                <div class="skill__img">
+                    <img src="../../../assets/imagenes/pngkit_download-png_1010012.png" alt="HTML" srcset="">
+                </div>
+                <h2>C</h2>
+            </div>
+            <p class="text-center">C es un lenguaje de programación de propósito general originalmente desarrollado por Dennis Ritchie entre 1969 y 1972, como evolución del anterior lenguaje B. C es apreciado por la eficiencia del código que produce y es el lenguaje de programación más popular para crear softwares de sistemas y aplicaciones.
+                </p>
+        </div>
+        <div class="skill">
+            <div class="skill__title"> 
+                <div class="skill__img">
+                    <img src="../../../assets/imagenes/pngkit_bluetooth-logo-png_1380843.png" alt="HTML" srcset="">
+                </div>
+                <h2>ARDUINO</h2>
+            </div>
+            <p class="text-center">Arduino es una compañía de desarrollo de software y hardware libres, así como una comunidad internacional que diseña y manufactura placas de desarrollo de hardware para construir dispositivos digitales y dispositivos interactivos que puedan detectar y controlar objetos del mundo real.</p>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>
+
+<!--<div class="body__skill">
+        <h2 class="skill__title"> DISEÑO WEB </h2>
+        <div class="skill__design">
             <span>HTML</span>
         </div>
-        <div class="menu">
+        <div class="skill__menu">
             <div class="html" id="html-menu"></div>
         </div>
-        <div class="diseño">
+        <div class="skill__design">
             <span>CSS</span>
         </div>
-        <div class="menu">
-            <div class="css" id="css-menu"></div>
+        <div class="skill__menu">
+            <div class="skil__css" id="css-menu"></div>
         </div>
-        <div class="diseño">
+        <div class="skill__design">
             <span>JAVASCRIPT</span>
         </div>
-        <div class="menu">
+        <div class="skill__menu">
             <div class="js" id="js-menu"></div>
         </div>
-        <div class="diseño">
+        <div class="skill__design">
             <span>ANGULAR</span>
         </div>
-        <div class="menu">
+        <div class="skill__menu">
             <div class="angular" id="angular-menu"></div>
         </div>
     </div>
-    <div class="skill">
-        <h2 class="cat"> HABILIDADES BLANDAS </h2>
-        <div class="diseño">
+    <div class="body__skill">
+        <h2 class="skill__cat"> HABILIDADES BLANDAS </h2>
+        <div class="skill__design">
             <span>WIP</span>
             <span></span>
         </div>
-        <div class="menu">
+        <div class="skill__menu">
             <div class="html" id=""></div>
         </div>
     </div>
-    <div class="skill">
-        <h2 class="cat"> HABILIDADES DURAS </h2>
-        <div class="diseño">
+    <div class="body__skill">
+        <h2 class="skill__title"> HABILIDADES DURAS </h2>
+        <div class="skill__design">
             <span>WIP</span>
             <span></span>
         </div>
-        <div class="menu">
+        <div class="skill__menu">
             <div class="html" id=""></div>
         </div>
-    </div>
-</div>
-<div class="borde"></div>
-<div class="cv">
-    <button class="enter">
-        <h2>Descarga mi CV</h2>
-    </button>
-</div>
-<app-footer></app-footer>
+    </div>-->

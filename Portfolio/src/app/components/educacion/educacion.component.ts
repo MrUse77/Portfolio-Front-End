@@ -4,7 +4,7 @@ import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 @Component({
   selector: 'app-educacion',
   templateUrl: './educacion.component.html',
-  styleUrls: ['./educacion.component.css']
+  styleUrls: ['./educacion.component.scss']
 })
 export class EducacionComponent {
   secu= ["EEST N°8", "TECNICO EN ELECTRONICA", "2016-2022"];
