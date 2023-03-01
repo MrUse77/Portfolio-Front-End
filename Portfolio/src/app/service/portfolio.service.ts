@@ -26,14 +26,7 @@ toggleInterface():void{
     this.showSesion = !this.showSesion;
     this.subject.next(this.showSesion);
 }
-
 ontoggle(): Observable<any>{
     return this.subject.asObservable();
 }
-
-  
-  
-  
-  
-  
 }

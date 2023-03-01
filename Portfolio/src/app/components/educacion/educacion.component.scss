@@ -1,4 +1,3 @@
-
 h1{
     display: flex;
     justify-content: center;
@@ -12,18 +11,8 @@ h5{
 p{
     margin: 5px;
 }
-header{
-    display: flex;
-    margin-bottom: 5%;
-}
 .eduw{
     min-height: 100vh;
-}
-.edu{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 1%;
 }
 .educacion{
     font-size: 20px;
@@ -36,10 +25,12 @@ header{
     border-style:  solid;
     border-color: #1e80b1;
     margin-right: 20px;
-    width: 300px;
+    min-width: 300px;
+    max-width: 300px;
     height: 400px;
     background-image:radial-gradient( #1e80b1, #206487);
     z-index: 1;
+    overflow: hidden;
 }
 .img:hover{
     background-image:linear-gradient(90deg, #4eccfa,#4ec5ff);
@@ -76,19 +67,12 @@ header{
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
-    height: 93px;
     width: 160px;
     top:60%;
     left:25%;
     transition: 1s ease all;
 }
 
-svg{
-    fill: #4eccfa;
-}
-svg:hover{
-    fill: #1A9FFF;
-}
 img{
     transition: 1s ease all;
 }
@@ -183,4 +167,10 @@ img{
     left: 10%;
     border: solid #1e80b1;
     border-radius: 5px;
+}
+.container-fluid{
+    width: 100vw;
+    height: 400px;
+    display: flex;
+    overflow: auto;
 }

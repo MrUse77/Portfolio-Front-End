@@ -84,3 +84,22 @@ svg:hover{
     fill: #1A9FFF;
 
 }
+.menu__button--mostrar{
+    display: flex;
+    transform: translateX(0);
+    visibility: visible;
+    opacity: 1;
+    transition: 0.75s ease all;
+    overflow: scroll;
+}
+.li__container--expand{
+    transform: translateY(0) scaleY(1);
+    opacity: 1;
+    overflow: hidden;
+}
+.container__li--expand{
+    height: 300px;
+}
+.ocultar{
+    overflow: hidden;
+}

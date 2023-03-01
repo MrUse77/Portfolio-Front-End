@@ -50,9 +50,12 @@ header{
     border-style:  solid;
     border-color: #1e80b1;
     margin-right: 20px;
-    width: 300px;
+    min-width: 300px;
+    max-width: 300px;
     height: 400px;
     background-image:radial-gradient( #1e80b1, #206487);
+    z-index: 1;
+    overflow: hidden;
 }
 .img:hover{
     background-image:linear-gradient(90deg, #4eccfa,#4ec5ff);
@@ -169,4 +172,10 @@ svg:hover{
     left: 10%;
     border: solid #1e80b1;
     border-radius: 5px;
+}
+.container-fluid{
+    width: 100vw;
+    height: 400px;
+    display: flex;
+    overflow: auto;
 }
