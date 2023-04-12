@@ -1,9 +1,14 @@
+<<<<<<< HEAD
 
 import { Component, EventEmitter, Injectable, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { Usuario } from 'src/app/Modelo/Usuario';
 import { AutenticacionService } from 'src/app/service/autenticacion.service';
+=======
+import { HttpClient } from '@angular/common/http';
+import { Component, EventEmitter, Injectable, OnInit, Output } from '@angular/core';
+>>>>>>> 0f1035e79c3aaef1443053f11f9a60218c258dd6
 
 @Component({
   selector: 'app-signup',
@@ -11,6 +16,7 @@ import { AutenticacionService } from 'src/app/service/autenticacion.service';
   styleUrls: ['./signup.component.css']
 })
 export class SignUpComponent implements OnInit{
+<<<<<<< HEAD
   form:FormGroup;
   usuarios: Usuario[] = [];
   constructor(private formBuilder:FormBuilder, private service:AutenticacionService, private ruta:Router){
@@ -51,3 +57,13 @@ export class SignUpComponent implements OnInit{
   }
 
 
+=======
+
+
+  constructor(
+  ){}
+  ngOnInit(): void {
+    
+  }
+  }
+>>>>>>> 0f1035e79c3aaef1443053f11f9a60218c258dd6

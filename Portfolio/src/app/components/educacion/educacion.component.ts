@@ -15,7 +15,11 @@ export class EducacionComponent {
   show=0;
   show1=0;
   show2=0;
+<<<<<<< HEAD
   show3=0;
+=======
+  show3=0
+>>>>>>> 0f1035e79c3aaef1443053f11f9a60218c258dd6
   @ViewChild('info1')info1!: ElementRef;
   @ViewChild('info2')info2!: ElementRef; 
   @ViewChild('info3')info3!: ElementRef; 
@@ -25,9 +29,12 @@ export class EducacionComponent {
   @ViewChild('imagen3') imagen3!:ElementRef;
   @ViewChild('imagen4') imagen4!:ElementRef;
   @ViewChild('agregar') agregar!:ElementRef;
+<<<<<<< HEAD
   @ViewChild('edit') edit!:ElementRef;
   @ViewChild('editar') editar!:ElementRef;
   @ViewChild('edicion') edicion!:ElementRef;
+=======
+>>>>>>> 0f1035e79c3aaef1443053f11f9a60218c258dd6
 
   constructor(private render2: Renderer2,
     ){
@@ -118,6 +125,7 @@ export class EducacionComponent {
       }
     }
 }
+<<<<<<< HEAD
 SaveInfo(){
   const edit = this.edit.nativeElement;
   const editar = this.editar.nativeElement;
@@ -135,4 +143,6 @@ EditInfo(){
   this.render2.setStyle(editar, 'display', 'none');
   this.render2.setStyle(edicion, 'display', 'flex');
 }
+=======
+>>>>>>> 0f1035e79c3aaef1443053f11f9a60218c258dd6
 }

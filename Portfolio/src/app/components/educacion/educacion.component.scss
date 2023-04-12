@@ -102,6 +102,29 @@ img{
     background: transparent;
     border: none;
 }
+<<<<<<< HEAD
+=======
+.mod1{
+    position: absolute;
+    display: flex;
+    top:0;
+    right: 0;
+    height: 24px;
+    width: 24px;
+    margin-right: 10px;
+    margin: 10px;
+    z-index: 1;
+    background: transparent;
+    border: none;
+}
+.mod1 svg{
+    display: flex;
+    align-items: center;
+    fill: #1A9FFF;
+    width: 20px;
+    height: 20px;
+}
+>>>>>>> 0f1035e79c3aaef1443053f11f9a60218c258dd6
 .mod svg{
     display: flex;
     align-items: center;
@@ -153,6 +176,7 @@ img{
     height: 400px;
     display: flex;
     overflow: auto;
+<<<<<<< HEAD
 }
 .mod1{
     position: relative;
@@ -167,4 +191,6 @@ img{
 }
 .mod1:hover{
     background-image: linear-gradient(90deg, #194766, #206487, #194766);
+=======
+>>>>>>> 0f1035e79c3aaef1443053f11f9a60218c258dd6
 }

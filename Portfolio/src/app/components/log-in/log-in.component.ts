@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
+<<<<<<< HEAD
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/Modelo/Usuario';
 import { AutenticacionService } from 'src/app/service/autenticacion.service';
+=======
+>>>>>>> 0f1035e79c3aaef1443053f11f9a60218c258dd6
 
 @Component({
   selector: 'app-log-in',
@@ -10,6 +13,7 @@ import { AutenticacionService } from 'src/app/service/autenticacion.service';
   styleUrls: ['./log-in.component.scss']
 })
 export class LogInComponent {
+<<<<<<< HEAD
   usuarios: Usuario[] | undefined;
   form:FormGroup;
   
@@ -34,4 +38,7 @@ export class LogInComponent {
       return this.form.get('password');
     }
   
+=======
+
+>>>>>>> 0f1035e79c3aaef1443053f11f9a60218c258dd6
 }

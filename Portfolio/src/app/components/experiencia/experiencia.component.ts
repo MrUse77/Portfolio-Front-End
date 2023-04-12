@@ -1,9 +1,12 @@
 import { style } from '@angular/animations';
 import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+<<<<<<< HEAD
 import { Trabajo } from 'src/app/Modelo/Trabajo';
 import { TipoTrabajo } from 'src/app/Modelo/TipoTrabajo';
 import { DatosService } from 'src/app/service/datos.service';
+=======
+>>>>>>> 0f1035e79c3aaef1443053f11f9a60218c258dd6
 import { __values } from 'tslib';
 
 @Component({
@@ -13,6 +16,7 @@ import { __values } from 'tslib';
 })
 export class ExperienciaComponent implements OnInit{
   biomedic = ["Biomedic", "Servicio Tecnico", "Dic 2021 - Nov 2022"];
+<<<<<<< HEAD
   @ViewChild('info')info!: ElementRef; 
   @ViewChild('imagen') imagen!:ElementRef;
   @ViewChild('edit') edit!:ElementRef;
@@ -24,16 +28,28 @@ export class ExperienciaComponent implements OnInit{
   tipo_trabajo: TipoTrabajo[] = [];
 
   constructor(private render2: Renderer2,private service:DatosService,
+=======
+  @ViewChild('info')
+  info!: ElementRef; 
+  @ViewChild('imagen') imagen!:ElementRef;
+  show=0;
+  
+  constructor(private render2: Renderer2,
+>>>>>>> 0f1035e79c3aaef1443053f11f9a60218c258dd6
     ){
   }
 
   ngOnInit(): void {
+<<<<<<< HEAD
     this.service.Datos().subscribe(data=>{
       this.exp=data;
     })
     this.service.tipoT().subscribe(data2=>{
       this.tipo_trabajo=data2;
     })
+=======
+    
+>>>>>>> 0f1035e79c3aaef1443053f11f9a60218c258dd6
   }
   ShowInfo(){
     const info = this.info.nativeElement;
@@ -55,6 +71,7 @@ export class ExperienciaComponent implements OnInit{
       this.render2.setStyle(imagen,'visibility','visible');
     }
     }
+<<<<<<< HEAD
     EditInfo(){
       const edit = this.edit.nativeElement;
       const editar = this.editar.nativeElement;
@@ -76,4 +93,7 @@ export class ExperienciaComponent implements OnInit{
       this.render2.setStyle(trabajo, 'z-index', '0');
     }
 
+=======
+    
+>>>>>>> 0f1035e79c3aaef1443053f11f9a60218c258dd6
 }
