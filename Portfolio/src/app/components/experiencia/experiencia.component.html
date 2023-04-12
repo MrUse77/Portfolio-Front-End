@@ -1,0 +1,49 @@
+<app-header [label]="'EXPERIENCIA'">
+</app-header>
+<div class="eduw" id="2">
+    <button #editar (click)="EditInfo()" class="mod1">
+        <p>EDITAR</p>
+    </button>
+    <ul #edit style="display: none; margin: 0; padding: 0;">
+    <button (click)="SaveInfo()" class="mod1">
+        <p style="margin: 0;">Guardar</p>
+    </button>
+</ul>
+
+        <div class="container-fluid" style="min-height: 400px; ;">
+            <button class="img col">
+                <div class="agregar">
+                    <svg class="agregar" #agregar xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="#1A9FFF" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                    </svg>
+                </div>
+            </button>
+            <div>
+            <button *ngFor="let exp of exp" (click)="ShowInfo()" #trabajo class="img col" style="position: absolute; z-index: 0;">
+                <img #imagen class="imagen" src="../../../assets/imagenes/logoBlanco.png" alt="">
+                <div #info class="info">
+                    <p>{{exp.nombreEmpresa}}</p>
+                    <H5>{{exp.descripcion}}</H5>
+                    <h6>Inicio:{{exp.fechaInicio}}</h6>
+                    <h6>Fin:{{exp.fechaFin}}</h6>
+                </div>
+            </button>
+            <div *ngFor="let exp of exp" #edicion class="edit" style="display: none; z-index: 2;">
+                <input class="edicion nombre" type="text" [(ngModel)]=exp.nombreEmpresa/>
+                <input class="edicion trabajo" type="text" [(ngModel)]=exp.descripcion>
+                <input class="edicion fecha" type="date" [(ngModel)]=exp.fechaInicio>
+                <input class="edicion fecha" type="date" [(ngModel)]=exp.fechaFin>
+                <input class="edicion rol" type="text" list="input">
+                <datalist id="input" style="z-index: 5">
+                    <option *ngFor="let tipo_trabajo of tipo_trabajo" value="{{tipo_trabajo.rol}}">{{tipo_trabajo.rol}}</option>
+                </datalist>
+                <input class="edicion imagen" type="file">
+                <button class="mod1">
+                    <p>BORRAR</p>
+                </button>
+            </div>
+            </div>
+        </div>
+</div>
+    <app-footer></app-footer>

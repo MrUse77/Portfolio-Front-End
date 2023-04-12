@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.footer{
+background: #163e58;
+}
+h4{
+    height: max-content;
+}
+img{
+    position: relative;
+    height: 50px;
+    margin-left: 5px;
+}
+svg{
+    margin-right: 5px;
+    color: white;
+
+}
+.redes{
+    display: flex;
+    
+    position: absolute;
+    height: max-content;
+    width: 50px;
+    right: 40%;
+}
+.icons{
+    position: absolute;
+    display: flex;
+    top: 25px;
+    height: max-content;
+}

@@ -1,0 +1,133 @@
+<app-header [label]="'EDUCACION'">
+</app-header>
+<div title class="eduw" id="3">
+    <button #editar (click)="EditInfo()" class="mod1">
+        <p>EDITAR</p>
+    </button>
+    <ul #edit style="display: none; margin: 0; padding: 0;">
+    <button (click)="SaveInfo()" class="mod1">
+        <p style="margin: 0;">Guardar</p>
+    </button>
+    </ul>
+    <div class="educacion">
+        <h1>Secundario y Universidad</h1>
+        <div class="container-fluid" style="margin-bottom: 50px; margin-top: 50px;">
+            <button class="img col">
+                <img  src="" alt="">
+                <div class="agregar">
+                    <svg class="agregar" #agregar xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="#1A9FFF" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                    </svg>
+                </div>
+            </button>
+            <button  (click)="ShowInfo('escuela')" class="img col">
+                <img #imagen src="../../../assets/imagenes/EEST-8-Moron.jpg" alt="" width="200" height="100">
+                <div #info1  class="info">
+                    <p>{{secu[0]}}</p>
+                    <h5>{{secu[1]}}</h5>
+                    <h6>{{secu[2]}}</h6>
+                </div>
+                <div class="edit" style="display: none;">
+                    <button class="mod" >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
+                            <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+                            <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                            <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
+                        </svg>
+                    </button>
+                    <input class="edicion nombre" type="text" [(ngModel)]="secu[0]">
+                    <input class="edicion trabajo" type="text" [(ngModel)]="secu[1]">
+                    <input class="edicion fecha" type="text" [(ngModel)]="secu[2]">
+                </div>
+            </button>
+        </div>
+        <h1 >CURSOS</h1>
+        <div class="container-fluid" style="margin-bottom: 50px; margin-top: 50px;">
+            <button class="img col">
+                <img  src="" alt="">
+                <div class="agregar">
+                    <svg class="agregar" #agregar xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="#1A9FFF" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                    </svg>
+                </div>
+            </button>
+            <button  (click)="ShowInfo('utn')" class="img col">
+                <img #imagen2  class="utn" src="../../../assets/imagenes/th-1794450002-removebg-preview.png" alt="">
+                <div #info2 class="info">
+                    <p>{{curso[0]}}</p>
+                    <H5>{{curso[1]}}</H5>
+                    <h6>{{curso[2]}}</h6>
+                </div>
+                </button>
+                <div class="edit" style="display: none;">
+                    <button class="mod" >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
+                            <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+                            <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                            <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
+                        </svg>
+                    </button>
+                    <input class="edicion nombre" type="text" [(ngModel)]="curso[0]">
+                    <input class="edicion trabajo" type="text" [(ngModel)]="curso[1]">
+                    <input class="edicion fecha" type="text" [(ngModel)]="curso[2]">
+                </div>
+            <button  (click)="ShowInfo('arg_pro')" class="img col">
+                <img #imagen3  class="arg_pro"src="../../../assets/imagenes/MINIATURA-ARGEPROGR.jpg" alt="">
+                <div #info3  class="info1">
+                    <p>{{curso[3]}}</p>
+                    <div class="info2">
+                        <p>{{curso[4]}}</p>
+                        <h5>{{curso[5]}}</h5>
+                        <h6>{{curso[6]}}</h6>
+                    </div>
+                </div>
+                <div class="edit" style="display: none;">
+                    <button class="mod" >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
+                            <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+                            <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                            <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
+                        </svg>
+                    </button>
+                    <input class="edicion nombre" type="text" [(ngModel)]="curso[3]">
+                    <input class="edicion nombre" type="text" [(ngModel)]="curso[4]" style="top: 51px;">
+                    <input class="edicion fecha" type="text" [(ngModel)]="curso[5]" style="top: 151px;">
+                </div>
+            </button>
+            <button  (click)="ShowInfo('arg_pro2')" class="img col">
+                <img #imagen4  class="arg_pro"src="../../../assets/imagenes/MINIATURA-ARGEPROGR.jpg" alt="">
+                <div #info4  class="info1">
+                    <p>{{curso[3]}}</p>
+                    <div class="info3">
+                        <p>{{curso[7]}}</p>
+                        <H5>{{curso[8]}}</H5>
+                        <h6>{{curso[9]}}</h6>
+                    </div>
+                </div>
+                <div class="edit" style="display: none;">
+                    <button class="mod" >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
+                            <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+                            <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                            <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
+                        </svg>
+                    </button>
+                    <input class="edicion nombre" type="text" [(ngModel)]="curso[7]">
+                    <input class="edicion trabajo" type="text" [(ngModel)]="curso[8]">
+                    <input class="edicion fecha" type="text" [(ngModel)]="curso[9]">
+                </div>
+            </button>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
