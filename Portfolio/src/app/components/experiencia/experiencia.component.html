@@ -1,17 +1,33 @@
 <app-header [label]="'EXPERIENCIA'">
 </app-header>
 <div class="eduw" id="2">
-    <button #editar (click)="EditInfo()" class="mod1">
-        <p>EDITAR</p>
-    </button>
-    <ul #edit style="display: none; margin: 0; padding: 0;">
-    <button (click)="SaveInfo()" class="mod1">
-        <p style="margin: 0;">Guardar</p>
-    </button>
-</ul>
 
-        <div class="container-fluid" style="min-height: 400px; ;">
-            <button class="img col">
+<div #newWork class="div_new" >
+    <div class="new__add">
+        <form (ngSubmit)="NewWork(form.value)" class="new__add--form" [formGroup]="form" action="" method="post">
+        <div class="edit container-fluid" style="width: 400px; height: 500px;">
+            <button (click)="cerrarVentana()" class="menu__button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                </svg>
+            </button>
+            <label for="nombreEmpresa"><h5 class="text-center">Nombre de la empresa</h5><input class="form-control edicion nombre" type="text" id="nombreEmpresa" formControlName="nombreEmpresa"></label>
+            <label for="descripcion"><h5 class="text-center">Descripcion</h5><input class="form-control edicion trabajo" type="text" id="descripci" formControlName="descripcion"></label>
+            <label for="fechaInicio" style="width: 50%"><h5 class="text-center">Fecha de inicio</h5><input class="form-control edicion fecha" type="date" [min]="1900-01-01" style="margin-right: 5px;" id="fechaInicio" formControlName="fechaInicio"></label>
+            <label for="fechaFin" style="width: 50%"><h5 class="text-center">Fecha final</h5><input class="form-control edicion fecha " type="date" style="margin-left: 5px;" id="fechaFin" formControlName="fechaFin"></label>
+            <label for="tipo_trabajo"><h5 class="text-center">Tipo de trabajo</h5><input class="form-control edicion rol" type="text" list="input" id="tipo_trabajo" formControlName="tipo_trabajo">
+            <datalist id="input" style="z-index: 11" >
+                <option *ngFor="let tipo_trabajo of tipo_trabajo" value="{{tipo_trabajo.rol}}">{{tipo_trabajo.rol}}</option>
+            </datalist></label>
+            <label for="logo"><input class="edicion imagen" type="file"></label>  
+            <input class="mod1--crear" type="submit" value="CREAR">
+        </div>
+    </form>
+    </div>
+</div>
+        <div class="container-fluid" style="min-height: 400px;">
+            <div>
+            <button (click)="agregarTrabajo()" class="container img col">
                 <div class="agregar">
                     <svg class="agregar" #agregar xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="#1A9FFF" class="bi bi-plus-circle" viewBox="0 0 16 16">
                         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
@@ -19,31 +35,35 @@
                     </svg>
                 </div>
             </button>
-            <div>
-            <button *ngFor="let exp of exp" (click)="ShowInfo()" #trabajo class="img col" style="position: absolute; z-index: 0;">
-                <img #imagen class="imagen" src="../../../assets/imagenes/logoBlanco.png" alt="">
-                <div #info class="info">
+        </div>
+            <div *ngFor="let exp of exp" class="container" style="width: 300px; margin-left: 10px; margin-right: 5px; height: 400px;" >
+                <button #editar (click)="exp.edit = !exp.edit"  [ngStyle]="{'display': exp.edit? 'none':'block'}" class="mod1">
+                    <p>EDITAR</p>
+                </button>
+            <button (click)="exp.selected = !exp.selected" [ngStyle]="{'display': exp.edit? 'none':'block'}" #trabajo class="img col" >
+                <img class="imagen" src="" alt="" [ngStyle]="{ 'visibility': exp.selected ? 'hidden' : 'visible', 'opacity': exp.selected? '0':'1','top': exp.selected? '70%': '150px' }"  style="position: absolute; z-index: 0;">
+                <div class="info" [ngStyle]="{ 'visibility': exp.selected ? 'visible' : 'hidden', 'opacity': exp.selected? '1':'0','top': exp.selected? '107px': '70%' }" style="position: absolute; z-index: 0;">
                     <p>{{exp.nombreEmpresa}}</p>
                     <H5>{{exp.descripcion}}</H5>
                     <h6>Inicio:{{exp.fechaInicio}}</h6>
                     <h6>Fin:{{exp.fechaFin}}</h6>
                 </div>
             </button>
-            <div *ngFor="let exp of exp" #edicion class="edit" style="display: none; z-index: 2;">
-                <input class="edicion nombre" type="text" [(ngModel)]=exp.nombreEmpresa/>
-                <input class="edicion trabajo" type="text" [(ngModel)]=exp.descripcion>
-                <input class="edicion fecha" type="date" [(ngModel)]=exp.fechaInicio>
-                <input class="edicion fecha" type="date" [(ngModel)]=exp.fechaFin>
-                <input class="edicion rol" type="text" list="input">
-                <datalist id="input" style="z-index: 5">
+            <form (ngSubmit)="EditarTrabajo(form2.value)" [formGroup]="form2" action="" method="put" #edicion class="edit" [ngStyle]="{'display': exp.edit? 'flex':'none', 'z-index': exp.edit? '2':'-1'}" style="display: none; z-index: 10;">
+                <label for="nombreEmpresa"><input class="form-control edicion nombre" type="text"></label>
+                <label for="descripcion"><input class="form-control edicion trabajo" type="text"   ></label>
+                <label for="fechaInicio" style="width: 45%"><input class="form-control edicion fecha" type="date" [min]="1900-01-01" style="margin-right: 5px;"></label>
+                <label for="fechaFin" style="width: 45%"><input class="form-control edicion fecha " type="date" style="margin-left: 5px;"   ></label>
+                <label for="tipo_trabajo"><input class="form-control edicion rol" type="text" list="input">
+                <datalist id="input" style="z-index: 10">
                     <option *ngFor="let tipo_trabajo of tipo_trabajo" value="{{tipo_trabajo.rol}}">{{tipo_trabajo.rol}}</option>
-                </datalist>
-                <input class="edicion imagen" type="file">
-                <button class="mod1">
-                    <p>BORRAR</p>
+                </datalist></label>
+                <label for="logo"><input class="edicion imagen" type="text"> </label>  
+                <button class="mod1--borrar">
+                    <p>GUARDAR</p>
                 </button>
-            </div>
-            </div>
+            </form>
         </div>
-</div>
+    </div>
+            </div>
     <app-footer></app-footer>

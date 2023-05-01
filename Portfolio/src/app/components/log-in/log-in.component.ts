@@ -1,7 +1,8 @@
+import { TypeofExpr } from '@angular/compiler';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Usuario } from 'src/app/Modelo/Usuario';
+import  {Usuario} from 'src/app/Modelo/Usuario';
 import { AutenticacionService } from 'src/app/service/autenticacion.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { AutenticacionService } from 'src/app/service/autenticacion.service';
   styleUrls: ['./log-in.component.scss']
 })
 export class LogInComponent {
-  usuarios: Usuario[] | undefined;
+  usuarios:typeof Usuario[] | undefined;
   form:FormGroup;
   
   constructor(private formBuilder:FormBuilder, private service:AutenticacionService, private ruta:Router){

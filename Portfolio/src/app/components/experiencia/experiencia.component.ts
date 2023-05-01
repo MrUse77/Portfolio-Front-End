@@ -4,7 +4,10 @@ import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/co
 import { Trabajo } from 'src/app/Modelo/Trabajo';
 import { TipoTrabajo } from 'src/app/Modelo/TipoTrabajo';
 import { DatosService } from 'src/app/service/datos.service';
+import { AutenticacionService } from 'src/app/service/autenticacion.service';
 import { __values } from 'tslib';
+import { FormBuilder, FormGroup, Validators, FormsModule } from '@angular/forms';
+import { Usuario } from 'src/app/Modelo/Usuario';
 
 @Component({
   selector: 'app-experiencia',
@@ -19,42 +22,51 @@ export class ExperienciaComponent implements OnInit{
   @ViewChild('editar') editar!:ElementRef;
   @ViewChild('edicion') edicion!:ElementRef;
   @ViewChild('trabajo') trabajo!:ElementRef;
+  @ViewChild('newWork') newWork!:ElementRef;
+
   show=0;
   exp: Trabajo[] = [];
   tipo_trabajo: TipoTrabajo[] = [];
-
-  constructor(private render2: Renderer2,private service:DatosService,
+  usuario: Usuario[] = [];
+  form:FormGroup;
+  form2:FormGroup;
+  constructor(private render2: Renderer2,private service:DatosService,private formBuilder:FormBuilder,private service2:AutenticacionService
     ){
+      this.form=this.formBuilder.group(
+        {
+        id: Number,
+        nombreEmpresa:['',[Validators.required]],
+        descripcion:['',[Validators.required]],
+        fechaInicio:['',[Validators.required]],
+        fechaFin:['',[Validators.required]], 
+        logo:['',[Validators.required]],
+        tipo_trabajo:['',[Validators.required]],
+        }
+      )
+      this.form2=this.formBuilder.group(
+        {
+        id: Number,
+        nombreEmpresa:['',[Validators.required]],
+        descripcion:['',[Validators.required]],
+        fechaInicio:['',[Validators.required]],
+        fechaFin:['',[Validators.required]], 
+        tipo_trabajo:['',[Validators.required]],
+        logo:['',[Validators.required]],
+        }
+      )
   }
-
   ngOnInit(): void {
-    this.service.Datos().subscribe(data=>{
+    this.service.DatosTrabajo().subscribe(data=>{
+      console.log(data);
       this.exp=data;
     })
     this.service.tipoT().subscribe(data2=>{
       this.tipo_trabajo=data2;
     })
+    this.service2.iniciarSesion().subscribe(data3 =>{
+      console.log(data3);
+    })
   }
-  ShowInfo(){
-    const info = this.info.nativeElement;
-    const imagen = this.imagen.nativeElement;
-    this.render2.setStyle(info,'opacity','1');
-    this.render2.setStyle(info,'top','107px');
-    this.render2.setStyle(info,'visibility','visible');
-    this.render2.setStyle(imagen,'visibility','hidden');
-    this.render2.setStyle(imagen,'opacity','0');
-    this.render2.setStyle(imagen,'top','70%');
-    this.show++;
-    if(this.show==2){
-      this.show=0;
-      this.render2.setStyle(info, 'opacity', '0');
-      this.render2.setStyle(info,'top','70%');
-      this.render2.setStyle(info, 'visibility', 'hidden');
-      this.render2.setStyle(imagen,'top','150px');
-      this.render2.setStyle(imagen,'opacity','1');
-      this.render2.setStyle(imagen,'visibility','visible');
-    }
-    }
     EditInfo(){
       const edit = this.edit.nativeElement;
       const editar = this.editar.nativeElement;
@@ -64,6 +76,7 @@ export class ExperienciaComponent implements OnInit{
       this.render2.setStyle(editar, 'display', 'none');
       this.render2.setStyle(edicion, 'display', 'flex');
       this.render2.setStyle(trabajo, 'z-index', '-1');
+      this.render2.setStyle(trabajo, 'display', 'none');
     }
     SaveInfo(){
       const edit = this.edit.nativeElement;
@@ -74,6 +87,32 @@ export class ExperienciaComponent implements OnInit{
       this.render2.setStyle(editar, 'display', 'block');
       this.render2.setStyle(edicion, 'display', 'none');
       this.render2.setStyle(trabajo, 'z-index', '0');
+      this.render2.setStyle(trabajo, 'display', 'block');
     }
-
+    agregarTrabajo(){
+      const newWork = this.newWork.nativeElement;
+      this.render2.setStyle(newWork, 'display', 'flex');
+    }
+    NewWork(form: Trabajo){
+      this.service.CrearTrabajo(form).subscribe((data2)=>{
+        console.log(data2);
+        const newWork = this.newWork.nativeElement;
+        this.render2.setStyle(newWork, 'display', 'none');
+      }),(error: any)=>{
+        console.error(error);
+    }
+    };
+    cerrarVentana(){
+      const newWork = this.newWork.nativeElement;
+      this.render2.setStyle(newWork, 'display', 'none');
+    }
+    EditarTrabajo(form2: Trabajo){
+      if (form2 && form2.id) {
+    this.service.EditarTrabajo(form2.id, form2.nombreEmpresa, form2.descripcion, form2.fechaInicio, form2.fechaFin, form2.logo, form2.tipo_Trabajo).subscribe((data4)=>{
+      console.log(data4);
+    }),(error: any)=>{
+      console.error(error);
+    }
+  }
+}
 }

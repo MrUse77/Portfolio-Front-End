@@ -51,11 +51,13 @@ li{
     display: flex;
     list-style: none;
     margin-top: 20px;
-}
-.nav__ul{
     padding-right: 1%;
     padding-left: 1%;
 }
+.nav__ul--menu{
+    justify-content: center;
+}
+
 .row.nav-menu{
     display:none;
 }
@@ -461,6 +463,14 @@ ul{
 .menu__movil{
     position: fixed;
 }
+.nav__ul--menu{
+    display: flex;
+    list-style: none;
+    margin-top: 20px;
+    padding-right: 1%;
+    padding-left: 1%;
+    min-height: 80px;
+}
 .menu__button{
     position: absolute;
     display: flex;
@@ -505,6 +515,9 @@ ul{
 }
 .ul__boton--fuera{
     display: none;
+}
+.ul__boton--adentro{
+    min-height: 80px;
 }
 .ul__boton--movil{
     position: relative;
