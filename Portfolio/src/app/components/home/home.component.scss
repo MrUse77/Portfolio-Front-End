@@ -337,7 +337,6 @@ position: fixed;
     height: 400px;
 }
 
-
 /* animaciones */
 @keyframes oscuerecer {
     0%{background-color: rgba(0, 0, 0, 0.0);}
@@ -378,8 +377,11 @@ position: fixed;
     text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
     min-height: 500px;
     display: flex;
-    flex-direction:column;
+    flex-wrap: wrap;
+    flex-direction:row;
+    justify-content: center;
     margin-bottom: 3%;
+    overflow: visible;
 }
 .proyectos__mas--mis{
     overflow-x:scroll;
@@ -411,7 +413,9 @@ position: fixed;
 }
 .proyectos__mas{
     margin: 1em;
+    width: 100%;
     text-align: center;
+    height: max-content;
 }
 .proyectos__mas--caja{
     width: 150px;
@@ -428,6 +432,59 @@ position: fixed;
 }
 .proyectos__mas--caja:hover{
     background-image: linear-gradient(90deg, #194766, #206487, #194766);
+}
+.mod1--url{
+    position: relative;
+    height: 40px;
+    width: 150px;
+    margin:12px;
+    color: white;
+    background: rgba(243, 243, 243, 0.1);
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.3);
+    border: none;
+    text-decoration: none;
+    z-index: 3;
+}
+.mod1--url:hover{
+    background-image: linear-gradient(90deg, #194766, #206487, #194766);
+}
+.img{
+    position: relative;
+    border-style:  solid;
+    border-color: #1e80b1;
+    min-width: 300px;
+    max-width: 300px;
+    margin-left: 10px;
+    height: 400px;
+    background-image:radial-gradient( #1e80b1, #206487);
+    z-index: 0;
+    overflow: hidden;
+}
+.img:hover{
+    background-image:linear-gradient(90deg, #4eccfa,#4ec5ff);
+}
+.img .imagen {
+    position: absolute;
+    top: 150px;
+    left: 2.5px;
+    width: 290px;
+    height: 80px;
+    transition: 1s ease all;
+}
+.info{
+    position:absolute;
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    height: 250px;
+    width: 160px;
+    top:70%;
+    left:25%;
+    transition: 1s ease all;
+    overflow: scroll;
 }
 
 /* RESPONSIVE-CELULAR */

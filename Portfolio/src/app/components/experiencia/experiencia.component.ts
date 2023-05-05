@@ -15,7 +15,6 @@ import { Usuario } from 'src/app/Modelo/Usuario';
   styleUrls: ['./experiencia.component.scss']
 })
 export class ExperienciaComponent implements OnInit{
-  biomedic = ["Biomedic", "Servicio Tecnico", "Dic 2021 - Nov 2022"];
   @ViewChild('info')info!: ElementRef; 
   @ViewChild('imagen') imagen!:ElementRef;
   @ViewChild('edit') edit!:ElementRef;
@@ -26,7 +25,7 @@ export class ExperienciaComponent implements OnInit{
 
   show=0;
   exp: Trabajo[] = [];
-  tipo_trabajo: TipoTrabajo[] = [];
+  tipo_Trabajo: TipoTrabajo[] = [];
   usuario: Usuario[] = [];
   form:FormGroup;
   form2:FormGroup;
@@ -34,23 +33,21 @@ export class ExperienciaComponent implements OnInit{
     ){
       this.form=this.formBuilder.group(
         {
-        id: Number,
         nombreEmpresa:['',[Validators.required]],
         descripcion:['',[Validators.required]],
         fechaInicio:['',[Validators.required]],
         fechaFin:['',[Validators.required]], 
         logo:['',[Validators.required]],
-        tipo_trabajo:['',[Validators.required]],
+        tipo_Trabajo:['',[Validators.required]],
         }
       )
       this.form2=this.formBuilder.group(
         {
-        id: Number,
         nombreEmpresa:['',[Validators.required]],
         descripcion:['',[Validators.required]],
         fechaInicio:['',[Validators.required]],
         fechaFin:['',[Validators.required]], 
-        tipo_trabajo:['',[Validators.required]],
+        tipo_Trabajo:['',[Validators.required]],
         logo:['',[Validators.required]],
         }
       )
@@ -61,7 +58,7 @@ export class ExperienciaComponent implements OnInit{
       this.exp=data;
     })
     this.service.tipoT().subscribe(data2=>{
-      this.tipo_trabajo=data2;
+      this.tipo_Trabajo=data2;
     })
     this.service2.iniciarSesion().subscribe(data3 =>{
       console.log(data3);
@@ -101,18 +98,14 @@ export class ExperienciaComponent implements OnInit{
       }),(error: any)=>{
         console.error(error);
     }
-    };
+    }
+
     cerrarVentana(){
       const newWork = this.newWork.nativeElement;
       this.render2.setStyle(newWork, 'display', 'none');
     }
-    EditarTrabajo(form2: Trabajo){
-      if (form2 && form2.id) {
-    this.service.EditarTrabajo(form2.id, form2.nombreEmpresa, form2.descripcion, form2.fechaInicio, form2.fechaFin, form2.logo, form2.tipo_Trabajo).subscribe((data4)=>{
-      console.log(data4);
-    }),(error: any)=>{
-      console.error(error);
+    EditarTrabajo(id: number,form2: Trabajo){
+      console.log('ID del trabajo a editar:', id);
+      this.service.EditarTrabajo(id, form2)
     }
   }
-}
-}

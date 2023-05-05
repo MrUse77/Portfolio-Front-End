@@ -1,3 +1,6 @@
+*{
+    color: white;
+}
 h6{
     margin: 5px;
 }
@@ -8,11 +11,15 @@ h5 {
 p {
     margin: 5px;
 }
+.cerrar{
+    margin: 1%;
+}
 header{
     display: flex;
     margin-bottom: 5%;
 }
-.eudw{
+
+.eduw{
     margin-bottom: 100px;
     min-height: 100vh;
 }
@@ -22,34 +29,32 @@ header{
     justify-content: center;
     margin-left: 1%;
 }
-.cerrar{
-    margin: 1%;
-}
-.proyectos{
-    min-height: 100vh;
-    min-width: 50%;
-    width: 75%;
-    font-size: 20px;
-    color: #B8BCBF;
-    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
-    height: 50%;
-    margin-left: 10%;
-}
-
 .img .imagen {
     position: absolute;
     top: 150px;
     left: 2.5px;
     width: 290px;
     height: 80px;
+    transition: 1s ease all;
+}
+.biomedic {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    display: flex;
+    width: max-content;
+    border-style: none;
+    height: 400px;
 }
 .img{
     position: relative;
     border-style:  solid;
     border-color: #1e80b1;
-    width: 300px;
+    min-width: 300px;
+    max-width: 300px;
     height: 400px;
     background-image:radial-gradient( #1e80b1, #206487);
+    z-index: 0;
 }
 .img:hover{
     background-image:linear-gradient(90deg, #4eccfa,#4ec5ff);
@@ -61,16 +66,22 @@ svg:hover{
     fill: #1A9FFF;
 }
 .info{
-    position: absolute;
+    position:absolute;
     display: flex;
     visibility: hidden;
+    opacity: 0;
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
-    height: 93px;
+    height: 250px;
     width: 160px;
-    top:107px;
+    top:70%;
     left:25%;
+    transition: 1s ease all;
+    overflow: scroll;
+}
+.button{
+    height: 400px;
 }
 .agregar{
     position: absolute;
@@ -82,24 +93,179 @@ svg:hover{
 }
 .agregar svg{
     fill: #1A9FFF;
-
 }
-.menu__button--mostrar{
+.mod{
+    position: absolute;
     display: flex;
-    transform: translateX(0);
-    visibility: visible;
-    opacity: 1;
-    transition: 0.75s ease all;
-    overflow: scroll;
+    top:0;
+    right: 10px;
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+    margin: 10px;
+    z-index: 1;
+    background: transparent;
+    border: none;
 }
-.li__container--expand{
-    transform: translateY(0) scaleY(1);
-    opacity: 1;
-    overflow: hidden;
+.mod1{
+    position: absolute;
+    height: 40px;
+    width: 150px;
+    margin:12px;
+    color: white;
+    background: rgba(243, 243, 243, 0.1);
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.3);
+    border: none;
+    text-decoration: none;
+    z-index: 2;
+    top: 0;
+    left:0;
 }
-.container__li--expand{
-    height: 300px;
+.mod1--crear{
+    position: relative;
+    height: 40px;
+    width: 150px;
+    margin:12px;
+    color: white;
+    background: rgba(243, 243, 243, 0.1);
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.3);
+    border: none;
+    text-decoration: none;
+    z-index: 2;
 }
-.ocultar{
-    overflow: hidden;
+.mod1--borrar{
+    position: relative;
+    height: 40px;
+    width: 150px;
+    margin:12px;
+    color: white;
+    background: rgba(243, 243, 243, 0.1);
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.3);
+    border: none;
+    text-decoration: none;
+    z-index: 2;
+}
+.mod1--borrar:hover{
+    background-image: linear-gradient(90deg, #194766, #206487, #194766);
+}
+.mod1:hover{
+    background-image: linear-gradient(90deg, #194766, #206487, #194766);
+}
+.mod1--url:hover{
+    background-image: linear-gradient(90deg, #194766, #206487, #194766);
+}
+.mod svg{
+    align-items: center;
+    fill: #1A9FFF;
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+}
+.mod{
+    position: relative;
+}
+.edit{
+    position: relative;
+    height: 400px;
+    width: 300px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-image: linear-gradient(90deg, #194766, #206487, #194766);
+}
+.edicion{
+    position: relative;
+    background-color: #206487;
+    border: none;
+}
+.nombre{
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    height: 50px;
+    border: solid hsl(200, 71%, 41%);
+    border-radius: 5px;
+}
+.trabajo{
+    position: relative;
+    height: 100px;
+    margin-top: 1px;
+    border: solid #1e80b1;
+    border-radius: 5px;
+}
+.fecha{
+    position: relative;
+    height: 100px;
+    margin-top: 1px;
+    height: max-content;
+    border: solid #1e80b1;
+    border-radius: 5px;
+}
+.container-fluid{
+    width: 95vw;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+.rol{
+    position: relative;
+    height: 100px;
+    margin-top: 1px;
+    margin-right: 5px;
+    margin-left: 5px;
+    height: max-content;
+    border: solid #1e80b1;
+    border-radius: 5px;
+}
+.div_new{
+    position: absolute;
+    z-index: 10;
+    height: 70%;
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    top:0;
+    z-index: 5;
+    background-color: rgba(0, 0, 0, 0.264);
+}
+.new__add{
+    position: relative;
+    background-color: #194766;
+    width: 400px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: solid #1e80b1;
+    z-index: 6;
+}
+.new__add--form{
+    border-radius: 5px;
+    border: solid #1e80b1;
+}
+.menu__button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: transparent;
+    border: none;
+    width: 25px;
+}
+.container{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.mod1--url{
+    position: relative;
+    height: 40px;
+    width: 150px;
+    margin:12px;
+    color: white;
+    background: rgba(243, 243, 243, 0.1);
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.3);
+    border: none;
+    text-decoration: none;
+    z-index: 3;
 }

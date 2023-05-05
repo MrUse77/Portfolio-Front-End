@@ -1,5 +1,7 @@
 
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Proyectos } from 'src/app/Modelo/Proyectos';
+import { DatosService } from 'src/app/service/datos.service';
 
 @Component({
   selector: 'app-home',
@@ -8,6 +10,7 @@ import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/co
 })
 export class HomeComponent implements OnInit{
   title = 'Portfolio';
+  pro: Proyectos[] = [];
   @ViewChild ('menu') menu !: ElementRef;
   @ViewChild ('redes') redes !: ElementRef;
   @ViewChild ('contacto') contacto !: ElementRef;
@@ -21,11 +24,17 @@ export class HomeComponent implements OnInit{
   menus=0;
   menu2=0;
   skill=0;
-  
-  constructor(private render2: Renderer2,
+  redireccionar(url: any) {
+    window.open(url,'_blank');
+  }
+  constructor(private render2: Renderer2, private service:DatosService
   ){
   }
   ngOnInit(): void {
+    this.service.DatosProyectos().subscribe(data => {
+      this.pro = data;
+      console.log(data);
+    });
   }
   showMenu(){
     const menu = this.menu.nativeElement;

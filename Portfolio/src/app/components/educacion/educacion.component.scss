@@ -1,49 +1,69 @@
-h1{
-    display: flex;
-    justify-content: center;
+*{
+    color: white;
 }
 h6{
-    margin:5px
-}
-h5{
     margin: 5px;
 }
-p{
+h5 {
     margin: 5px;
+}
+
+p {
+    margin: 5px;
+}
+.cerrar{
+    margin: 1%;
+}
+header{
+    display: flex;
+    margin-bottom: 5%;
 }
 .eduw{
+    margin-bottom: 100px;
     min-height: 100vh;
 }
-.educacion{
-    font-size: 20px;
-    color: #B8BCBF;
-    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
-    min-height: 100vh;
+.edu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1%;
+}
+.img .imagen {
+    position: absolute;
+    top: 150px;
+    left: 2.5px;
+    width: 290px;
+    height: 80px;
+    transition: 1s ease all;
+}
+.biomedic {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    display: flex;
+    width: max-content;
+    border-style: none;
+    height: 400px;
 }
 .img{
     position: relative;
     border-style:  solid;
     border-color: #1e80b1;
-    margin-right: 20px;
     min-width: 300px;
     max-width: 300px;
     height: 400px;
     background-image:radial-gradient( #1e80b1, #206487);
     z-index: 1;
-    overflow: hidden;
+
 }
 .img:hover{
     background-image:linear-gradient(90deg, #4eccfa,#4ec5ff);
 }
-.utn{
-    height: 300px;
+svg{
+    fill: #4eccfa;
 }
-.arg_pro{
-    width: 126px;
-    height: 85px;
-}
-.cerrar{
-    margin: 1%;
+svg:hover{
+    fill: #1A9FFF;
 }
 .info{
     position:absolute;
@@ -53,30 +73,16 @@ p{
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
-    height: 93px;
+    height: 250px;
     width: 160px;
-    top:60%;
+    top:70%;
     left:25%;
     transition: 1s ease all;
+    overflow: scroll;
 }
-.info1{
-    position:absolute;
-    display: flex;
-    visibility: hidden;
-    opacity: 0;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-    width: 160px;
-    top:60%;
-    left:25%;
-    transition: 1s ease all;
+.button{
+    height: 400px;
 }
-
-img{
-    transition: 1s ease all;
-}
-
 .agregar{
     position: absolute;
     display: flex;
@@ -87,7 +93,6 @@ img{
 }
 .agregar svg{
     fill: #1A9FFF;
-
 }
 .mod{
     position: absolute;
@@ -102,59 +107,21 @@ img{
     background: transparent;
     border: none;
 }
-.mod svg{
-    display: flex;
-    align-items: center;
-    fill: #1A9FFF;
-    width: 20px;
-    height: 20px;
-}
-.edicion{
-    position: relative;
-    top: 0;
-    left: 0;
-    background-color: #206487;
-    border: none;
-
-}
-.nombre{
-    position: absolute;
-    display: flex;
-    align-items: flex-start;
-    left: 10%;
-    height: 50px;
-    margin-top: 50px;
-    width: 80%;
-    border: solid #1e80b1;
-    border-radius: 5px;
-}
-.trabajo{
-    position: absolute;
-    height: 100px;
-    top: 100px;
-    margin-top: 1px;
-    width: 80%;
-    left: 10%;
-    border: solid #1e80b1;
-    border-radius: 5px;
-}
-.fecha{
-    position: absolute;
-    height: 100px;
-    top: 201px;
-    margin-top: 1px;
-    width: 80%;
-    left: 10%;
-    border: solid #1e80b1;
-    border-radius: 5px;
-}
-.container-fluid{
-    width: 100vw;
-    height: 400px;
-    display: flex;
-    overflow: auto;
-}
 .mod1{
+    position: absolute;
+    height: 40px;
+    width: 150px;
+    margin:12px;
+    color: white;
+    background: rgba(243, 243, 243, 0.1);
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.3);
+    border: none;
+    text-decoration: none;
+    z-index: 2;
+    top: 0;
+    left:0;
+}
+.mod1--crear{
     position: relative;
     height: 40px;
     width: 150px;
@@ -164,7 +131,127 @@ img{
     text-shadow: 1px 1px 0px rgba(0,0,0,0.3);
     border: none;
     text-decoration: none;
+    z-index: 2;
+}
+.mod1--borrar{
+    position: relative;
+    height: 40px;
+    width: 150px;
+    margin:12px;
+    color: white;
+    background: rgba(243, 243, 243, 0.1);
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.3);
+    border: none;
+    text-decoration: none;
+    z-index: 2;
+}
+.mod1--borrar:hover{
+    background-image: linear-gradient(90deg, #194766, #206487, #194766);
 }
 .mod1:hover{
     background-image: linear-gradient(90deg, #194766, #206487, #194766);
+}
+.mod svg{
+    align-items: center;
+    fill: #1A9FFF;
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+}
+.mod{
+    position: relative;
+}
+.edit{
+    height: 400px;
+    width: 300px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-image: linear-gradient(90deg, #194766, #206487, #194766);
+}
+.edicion{
+    position: relative;
+    background-color: #206487;
+    border: none;
+}
+.nombre{
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    height: 50px;
+    border: solid hsl(200, 71%, 41%);
+    border-radius: 5px;
+}
+.trabajo{
+    position: relative;
+    height: 100px;
+    margin-top: 1px;
+    border: solid #1e80b1;
+    border-radius: 5px;
+}
+.fecha{
+    position: relative;
+    height: 100px;
+    margin-top: 1px;
+    height: max-content;
+    border: solid #1e80b1;
+    border-radius: 5px;
+}
+.container-fluid{
+    width: 95vw;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+.rol{
+    position: relative;
+    height: 100px;
+    margin-top: 1px;
+    margin-right: 5px;
+    margin-left: 5px;
+    height: max-content;
+    border: solid #1e80b1;
+    border-radius: 5px;
+}
+.div_new{
+    position: absolute;
+    z-index: 10;
+    height: 70%;
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    top:0;
+    z-index: 5;
+    background-color: rgba(0, 0, 0, 0.264);
+}
+.new__add{
+    position: relative;
+    background-color: #194766;
+    width: 400px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: solid #1e80b1;
+    z-index: 6;
+}
+.new__add--form{
+    border-radius: 5px;
+    border: solid #1e80b1;
+}
+.menu__button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: transparent;
+    border: none;
+    width:25px;
+    z-index: 0;
+}
+.container{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 0;
 }

@@ -159,6 +159,7 @@ svg:hover{
     position: relative;
 }
 .edit{
+    position: relative;
     height: 400px;
     width: 300px;
     align-items: center;
@@ -244,4 +245,9 @@ svg:hover{
     right: 0;
     background: transparent;
     border: none;
+    width:25px;
+    z-index: 0;
+}
+.menu__button svg{
+    z-index: 10;
 }

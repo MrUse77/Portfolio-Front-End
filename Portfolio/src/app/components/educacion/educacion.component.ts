@@ -1,5 +1,11 @@
-import { NgClass } from '@angular/common';
+import { NgClass, CommonModule  } from '@angular/common';
 import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Educacion, TipoEducacion } from 'src/app/Modelo/Educacion';
+import { Usuario } from 'src/app/Modelo/Usuario';
+import { AutenticacionService } from 'src/app/service/autenticacion.service';
+import { DatosService } from 'src/app/service/datos.service';
+
 
 @Component({
   selector: 'app-educacion',
@@ -7,117 +13,63 @@ import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
   styleUrls: ['./educacion.component.scss']
 })
 export class EducacionComponent {
-  secu= ["EEST N°8", "TECNICO EN ELECTRONICA", "2016-2022"];
-  curso = [
-    "UTN HAEDO", "CURSO DE REPARACION DE PC","Abril 2019 - Septiembre 2019",
-    "ARGENTINA PROGRAMA", "1° ETAPA #SeProgramar", "junio 2022","","2° ETAPA #YoProgramo", "CURSO DE DESARROLLO WEB FULL STACK","En curso"
-          ];
-  show=0;
-  show1=0;
-  show2=0;
-  show3=0;
-  @ViewChild('info1')info1!: ElementRef;
-  @ViewChild('info2')info2!: ElementRef; 
-  @ViewChild('info3')info3!: ElementRef; 
-  @ViewChild('info4')info4!: ElementRef; 
-  @ViewChild('imagen') imagen!:ElementRef;
-  @ViewChild('imagen2') imagen2!:ElementRef;
-  @ViewChild('imagen3') imagen3!:ElementRef;
-  @ViewChild('imagen4') imagen4!:ElementRef;
+  edu:  Educacion[] = [];
+  edu2:Educacion[] = [];
+  edu1:Educacion[] = [];
+  tipo_educacion: TipoEducacion[] = [];
+  usuario: Usuario[] = [];
   @ViewChild('agregar') agregar!:ElementRef;
   @ViewChild('edit') edit!:ElementRef;
   @ViewChild('editar') editar!:ElementRef;
   @ViewChild('edicion') edicion!:ElementRef;
-
-  constructor(private render2: Renderer2,
-    ){
-  }
+  @ViewChild('newEdu') newEdu!:ElementRef;
   
-  ShowInfo(num: string){
-    const info1 = this.info1.nativeElement;
-    const info2 = this.info2.nativeElement;
-    const info3 = this.info3.nativeElement;
-    const info4 = this.info4.nativeElement;
-    const imagen = this.imagen.nativeElement;
-    const imagen2 = this.imagen2.nativeElement;
-    const imagen3 = this.imagen3.nativeElement;
-    const imagen4 = this.imagen4.nativeElement;
-
-    if(num == 'escuela'){
+  form:FormGroup;
+  form2:FormGroup;
+  constructor(private render2: Renderer2, private service:DatosService,private formBuilder:FormBuilder,private service2:AutenticacionService){
+    this.form=this.formBuilder.group(
+      {
+      nombreEducacion:['',[Validators.required]],
+      titulo:['',[Validators.required]],
+      fechaInicio:['',[Validators.required]],
+      fechaFin:['',[Validators.required]], 
+      logo:['',[Validators.required]],
+      persona:this.formBuilder.group({
+      id:['543ba29f-28d2-44cc-a4b0-135594f775ad']
+      }),
+      tipo_Educacion: this.formBuilder.group({
+        id: ['',[Validators.required]], // asumiendo que id es un número
+      })
+      }
+    )
+    this.form2=this.formBuilder.group(
+      {
+      nombreEducacion:['',[Validators.required]],
+      titulo:['',[Validators.required]],
+      fechaInicio:['',[Validators.required]],
+      fechaFin:['',[Validators.required]], 
+      tipo_Educacion: this.formBuilder.group({
+        id: ['',[Validators.required]],
+        nombre_tipo: ['',[Validators.required]], // asumiendo que id es un número
+      }),
+      logo:['',[Validators.required]],
+      }
+    )
+  }
+  ngOnInit(): void {
+    this.service.DatosEducacion().subscribe(data => {
+      this.edu = data;
+      console.log(data);
+      this.edu1 = this.edu.filter(edu => edu.tipo_Educacion?.id == 1 || edu.tipo_Educacion?.id == 2 );
+      console.log(this.edu1);
+      this.edu2 = this.edu.filter(edu => edu.tipo_Educacion?.id == 3);
+      console.log(this.edu2);
+    });
     
-      this.render2.setStyle(info1,'opacity','1');
-      this.render2.setStyle(info1,'top','107px');
-      this.render2.setStyle(info1,'visibility','visible');
-      this.render2.setStyle(imagen,'visibility','hidden');
-      this.render2.setStyle(imagen,'opacity','0');
-      this.render2.setStyle(imagen,'top','70%');
-      this.show++;
-
-      if(this.show ==2){
-        this.show = 0;
-        this.render2.setStyle(info1, 'opacity', '0');
-        this.render2.setStyle(info1,'top','70%');
-        this.render2.setStyle(info1, 'visibility', 'hidden');
-        this.render2.setStyle(imagen,'top','150px');
-        this.render2.setStyle(imagen,'opacity','1');
-        this.render2.setStyle(imagen,'visibility','visible');
-      }
-    }
-    if(num == 'utn'){
-      this.render2.setStyle(info2,'opacity','1');
-      this.render2.setStyle(info2,'top','107px');
-      this.render2.setStyle(info2,'visibility','visible');
-      this.render2.setStyle(imagen2,'visibility','hidden');
-      this.render2.setStyle(imagen2,'opacity','0');
-      this.render2.setStyle(imagen2,'top','70%');
-      this.show1 ++;
-      if(this.show1 == 2){
-        this.render2.setStyle(info2, 'opacity', '0');
-        this.render2.setStyle(info2,'top','60%');
-        this.render2.setStyle(info2, 'visibility', 'hidden');
-        this.render2.setStyle(imagen2,'top','150px');
-        this.render2.setStyle(imagen2,'opacity','1');
-        this.render2.setStyle(imagen2,'visibility','visible');
-        this.show1 = 0;
-      }
-    }
-    if(num == 'arg_pro'){
-      this.render2.setStyle(info3,'opacity','1');
-      this.render2.setStyle(info3,'visibility','visible');
-      this.render2.setStyle(info3,'top','107px');
-      this.render2.setStyle(imagen3,'visibility','hidden');
-      this.render2.setStyle(imagen3,'opacity','0');
-      this.render2.setStyle(imagen3,'top','70%');
-      this.show2 ++;
-      if(this.show2 == 2){
-        this.render2.setStyle(info3, 'opacity', '0');
-        this.render2.setStyle(info3, 'visibility', 'hidden');
-        this.render2.setStyle(info3,'top','60%');
-        this.render2.setStyle(imagen3,'opacity','1');
-        this.render2.setStyle(imagen3,'visibility','visible');
-        this.render2.setStyle(imagen3,'top','150px');
-        this.show2 = 0;
-      }
-    }
-    if(num == 'arg_pro2'){
-      this.render2.setStyle(info4,'opacity','1');
-      this.render2.setStyle(info4,'visibility','visible');
-      this.render2.setStyle(info4,'top','70px');
-      this.render2.setStyle(imagen4,'visibility','hidden');
-      this.render2.setStyle(imagen4,'opacity','0');
-      this.render2.setStyle(imagen4,'top','70%');
-      this.show3 ++;
-      if(this.show3 == 2){
-        this.render2.setStyle(info4, 'opacity', '0');
-        this.render2.setStyle(info4, 'visibility', 'hidden');
-        this.render2.setStyle(info4,'top','60%');
-        this.render2.setStyle(imagen4,'opacity','1');
-        this.render2.setStyle(imagen4,'visibility','visible');
-        this.render2.setStyle(imagen4,'top','150px');
-        this.show3 = 0;
-      }
-    }
-}
+    this.service.tipoE().subscribe(data2=>{
+      this.tipo_educacion=data2;
+    })
+  }
 SaveInfo(){
   const edit = this.edit.nativeElement;
   const editar = this.editar.nativeElement;
@@ -135,4 +87,28 @@ EditInfo(){
   this.render2.setStyle(editar, 'display', 'none');
   this.render2.setStyle(edicion, 'display', 'flex');
 }
+NewEdu(form: Educacion){
+  this.service.CrearEducacion(form).subscribe((data2)=>{
+    console.log(data2);
+    const newEdu = this.newEdu.nativeElement;
+    this.render2.setStyle(newEdu, 'display', 'none');
+  }),(error: any)=>{
+    console.error(error);
+}
+}
+agregarEducacion  (){
+  const newEdu = this.newEdu.nativeElement;
+  this.render2.setStyle(newEdu, 'display', 'flex');
+}
+cerrarVentana(){
+  const newEdu = this.newEdu.nativeElement;
+  this.render2.setStyle(newEdu, 'display', 'none');
+}
+  async EditarEducacion(id: number,form2: Educacion){
+  console.log('ID del Educacion a editar:', id);
+  await this.service.EditarEducacion(id, form2)
+}
+svgIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+<path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+</svg>`;
 }
