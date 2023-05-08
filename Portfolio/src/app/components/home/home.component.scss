@@ -247,10 +247,6 @@ li{
     color: white;
     display: grid;
     justify-items: center;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> develop
     align-items: start;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto auto;
@@ -289,18 +285,6 @@ li{
     border-radius: 5px;
     position: relative;
     animation: fillBars 2.5s 1;
-<<<<<<< HEAD
-=======
-    align-items: center;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto auto;
-}
-.skill{
-    width: 300px;
-    margin-bottom: 5%;
->>>>>>> 0f1035e79c3aaef1443053f11f9a60218c258dd6
-=======
->>>>>>> develop
 }
 .skill__title{
     justify-content: center;
@@ -359,10 +343,6 @@ position: fixed;
     50%{background-color: rgba(0, 0, 0, 0.3);}
     100%{   background: rgba(0, 0, 0, 0.7);}
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> develop
 @keyframes fillBars{
     from{
         width: 0;
@@ -371,11 +351,6 @@ position: fixed;
         width: 100%;
     }
 }
-<<<<<<< HEAD
-=======
->>>>>>> 0f1035e79c3aaef1443053f11f9a60218c258dd6
-=======
->>>>>>> develop
 .menu__button--mostrar{
     display: flex;
     transform: translateX(0);
@@ -585,15 +560,7 @@ ul{
 .li__container--expand{
     overflow: scroll;
     height: 20vh;
-<<<<<<< HEAD
-<<<<<<< HEAD
     align-items: flex-end;
-=======
-    align-items: center;
->>>>>>> 0f1035e79c3aaef1443053f11f9a60218c258dd6
-=======
-    align-items: flex-end;
->>>>>>> develop
 }
 /* HEADER*/
 .nav__yoprogramo{

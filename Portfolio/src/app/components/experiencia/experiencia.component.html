@@ -1,23 +1,6 @@
 <app-header [label]="'EXPERIENCIA'">
 </app-header>
 <div class="eduw" id="2">
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <button #editar (click)="EditInfo()" class="mod1">
-        <p>EDITAR</p>
-    </button>
-    <ul #edit style="display: none; margin: 0; padding: 0;">
-    <button (click)="SaveInfo()" class="mod1">
-        <p style="margin: 0;">Guardar</p>
-    </button>
-</ul>
-
-        <div class="container-fluid" style="min-height: 400px; ;">
-=======
-        <div class="container-fluid">
->>>>>>> 0f1035e79c3aaef1443053f11f9a60218c258dd6
-            <button class="img col">
-=======
 
 <div #newWork class="div_new" >
     <div class="new__add">
@@ -42,7 +25,6 @@
         <div class="container-fluid" style="min-height: 400px;">
             <div *ngIf="(token)">
             <button (click)="agregarTrabajo()" class="container img col">
->>>>>>> develop
                 <div class="agregar">
                     <svg class="agregar" #agregar xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="#1A9FFF" class="bi bi-plus-circle" viewBox="0 0 16 16">
                         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
@@ -50,64 +32,6 @@
                     </svg>
                 </div>
             </button>
-<<<<<<< HEAD
-<<<<<<< HEAD
-            <div>
-            <button *ngFor="let exp of exp" (click)="ShowInfo()" #trabajo class="img col" style="position: absolute; z-index: 0;">
-                <img #imagen class="imagen" src="../../../assets/imagenes/logoBlanco.png" alt="">
-                <div #info class="info">
-                    <p>{{exp.nombreEmpresa}}</p>
-                    <H5>{{exp.descripcion}}</H5>
-                    <h6>Inicio:{{exp.fechaInicio}}</h6>
-                    <h6>Fin:{{exp.fechaFin}}</h6>
-                </div>
-            </button>
-            <div *ngFor="let exp of exp" #edicion class="edit" style="display: none; z-index: 2;">
-                <input class="edicion nombre" type="text" [(ngModel)]=exp.nombreEmpresa/>
-                <input class="edicion trabajo" type="text" [(ngModel)]=exp.descripcion>
-                <input class="edicion fecha" type="date" [(ngModel)]=exp.fechaInicio>
-                <input class="edicion fecha" type="date" [(ngModel)]=exp.fechaFin>
-                <input class="edicion rol" type="text" list="input">
-                <datalist id="input" style="z-index: 5">
-                    <option *ngFor="let tipo_trabajo of tipo_trabajo" value="{{tipo_trabajo.rol}}">{{tipo_trabajo.rol}}</option>
-                </datalist>
-                <input class="edicion imagen" type="file">
-                <button class="mod1">
-                    <p>BORRAR</p>
-                </button>
-            </div>
-            </div>
-=======
-            <button (click)="ShowInfo()" class="img col">
-                <img #imagen class="imagen "src="../../../assets/imagenes/logoBlanco.png" alt="">
-                <div #info class="info">
-                    <p>{{biomedic[0]}}</p>
-                    <H5>{{biomedic[1]}}</H5>
-                    <h6>{{biomedic[2]}}</h6>
-                </div>
-                <button class="mod1">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
-                    </svg>
-                </button>
-                <div class="edit" style="display: none;">
-                    <button class="mod" >
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
-                            <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
-                            <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
-                            <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
-                        </svg>
-                    </button>
-                    <input class="edicion nombre" type="text" [(ngModel)]="biomedic[0]">
-                    <input class="edicion trabajo" type="text" [(ngModel)]="biomedic[1]">
-                    <input class="edicion fecha" type="text" [(ngModel)]="biomedic[2]">
-                </div>
-            </button>
->>>>>>> 0f1035e79c3aaef1443053f11f9a60218c258dd6
-=======
         </div>
             <div *ngFor="let exp of exp" class="container" style="width: 300px; margin-left: 10px; margin-right: 5px; height: 400px;" >
                 <button *ngIf="(token)" #editar (click)="exp.edit = !exp.edit"  [ngStyle]="{'display': exp.edit? 'none':'block'}" class="mod1">
@@ -137,7 +61,6 @@
                     <p>GUARDAR</p>
                 </button>
             </form>
->>>>>>> develop
         </div>
     </div>
             </div>

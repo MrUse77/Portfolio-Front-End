@@ -10,10 +10,6 @@
 
 </header>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> develop
 <form [formGroup]="form" (ngSubmit)="onSignUp(form.value)" class="session" action="" method="post">
       <p>
       Usuario
@@ -34,31 +30,12 @@
          </p>
       </div>
       <p>
-<<<<<<< HEAD
-=======
-<form class="session" action="" method="post" >
-      <p>
-      Usuario
-      </p>
-      <label for="user"><input class="relleno form-control" type="text" name="user" maxlength="50" id="user"    /></label>
-      <p>
-      Contraseña:
-      </p>
-      <label for="password"><input class="relleno form-control" type="password" name="password" maxlength="50" id="password"   /></label>
-<p>
->>>>>>> 0f1035e79c3aaef1443053f11f9a60218c258dd6
-=======
->>>>>>> develop
    Sexo:
 </p>
 <input type="radio" name="sexo" value="h" /> hombre <input type="radio" name="sexo" value="m" /> mujer
 <p>
    Correo:
 </p>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> develop
 <label for="mail"><input [ngClass]="{'is-invalid': mail?.errors && mail?.touched, 'is-valid':!mail?.errors && mail?.touched}" class="relleno form-control" type="email" name="correo" maxlength="100" id="mail" formControlName="mail"/></label>
 <div *ngIf="mail?.errors && mail?.touched" >
    <p *ngIf="mail?.hasError('required')" class="text-danger">
@@ -84,22 +61,4 @@
 <br>
 <br>
 <br>
-<<<<<<< HEAD
-=======
-<label for="mail"><input class="relleno form-control" type="email" name="correo" maxlength="100" id="mail"  /></label>
-<p class="box">
-   <input type="checkbox" name="info" checked="checked" /> Deseo recibir información sobre novedades y ofertas
-</p>
-<p class="box">
-   <input type="checkbox" name="condiciones" required=""/> Declaro haber leido y aceptar las condiciones generales del programa y la normativa sobre protección de datos
-</p>
-<p>
-   <button type="submit" class="hola">
-      <a routerLink="/" id="login">Registrarse</a>
-   </button>
-</p>
-</form>
->>>>>>> 0f1035e79c3aaef1443053f11f9a60218c258dd6
-=======
->>>>>>> develop
 <app-footer></app-footer>

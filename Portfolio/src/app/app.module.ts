@@ -1,14 +1,6 @@
 import { APP_INITIALIZER, NgModule, Renderer2 } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-<<<<<<< HEAD
-<<<<<<< HEAD
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-=======
-import {FormsModule} from '@angular/forms';
->>>>>>> 0f1035e79c3aaef1443053f11f9a60218c258dd6
-=======
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
->>>>>>> develop
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -55,14 +47,7 @@ export function LoadConfiguration(configservice: PortfolioService){
         BrowserAnimationsModule,
         AppRoutingModule,
         HttpClientModule,
-<<<<<<< HEAD
-<<<<<<< HEAD
         ReactiveFormsModule,
-=======
->>>>>>> 0f1035e79c3aaef1443053f11f9a60218c258dd6
-=======
-        ReactiveFormsModule,
->>>>>>> develop
     ]
 })
 export class AppModule {

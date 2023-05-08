@@ -1,20 +1,10 @@
 import { TypeofExpr } from '@angular/compiler';
 import { Component } from '@angular/core';
-<<<<<<< HEAD
-<<<<<<< HEAD
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-=======
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
->>>>>>> develop
 import { Router } from '@angular/router';
 import  {Usuario} from 'src/app/Modelo/Usuario';
 import { UsuarioLogin } from 'src/app/Modelo/UsuarioLogin';
 import { AutenticacionService } from 'src/app/service/autenticacion.service';
-<<<<<<< HEAD
-=======
->>>>>>> 0f1035e79c3aaef1443053f11f9a60218c258dd6
-=======
->>>>>>> develop
 
 @Component({
   selector: 'app-log-in',
@@ -22,15 +12,10 @@ import { AutenticacionService } from 'src/app/service/autenticacion.service';
   styleUrls: ['./log-in.component.scss']
 })
 export class LogInComponent {
-<<<<<<< HEAD
-<<<<<<< HEAD
-  usuarios: Usuario[] | undefined;
-=======
   usuarios: UsuarioLogin = {
     user:'',
     password:''
   };
->>>>>>> develop
   form:FormGroup;
   
   constructor(private formBuilder:FormBuilder, private service:AutenticacionService, private ruta:Router){
@@ -57,10 +42,4 @@ export class LogInComponent {
       return this.form.get('password');
     }
   
-<<<<<<< HEAD
-=======
-
->>>>>>> 0f1035e79c3aaef1443053f11f9a60218c258dd6
-=======
->>>>>>> develop
 }

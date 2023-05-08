@@ -20,10 +20,6 @@ export class HomeComponent implements OnInit{
   @ViewChild ('contacto2') contacto2 !: ElementRef;
   @ViewChild ('redes2') redes2 !: ElementRef;
   @ViewChild ('ocultar') ocultar !: ElementRef;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> develop
   @ViewChild ('datos') datos !: ElementRef;
   @ViewChild ('logo') logo !: ElementRef;
   @ViewChild ('lvl') lvl !: ElementRef;
@@ -35,20 +31,10 @@ export class HomeComponent implements OnInit{
   menus=0;
   menu2=0;
   skill=0;
-<<<<<<< HEAD
-=======
-  desc = ['Técnico electrónico y desarrollador web full stack'];
-  menus=0;
-  menu2=0;
->>>>>>> 0f1035e79c3aaef1443053f11f9a60218c258dd6
-  
-  constructor(private render2: Renderer2,
-=======
   redireccionar(url: any) {
     window.open(url,'_blank');
   }
   constructor(private render2: Renderer2, private service:DatosService
->>>>>>> develop
   ){
   }
   ngOnInit(): void {
@@ -143,10 +129,6 @@ showIcons2(){
       this.menu2=0;
     }
   } 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> develop
   skillON(dato = this.datos.nativeElement, logo = this.datos.nativeElement, lvl = this.lvl.nativeElement){
     this.render2.setStyle(logo,'opacity', '0');
     this.render2.setStyle(dato,'opacity', '100%');
@@ -159,9 +141,4 @@ showIcons2(){
     this.render2.setStyle(lvl,'opacity', '0');
   }
 
-<<<<<<< HEAD
-=======
->>>>>>> 0f1035e79c3aaef1443053f11f9a60218c258dd6
-=======
->>>>>>> develop
 }

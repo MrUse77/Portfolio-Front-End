@@ -91,7 +91,7 @@ export class EducacionComponent implements OnInit{
       this.render2.setStyle(newEdu2, 'display', 'none');
       this.render2.setStyle(signup, 'display', 'none');
     }
-}
+  }
 
 NewEdu(form: Educacion){
   this.service.CrearEducacion(form).subscribe((data2)=>{
@@ -117,5 +117,4 @@ cerrarVentana(){
   await this.service.EditarEducacion(id, form2);
   this.ObtenerDatos();
 }
-
 }

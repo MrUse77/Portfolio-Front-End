@@ -15,9 +15,8 @@ import { Usuario } from 'src/app/Modelo/Usuario';
   styleUrls: ['./experiencia.component.scss']
 })
 export class ExperienciaComponent implements OnInit{
-
-  @ViewChild('info') info!: ElementRef; 
-  @ViewChild('imagen') imagen!:ElementRef;;
+  @ViewChild('info')info!: ElementRef; 
+  @ViewChild('imagen') imagen!:ElementRef;
   @ViewChild('edit') edit!:ElementRef;
   @ViewChild('editar') editar!:ElementRef;
   @ViewChild('edicion') edicion!:ElementRef;
