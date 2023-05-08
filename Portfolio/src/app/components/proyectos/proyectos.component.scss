@@ -202,10 +202,11 @@ svg:hover{
     border-radius: 5px;
 }
 .container-fluid{
-    width: 95vw;
+    width: 100vw;
     display: flex;
     flex-wrap: wrap;
-    margin: 20px;
+    justify-content: center;
+    padding: 0;
 }
 .rol{
     position: relative;
@@ -256,6 +257,7 @@ svg:hover{
 .container{
     margin-top: 20px;
     margin-bottom: 20px;
+    padding: 0;
 }
 .mod1--url{
     position: relative;

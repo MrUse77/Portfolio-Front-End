@@ -5,20 +5,20 @@ import { Educacion, TipoEducacion } from '../Modelo/Educacion';
 import { TipoTrabajo } from '../Modelo/TipoTrabajo';
 import { Observable, async } from 'rxjs';
 import { Proyectos } from '../Modelo/Proyectos';
+import { Usuario } from '../Modelo/Usuario';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DatosService {
-  iniciarSesion() {
-    throw new Error('Method not implemented.');
-  }
   exp: Trabajo[] = [];
   urlApi="http://localhost:8080";
   constructor(private http:HttpClient,) { 
     console.log("todo ok");
   }
-  
+  DatosPersonas(): Observable<Usuario[]>{
+    return this.http.get<Usuario[]>(this.urlApi+"/personas/traer");
+  }
   //funciones trabajo
   DatosTrabajo(){
     return this.http.get<Trabajo[]>(this.urlApi+"/trabajos/traer");
@@ -53,7 +53,7 @@ export class DatosService {
   }
   CrearEducacion(form: Educacion){
     let direccion = this.urlApi+"/educacion/crear"
-    return this.http.post(direccion, form,{responseType: 'text'});
+    return this.http.post(direccion,form,{responseType:'text'});
   }
   tipoE(){
     return this.http.get<TipoEducacion[]>(this.urlApi+"/tipoeducacion/traer");

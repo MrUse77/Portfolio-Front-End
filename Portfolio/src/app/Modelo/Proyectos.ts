@@ -1,7 +1,7 @@
 export interface Proyectos{
     id:              number;
     nombreProyecto:  string;
-    Descripcion:     string;
+    descripcion:     string;
     fecha_Lanz:      Date;
     url:             string;
     logo:            string;

@@ -1,5 +1,5 @@
 import { NgClass, CommonModule  } from '@angular/common';
-import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Educacion, TipoEducacion } from 'src/app/Modelo/Educacion';
 import { Usuario } from 'src/app/Modelo/Usuario';
@@ -12,7 +12,7 @@ import { DatosService } from 'src/app/service/datos.service';
   templateUrl: './educacion.component.html',
   styleUrls: ['./educacion.component.scss']
 })
-export class EducacionComponent {
+export class EducacionComponent implements OnInit{
   edu:  Educacion[] = [];
   edu2:Educacion[] = [];
   edu1:Educacion[] = [];
@@ -23,9 +23,13 @@ export class EducacionComponent {
   @ViewChild('editar') editar!:ElementRef;
   @ViewChild('edicion') edicion!:ElementRef;
   @ViewChild('newEdu') newEdu!:ElementRef;
-  
+  @ViewChild('newEdu2') newEdu2!:ElementRef;
+  @ViewChild ('signup') signup !: ElementRef;
+  @ViewChild ('edition') edition !: ElementRef;
   form:FormGroup;
   form2:FormGroup;
+  renderer: any;
+  token = localStorage.getItem('token');
   constructor(private render2: Renderer2, private service:DatosService,private formBuilder:FormBuilder,private service2:AutenticacionService){
     this.form=this.formBuilder.group(
       {
@@ -35,7 +39,7 @@ export class EducacionComponent {
       fechaFin:['',[Validators.required]], 
       logo:['',[Validators.required]],
       persona:this.formBuilder.group({
-      id:['543ba29f-28d2-44cc-a4b0-135594f775ad']
+      id:['1']
       }),
       tipo_Educacion: this.formBuilder.group({
         id: ['',[Validators.required]], // asumiendo que id es un número
@@ -52,11 +56,10 @@ export class EducacionComponent {
         id: ['',[Validators.required]],
         nombre_tipo: ['',[Validators.required]], // asumiendo que id es un número
       }),
-      logo:['',[Validators.required]],
       }
     )
   }
-  ngOnInit(): void {
+  ObtenerDatos(){
     this.service.DatosEducacion().subscribe(data => {
       this.edu = data;
       console.log(data);
@@ -70,33 +73,38 @@ export class EducacionComponent {
       this.tipo_educacion=data2;
     })
   }
-SaveInfo(){
-  const edit = this.edit.nativeElement;
-  const editar = this.editar.nativeElement;
-  const edicion = this.edicion.nativeElement;
-  this.render2.setStyle(edit, 'display', 'none');
-  this.render2.setStyle(editar, 'display', 'block');
-  this.render2.setStyle(edicion, 'display', 'none');
-}
-EditInfo(){
-  const edit = this.edit.nativeElement;
-  const editar = this.editar.nativeElement;
-  const edicion = this.edicion.nativeElement;
+  ngOnInit(): void {
+    this.ObtenerDatos();
+  }  
+  ngAfterViewInit(): void {
+    const token = localStorage.getItem('token');
+    if (token) {
+      const signup = this.signup.nativeElement;
+      const newEdu2 = this.newEdu2.nativeElement;
+      this.render2.removeClass(newEdu2, 'ocultar');
+      this.render2.setStyle(signup, 'display', 'none');
 
-  this.render2.setStyle(edit, 'display', 'block');
-  this.render2.setStyle(editar, 'display', 'none');
-  this.render2.setStyle(edicion, 'display', 'flex');
-}
+    } else {
+  
+      const signup = this.signup.nativeElement;
+      const newEdu2 = this.newEdu2.nativeElement;
+      this.render2.setStyle(newEdu2, 'display', 'none');
+      this.render2.setStyle(signup, 'display', 'none');
+    }
+  }
+
 NewEdu(form: Educacion){
   this.service.CrearEducacion(form).subscribe((data2)=>{
     console.log(data2);
     const newEdu = this.newEdu.nativeElement;
     this.render2.setStyle(newEdu, 'display', 'none');
+    this.ObtenerDatos();
   }),(error: any)=>{
+    
     console.error(error);
 }
 }
-agregarEducacion  (){
+agregarEducacion (){
   const newEdu = this.newEdu.nativeElement;
   this.render2.setStyle(newEdu, 'display', 'flex');
 }
@@ -106,9 +114,7 @@ cerrarVentana(){
 }
   async EditarEducacion(id: number,form2: Educacion){
   console.log('ID del Educacion a editar:', id);
-  await this.service.EditarEducacion(id, form2)
+  await this.service.EditarEducacion(id, form2);
+  this.ObtenerDatos();
 }
-svgIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-<path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
-</svg>`;
 }

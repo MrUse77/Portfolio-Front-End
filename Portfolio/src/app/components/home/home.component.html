@@ -82,7 +82,7 @@
                         <h1> EDUCACION </h1>
                     </button>
                 </li>
-                <ul class="nav__ul nav__ul--menu">
+                <ul #sesion class="nav__ul nav__ul--menu">
                     <li>
                         <button routerLink="/SignUp" class="ul__boton ul__boton--adentro">Registrarse</button>
                     </li>
@@ -104,11 +104,14 @@
     <nav class="header__nav">
         <h1 class="nav__yoprogramo">Curso #YoProgramo</h1>
         <ul class="nav__ul">
-            <li>
-                <button routerLink="/SignUp" class="ul__boton ul__boton--fuera">Registrarse</button>
+            <li #signup>
+                <button  routerLink="/SignUp" class="ul__boton ul__boton--fuera">Registrarse</button>
             </li>
-            <li>
+            <li #login>
                 <button routerLink="/LogIn" class="ul__boton ul__boton--fuera">Iniciar Sesion</button>
+            </li>
+            <li #user style="display: none;">
+                <button (click)="logout()" class="ul__boton "> Hola, Bienvenido </button>
             </li>
             <li>
                 <button (click)="showMenu()" class="ul__boton ul__boton--movil">
@@ -265,10 +268,9 @@
 <section #ocultar class="proyectos">
 <div *ngFor="let pro of pro" class="proyectos__mas--mis">
         <button (click)="pro.selected = !pro.selected" [ngStyle]="{'display': pro.edit? 'none':'block'}" #trabajo class="img col boton-hover">
-            <img class="imagen" src="" alt="" [ngStyle]="{ 'visibility': pro.selected ? 'hidden' : 'visible', 'opacity': pro.selected? '0':'1','top': pro.selected? '70%': '150px' }" style="position: absolute; z-index: 0;">
-            <div class="info" [ngStyle]="{ 'visibility': pro.selected ? 'visible' : 'hidden', 'opacity': pro.selected? '1':'0','top': pro.selected? '107px': '70%' }" style="position: absolute; z-index: 0;">
+            <h1 class="imagen" [ngStyle]="{ 'visibility': pro.selected ? 'hidden' : 'visible', 'opacity': pro.selected? '0':'1','top': pro.selected? '70%': '150px' }"  style="position: absolute; z-index: 0;">{{pro.nombreProyecto}}</h1>            <div class="info" [ngStyle]="{ 'visibility': pro.selected ? 'visible' : 'hidden', 'opacity': pro.selected? '1':'0','top': pro.selected? '107px': '70%' }" style="position: absolute; z-index: 0;">
                 <p>{{pro.nombreProyecto}}</p>
-                <H6>{{pro.Descripcion}}</H6>
+                <H6>{{pro.descripcion}}</H6>
                 <h6>Lanzamiento: {{pro.fecha_Lanz}}</h6>
                 <button (click)="redireccionar(pro.url)" class="mod1--url">IR AL SITIO</button>
             </div>

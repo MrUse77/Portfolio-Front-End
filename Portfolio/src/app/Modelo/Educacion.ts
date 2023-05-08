@@ -4,7 +4,7 @@ export interface Educacion {
     titulo:          string;
     fechaInicio:     Date;
     fechaFin:        Date;
-    logo:            string;
+    logo:            Blob;
     tipo_Educacion:  TipoEducacion;
     persona:         Persona;
     selected: boolean;

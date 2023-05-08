@@ -1,6 +1,8 @@
 
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { Proyectos } from 'src/app/Modelo/Proyectos';
+import { Usuario } from 'src/app/Modelo/Usuario';
+import { UsuarioLogin } from 'src/app/Modelo/UsuarioLogin';
 import { DatosService } from 'src/app/service/datos.service';
 
 @Component({
@@ -10,6 +12,7 @@ import { DatosService } from 'src/app/service/datos.service';
 })
 export class HomeComponent implements OnInit{
   title = 'Portfolio';
+  users: Usuario[] = [];
   pro: Proyectos[] = [];
   @ViewChild ('menu') menu !: ElementRef;
   @ViewChild ('redes') redes !: ElementRef;
@@ -20,6 +23,10 @@ export class HomeComponent implements OnInit{
   @ViewChild ('datos') datos !: ElementRef;
   @ViewChild ('logo') logo !: ElementRef;
   @ViewChild ('lvl') lvl !: ElementRef;
+  @ViewChild ('signup') signup !: ElementRef;
+  @ViewChild ('login') login !: ElementRef;
+  @ViewChild ('user') user !: ElementRef;
+  @ViewChild ('sesion') sesion !: ElementRef;
   desc = ['Técnico electrónico y desarrollador web full stack'];
   menus=0;
   menu2=0;
@@ -31,10 +38,49 @@ export class HomeComponent implements OnInit{
   ){
   }
   ngOnInit(): void {
-    this.service.DatosProyectos().subscribe(data => {
+    
+    this.service.DatosPersonas().subscribe(data2 => {
+      this.users = data2;
+      console.log(data2);
+    })
+  this.service.DatosProyectos().subscribe(data => {
       this.pro = data;
       console.log(data);
     });
+  }
+  ngAfterViewInit(): void {
+    const token = localStorage.getItem('token');
+    if (token) {
+      const login = this.login.nativeElement;
+      const signup = this.signup.nativeElement;
+      const sesion = this.sesion.nativeElement; // corregido el typo
+      const user = this.user.nativeElement;
+      this.render2.setStyle(login, 'display', 'none');
+      this.render2.setStyle(signup, 'display', 'none');
+      this.render2.setStyle(sesion, 'display', 'none');
+      this.render2.setStyle(user, 'display', 'block');
+    } else {
+      const login = this.login.nativeElement;
+      const signup = this.signup.nativeElement;
+      const sesion = this.sesion.nativeElement;
+      const user = this.user.nativeElement;
+      this.render2.setStyle(login, 'display', 'block');
+      this.render2.setStyle(signup, 'display', 'block');
+      this.render2.setStyle(sesion, 'display', 'block');
+      this.render2.setStyle(user, 'display', 'none');
+    }
+  }
+  logout(){
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    const login = this.login.nativeElement;
+    const signup = this.signup.nativeElement;
+    const sesion = this.signup.nativeElement;
+    const user = this.user.nativeElement;
+    this.render2.setStyle(login, 'display','block');
+    this.render2.setStyle(signup, 'display','block');
+    this.render2.setStyle(sesion, 'display','block');
+    this.render2.setStyle(user, 'display','none');
   }
   showMenu(){
     const menu = this.menu.nativeElement;

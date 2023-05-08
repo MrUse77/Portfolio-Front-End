@@ -22,7 +22,7 @@ export class ExperienciaComponent implements OnInit{
   @ViewChild('edicion') edicion!:ElementRef;
   @ViewChild('trabajo') trabajo!:ElementRef;
   @ViewChild('newWork') newWork!:ElementRef;
-
+  token = localStorage.getItem('token');
   show=0;
   exp: Trabajo[] = [];
   tipo_Trabajo: TipoTrabajo[] = [];
@@ -52,7 +52,7 @@ export class ExperienciaComponent implements OnInit{
         }
       )
   }
-  ngOnInit(): void {
+  ObtenerDatos(){
     this.service.DatosTrabajo().subscribe(data=>{
       console.log(data);
       this.exp=data;
@@ -60,9 +60,9 @@ export class ExperienciaComponent implements OnInit{
     this.service.tipoT().subscribe(data2=>{
       this.tipo_Trabajo=data2;
     })
-    this.service2.iniciarSesion().subscribe(data3 =>{
-      console.log(data3);
-    })
+  }
+  ngOnInit(): void {
+  this.ObtenerDatos()
   }
     EditInfo(){
       const edit = this.edit.nativeElement;
@@ -95,6 +95,7 @@ export class ExperienciaComponent implements OnInit{
         console.log(data2);
         const newWork = this.newWork.nativeElement;
         this.render2.setStyle(newWork, 'display', 'none');
+        this.ObtenerDatos
       }),(error: any)=>{
         console.error(error);
     }
@@ -106,6 +107,7 @@ export class ExperienciaComponent implements OnInit{
     }
     EditarTrabajo(id: number,form2: Trabajo){
       console.log('ID del trabajo a editar:', id);
-      this.service.EditarTrabajo(id, form2)
+      this.service.EditarTrabajo(id, form2);
+      this.ObtenerDatos();
     }
   }

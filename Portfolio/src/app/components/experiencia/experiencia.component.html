@@ -17,14 +17,13 @@
             <datalist id="input" style="z-index: 11" >
                 <option *ngFor="let tipo_trabajo of tipo_Trabajo" value="{{tipo_trabajo.rol}}">{{tipo_trabajo.rol}}</option>
             </datalist></label>
-            <label for="logo"><input class="edicion imagen" type="file" id="logo" formControlName="logo"></label>  
             <input class="mod1--crear" type="submit" value="CREAR">
         </div>
     </form>
     </div>
 </div>
         <div class="container-fluid" style="min-height: 400px;">
-            <div>
+            <div *ngIf="(token)">
             <button (click)="agregarTrabajo()" class="container img col">
                 <div class="agregar">
                     <svg class="agregar" #agregar xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="#1A9FFF" class="bi bi-plus-circle" viewBox="0 0 16 16">
@@ -35,19 +34,18 @@
             </button>
         </div>
             <div *ngFor="let exp of exp" class="container" style="width: 300px; margin-left: 10px; margin-right: 5px; height: 400px;" >
-                <button #editar (click)="exp.edit = !exp.edit"  [ngStyle]="{'display': exp.edit? 'none':'block'}" class="mod1">
+                <button *ngIf="(token)" #editar (click)="exp.edit = !exp.edit"  [ngStyle]="{'display': exp.edit? 'none':'block'}" class="mod1">
                     <p>EDITAR</p>
                 </button>
             <button (click)="exp.selected = !exp.selected" [ngStyle]="{'display': exp.edit? 'none':'block'}" #trabajo class="img col" >
-                <img class="imagen" src="" alt="" [ngStyle]="{ 'visibility': exp.selected ? 'hidden' : 'visible', 'opacity': exp.selected? '0':'1','top': exp.selected? '70%': '150px' }"  style="position: absolute; z-index: 0;">
-                <div class="info" [ngStyle]="{ 'visibility': exp.selected ? 'visible' : 'hidden', 'opacity': exp.selected? '1':'0','top': exp.selected? '107px': '70%' }" style="position: absolute; z-index: 0;">
+                <h1 class="imagen" [ngStyle]="{ 'visibility': exp.selected ? 'hidden' : 'visible', 'opacity': exp.selected? '0':'1','top': exp.selected? '70%': '150px' }"  style="position: absolute; z-index: 0;">{{exp.nombreEmpresa}}</h1>                <div class="info" [ngStyle]="{ 'visibility': exp.selected ? 'visible' : 'hidden', 'opacity': exp.selected? '1':'0','top': exp.selected? '107px': '70%' }" style="position: absolute; z-index: 0;">
                     <p>{{exp.nombreEmpresa}}</p>
-                    <H5>{{exp.descripcion}}</H5>
+                    <H5 style="width: 100%;">{{exp.descripcion}}</H5>
                     <h6>Inicio:{{exp.fechaInicio}}</h6>
                     <h6>Fin:{{exp.fechaFin}}</h6>
                 </div>
             </button>
-            <form (ngSubmit)="EditarTrabajo(exp.id,form2.value); exp.edit = exp.edit" [formGroup]="form2" action="" method="put" #edicion class="edit" [ngStyle]="{'display': exp.edit? 'flex':'none', 'z-index': exp.edit? '2':'-1'}" style="display: none; z-index: 10;">
+            <form (ngSubmit)="EditarTrabajo(exp.id,form2.value); exp.edit = !exp.edit" [formGroup]="form2" action="" method="put" #edicion class="edit" [ngStyle]="{'display': exp.edit? 'flex':'none', 'z-index': exp.edit? '2':'-1'}" style="display: none; z-index: 10;">
                 <div class="menu__button"><input class="menu__button" type="button" (click)="exp.edit = !exp.edit"value=""/><svg style="z-index: 1" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
                     <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
                     </svg></div> 
@@ -59,7 +57,6 @@
                 <datalist id="input" style="z-index: 10">
                     <option *ngFor="let tipo_trabajo of tipo_Trabajo" value="{{tipo_trabajo.rol}}">{{tipo_trabajo.rol}}</option>
                 </datalist></label>
-                <label for="logo"><input class="edicion imagen" type="text"  id="logo" formControlName="logo"> </label>  
                 <button class="mod1--borrar">
                     <p>GUARDAR</p>
                 </button>

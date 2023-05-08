@@ -19,11 +19,12 @@ export class ProyectosComponent {
   @ViewChild('trabajo') trabajo!:ElementRef;
   form:FormGroup;
   form2:FormGroup;
+  token = localStorage.getItem('token');
   constructor(private render2: Renderer2, private service:DatosService,private formBuilder:FormBuilder,private service2:AutenticacionService){
     this.form=this.formBuilder.group(
       {
       nombreProyecto:['',[Validators.required]],
-      Descripcion:['',[Validators.required]],
+      descripcion:['',[Validators.required]],
       fecha_Lanz:['',[Validators.required]],
       url:['',[Validators.required]],
       logo:['',[Validators.required]],
@@ -32,18 +33,21 @@ export class ProyectosComponent {
     this.form2=this.formBuilder.group(
       {
       nombreProyecto:['',[Validators.required]],
-      Descripcion:['',[Validators.required]],
+      descripcion:['',[Validators.required]],
       fecha_Lanz:['',[Validators.required]],
       url:['',[Validators.required]],
       logo:['',[Validators.required]],
       }
     )
   }
+  ObtenerDatos(){
+  this.service.DatosProyectos().subscribe(data => {
+    this.pro = data;
+    console.log(data);
+  });
+}
   ngOnInit(): void {
-    this.service.DatosProyectos().subscribe(data => {
-      this.pro = data;
-      console.log(data);
-    });
+    this.ObtenerDatos();
   }
   showMenu(){
     const ocultar = this.trabajo.nativeElement;
@@ -72,6 +76,7 @@ export class ProyectosComponent {
       console.log(data2);
       const newPro = this.newPro.nativeElement;
       this.render2.setStyle(newPro, 'display', 'none');
+      this.ObtenerDatos();
     }),(error: any)=>{
       console.error(error);
   }
@@ -86,7 +91,8 @@ export class ProyectosComponent {
   }
     async EditarProyectos(id: number,form2: Proyectos){
     console.log('ID del Proyectos a editar:', id);
-    await this.service.EditarProyecto(id,form2)
+    await this.service.EditarProyecto(id,form2);
+    this.ObtenerDatos();
   }
   redireccionar(url: any) {
     window.location.href = `${url}`;

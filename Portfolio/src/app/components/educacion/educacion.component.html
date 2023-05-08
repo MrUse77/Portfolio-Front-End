@@ -3,7 +3,7 @@
 <div class="eduw" id="3">
     <div #newEdu class="div_new" >
         <div class="new__add">
-            <form (ngSubmit)="NewEdu(form.value)" class="new__add--form" [formGroup]="form" action="" method="post">
+            <form (ngSubmit)="NewEdu(form.value)" class="new__add--form" [formGroup]="form" action="" method="post" enctype="multipart/form-data">
                 <div class="edit container-fluid" style="width: 400px; height: 500px;">
                     <div class="menu__button"><input class="menu__button" type="button" (click)="cerrarVentana()" value=""/><svg style="z-index: 1" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
                         <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
@@ -14,9 +14,8 @@
                     <label for="fechaFin" style="width: 50%"><h5 class="text-center">Fecha final</h5><input class="form-control edicion fecha " type="date" style="margin-left: 5px;" id="fechaFin" formControlName="fechaFin"></label>
                     <label formGroupName="tipo_Educacion"><h5 class="text-center">Tipo de educacion</h5><input class="form-control edicion rol" type="text" list="input" id="id"  formControlName="id">
                     <datalist id="input" style="z-index: 11" >
-                        <option *ngFor="let tipo_educacion of tipo_educacion" value="{{tipo_educacion.nombre_tipo}}">{{tipo_educacion.nombre_tipo}}</option>
-                    </datalist></label>
-                    <label for="logo"><input class="edicion imagen" type="file" id="logo" formControlName="logo"></label>  
+                        <option *ngFor="let tipo_educacion of tipo_educacion" value="{{tipo_educacion.id}}">{{tipo_educacion.id}}:{{tipo_educacion.nombre_tipo}}</option>
+                    </datalist></label> 
                     <input class="mod1--crear" type="submit" value="CREAR">
                 </div>
             </form>
@@ -24,7 +23,7 @@
     </div>
         <div class="container-fluid" style="min-height: 400px;">
             <h1 style="width: 100%;">Secundario y Universidad</h1>
-            <div>
+            <div *ngIf="(token)">
                 <button (click)="agregarEducacion()" class="container img col">
                     <div class="agregar">
                         <svg class="agregar" #agregar xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="#1A9FFF" class="bi bi-plus-circle" viewBox="0 0 16 16">
@@ -36,30 +35,29 @@
             </div>
         <div *ngFor="let edu of edu1" class="container" style="width: 300px; margin-left: 10px; margin-right: 5px; height: 400px;" >
             <button (click)="edu.selected = !edu.selected" [ngStyle]="{'display': edu.edit? 'none':'block'}" #trabajo class="img col" >
-                <button #editar (click)="edu.edit = !edu.edit"  [ngStyle]="{'display': edu.edit? 'none':'block'}" class="mod1">
+                <button *ngIf="(token)" (click)="edu.edit = !edu.edit"  [ngStyle]="{'display': edu.edit? 'none':'block'}" class="mod1">
                     <p>EDITAR</p>
                 </button>
-                <img class="imagen" src="../../../assets/imagenes/1499794875MySQL-logo-png-transparent-1522566882.png" alt="" [ngStyle]="{ 'visibility': edu.selected ? 'hidden' : 'visible', 'opacity': edu.selected? '0':'1','top': edu.selected? '70%': '150px' }"  style="position: absolute; z-index: 0;">
+                <h1 class="imagen" [ngStyle]="{ 'visibility': edu.selected ? 'hidden' : 'visible', 'opacity': edu.selected? '0':'1','top': edu.selected? '70%': '150px' }"  style="position: absolute; z-index: 0;">{{edu.nombreEducacion}}</h1>
                 <div class="info" [ngStyle]="{ 'visibility': edu.selected ? 'visible' : 'hidden', 'opacity': edu.selected? '1':'0','top': edu.selected? '107px': '70%' }" style="position: absolute; z-index: 0;">
                     <p>{{edu.nombreEducacion}}</p>
-                    <H5>{{edu.titulo}}</H5>
+                    <H5 style="width: 100%;">{{edu.titulo}}</H5>
                     <h6>Inicio:{{edu.fechaInicio}}</h6>
                     <h6>Fin:{{edu.fechaFin}}</h6>
                 </div>
             </button>
-            <form (ngSubmit)="EditarEducacion(edu.id,form2.value); edu.edit = !edu.edit" [formGroup]="form2" action="" method="put" #edicion class="edit" [ngStyle]="{'display': edu.edit? 'flex':'none', 'z-index': edu.edit? '2':'-1'}" style="display: none; z-index: 10;position: relative;">
+            <form (ngSubmit)="EditarEducacion(edu.id,form2.value); edu.edit = !edu.edit" [formGroup]="form2" action="" method="put" #edicion class="edit" [ngStyle]="{'display': edu.edit? 'flex':'none', 'z-index': edu.edit? '2':'-1'}" style="display: none; z-index: 10;position: relative;" enctype="multipart/form-data">
                 <div class="menu__button"><input class="menu__button" type="button" (click)="edu.edit = !edu.edit"value=""/><svg style="z-index: 1" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
                     <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
                     </svg></div> 
                 <label for="nombreEducacion"><input class="form-control edicion nombre" type="text" id="nombreEducacion" formControlName="nombreEducacion"></label>
                 <label for="titulo"><input class="form-control edicion trabajo" type="text" id="titulo" formControlName="titulo"></label>
                 <label for="fechaInicio" style="width: 45%"><input class="form-control edicion fecha" type="date" [min]="1900-01-01" style="margin-right: 5px;" id="fechaInicio" formControlName="fechaInicio"></label>
-                <label for="fechaFin" style="width: 45%"><input class="form-control edicion fecha " type="date" style="margin-left: 5px;"  id="fechaFin" formControlName="fechaFin"  ></label>
-                <label formGroupName="tipo_Educacion"><input class="form-control edicion rol" type="text" list="input"  id="id" formControlName="id">
+                <label for="fechaFin" style="width: 45%"><input class="form-control edicion fecha " type="date" style="margin-left: 5px;"  id="fechaFin" formControlName="fechaFin" ></label>
+                <label formGroupName="tipo_Educacion"><input class="form-control edicion rol" type="text" list="input"  id="id" formControlName="id" [(ngModel)]="edu.tipo_Educacion.nombre_tipo">
                 <datalist *ngFor="let tipo_educacion of tipo_educacion" id="input" style="z-index: 10">
                     <option  value="{{tipo_educacion.nombre_tipo}}">{{tipo_educacion.nombre_tipo}}</option>
                 </datalist></label>
-                <label for="logo"><input class="edicion imagen" type="text"  id="logo" formControlName="logo"> </label>  
                 <button class="mod1--borrar">
                     <p>GUARDAR</p>
                 </button>
@@ -68,13 +66,13 @@
         <h1 style="width: 100%;">CURSOS</h1>
         <div *ngFor="let edu2 of edu2" class="container" style="width: 300px; margin-left: 10px; margin-right: 5px; height: 400px;" >
         <button (click)="edu2.selected = !edu2.selected" [ngStyle]="{'display': edu2.edit? 'none':'block'}" #trabajo class="img col" >
-            <button #editar (click)="edu2.edit = !edu2.edit"  [ngStyle]="{'display': edu2.edit? 'none':'block'}" class="mod1">
+            <button  *ngIf="(token)" (click)="edu2.edit = !edu2.edit"  [ngStyle]="{'display': edu2.edit? 'none':'block'}" class="mod1">
                 <p>EDITAR</p>
             </button>
-            <img class="imagen" src="" alt="" [ngStyle]="{ 'visibility': edu2.selected ? 'hidden' : 'visible', 'opacity': edu2.selected? '0':'1','top': edu2.selected? '70%': '150px' }"  style="position: absolute; z-index: 0;">
-            <div class="info" [ngStyle]="{ 'visibility': edu2.selected ? 'visible' : 'hidden', 'opacity': edu2.selected? '1':'0','top': edu2.selected? '107px': '70%' }" style="position: absolute; z-index: 0;">
+                <h1 class="imagen" [ngStyle]="{ 'visibility': edu2.selected ? 'hidden' : 'visible', 'opacity': edu2.selected? '0':'1','top': edu2.selected? '70%': '150px' }"  style="position: absolute; z-index: 0;">{{edu2.nombreEducacion}}</h1>
+                <div class="info" [ngStyle]="{ 'visibility': edu2.selected ? 'visible' : 'hidden', 'opacity': edu2.selected? '1':'0','top': edu2.selected? '107px': '70%' }" style="position: absolute; z-index: 0;">
                 <p>{{edu2.nombreEducacion}}</p>
-                <H5>{{edu2.titulo}}</H5>
+                <H5 style="width: 100%;">{{edu2.titulo}}</H5>
                 <h6>Inicio:{{edu2.fechaInicio}}</h6>
                 <h6>Fin:{{edu2.fechaFin}}</h6>
             </div>
@@ -83,15 +81,14 @@
             <div class="menu__button"><input class="menu__button" type="button" (click)="edu2.edit = !edu2.edit"value=""/><svg style="z-index: 1" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
                 <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
                 </svg></div> 
-            <label for="nombreEducacion"><input class="form-control edicion nombre" type="text" id="nombreEducacion" formControlName="nombreEducacion"></label>
-            <label for="titulo"><input class="form-control edicion trabajo" type="text" id="titulo" formControlName="titulo"></label>
-            <label for="fechaInicio" style="width: 45%"><input class="form-control edicion fecha" type="date" [min]="1900-01-01" style="margin-right: 5px;" id="fechaInicio" formControlName="fechaInicio"></label>
-            <label for="fechaFin" style="width: 45%"><input class="form-control edicion fecha " type="date" style="margin-left: 5px;"  id="fechaFin" formControlName="fechaFin"  ></label>
-            <label formGroupName="tipo_Educacion"><input class="form-control edicion rol" type="text" list="input"  id="nombre_tipo" formControlName="id">
+            <label for="nombreEducacion"><input class="form-control edicion nombre" type="text" id="nombreEducacion" formControlName="nombreEducacion"[(ngModel)]="edu2.nombreEducacion"></label>
+            <label for="titulo"><input class="form-control edicion trabajo" type="text" id="titulo" formControlName="titulo"[(ngModel)]="edu2.titulo"></label>
+            <label for="fechaInicio" style="width: 45%"><input class="form-control edicion fecha" type="date" [min]="1900-01-01" style="margin-right: 5px;" id="fechaInicio" formControlName="fechaInicio" [(ngModel)]="edu2.fechaInicio"></label>
+            <label for="fechaFin" style="width: 45%"><input class="form-control edicion fecha " type="date" style="margin-left: 5px;"  id="fechaFin" formControlName="fechaFin" [(ngModel)]="edu2.fechaFin"></label>
+            <label formGroupName="tipo_Educacion"><input class="form-control edicion rol" type="text" list="input"  id="nombre_tipo" formControlName="id" [(ngModel)]="edu2.tipo_Educacion.nombre_tipo">
             <datalist *ngFor="let tipo_educacion2 of tipo_educacion" id="input" style="z-index: 10">
                 <option value="{{tipo_educacion2.nombre_tipo}}">{{tipo_educacion2.nombre_tipo}}</option>
-            </datalist></label>
-            <label for="logo"><input class="edicion imagen" type="text"  id="logo" formControlName="logo"> </label>  
+            </datalist></label> 
             <input type="submit" class="mod1--borrar" value="GUARDAR">
         </form>
     </div>
