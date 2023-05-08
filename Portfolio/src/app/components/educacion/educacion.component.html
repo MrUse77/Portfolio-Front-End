@@ -61,20 +61,13 @@
                 <button class="mod1--borrar">
                     <p>GUARDAR</p>
                 </button>
-                <div class="edit" style="display: none;">
-                    <button class="mod" >
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
-                            <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
-                            <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
-                            <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
-                        </svg>
-                    </button>
-                    <input class="edicion nombre" type="text" [(ngModel)]="curso[7]">
-                    <input class="edicion trabajo" type="text" [(ngModel)]="curso[8]">
-                    <input class="edicion fecha" type="text" [(ngModel)]="curso[9]">
-                </div>
+            </form>
+        </div>
+        <h1 style="width: 100%;">CURSOS</h1>
+        <div *ngFor="let edu2 of edu2" class="container" style="width: 300px; margin-left: 10px; margin-right: 5px; height: 400px;" >
+        <button (click)="edu2.selected = !edu2.selected" [ngStyle]="{'display': edu2.edit? 'none':'block'}" #trabajo class="img col" >
+            <button  *ngIf="(token)" (click)="edu2.edit = !edu2.edit"  [ngStyle]="{'display': edu2.edit? 'none':'block'}" class="mod1">
+                <p>EDITAR</p>
             </button>
                 <h1 class="imagen" [ngStyle]="{ 'visibility': edu2.selected ? 'hidden' : 'visible', 'opacity': edu2.selected? '0':'1','top': edu2.selected? '70%': '150px' }"  style="position: absolute; z-index: 0;">{{edu2.nombreEducacion}}</h1>
                 <div class="info" [ngStyle]="{ 'visibility': edu2.selected ? 'visible' : 'hidden', 'opacity': edu2.selected? '1':'0','top': edu2.selected? '107px': '70%' }" style="position: absolute; z-index: 0;">
