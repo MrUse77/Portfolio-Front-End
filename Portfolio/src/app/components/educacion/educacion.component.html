@@ -82,7 +82,7 @@
                 <H5 style="width: 100%;">{{edu2.titulo}}</H5>
                 <h6>Inicio:{{edu2.fechaInicio}}</h6>
                 <h6>Fin:{{edu2.fechaFin}}</h6>
-            </div>
+            </div> 
         </button>
         <form (ngSubmit)="EditarEducacion(edu2.id,form2.value); edu2.edit = !edu2.edit" [formGroup]="form2" action="" method="put" #edicion class="edit" [ngStyle]="{'display': edu2.edit? 'flex':'none', 'z-index': edu2.edit? '2':'-1'}" style="display: none; z-index: 10;position: relative;">
             <div class="menu__button"><input class="menu__button" type="button" (click)="edu2.edit = !edu2.edit"value=""/><svg style="z-index: 1" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
@@ -101,5 +101,4 @@
     </div>
     </div>
 </div>
-
 <app-footer></app-footer>
