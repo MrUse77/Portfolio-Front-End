@@ -1,41 +1,50 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> develop
 
 import { Component, EventEmitter, Injectable, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
-import { Usuario } from 'src/app/Modelo/Usuario';
+import  {Usuario} from 'src/app/Modelo/Usuario';
 import { AutenticacionService } from 'src/app/service/autenticacion.service';
+<<<<<<< HEAD
 =======
 import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, Injectable, OnInit, Output } from '@angular/core';
 >>>>>>> 0f1035e79c3aaef1443053f11f9a60218c258dd6
 
+=======
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import Long from 'long';
+>>>>>>> develop
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
+
 export class SignUpComponent implements OnInit{
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> develop
   form:FormGroup;
   usuarios: Usuario[] = [];
   constructor(private formBuilder:FormBuilder, private service:AutenticacionService, private ruta:Router){
     this.form=this.formBuilder.group(
       {
+      id: Number,
       user:['',[Validators.required]],
       password:['',[Validators.required,Validators.minLength(8)]],
       mail:['',[Validators.required,Validators.email]],
       offers:['',[Validators.required]],
-      terms:['',[Validators.required]]
-      
+      terms:['',[Validators.required]],
       }
     )
   }
-  
   ngOnInit(): void {
-    this.service.iniciarSesion().subscribe(data=>{
-    console.log(data);
-  })
+  console.log(this.form);
     }
     get user(){
       return this.form.get('user');
@@ -49,14 +58,18 @@ export class SignUpComponent implements OnInit{
     get terms(){
       return this.form.get('terms');
     }
-    onSignUp(form:Usuario){
-      this.service.SignUp(form).subscribe(data2=>{
+    onSignUp(form: Usuario){
+      this.service.SignUp(form).subscribe((data2)=>{
         console.log(data2);
-      });
+        this.ruta.navigate(['/']);
+      }),(error: any)=>{
+        console.error(error);
     }
+    };
   }
 
 
+<<<<<<< HEAD
 =======
 
 
@@ -67,3 +80,5 @@ export class SignUpComponent implements OnInit{
   }
   }
 >>>>>>> 0f1035e79c3aaef1443053f11f9a60218c258dd6
+=======
+>>>>>>> develop

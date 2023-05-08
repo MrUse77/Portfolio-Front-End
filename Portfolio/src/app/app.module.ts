@@ -1,14 +1,18 @@
 import { APP_INITIALIZER, NgModule, Renderer2 } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 =======
 import {FormsModule} from '@angular/forms';
 >>>>>>> 0f1035e79c3aaef1443053f11f9a60218c258dd6
+=======
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+>>>>>>> develop
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule, HttpHandler } from  '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule, HttpHandler } from  '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PortfolioService } from './service/portfolio.service';
 import { SignUpComponent } from './components/Sign Up/signup.component';
@@ -18,6 +22,7 @@ import { EducacionComponent } from './components/educacion/educacion.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LogInComponent } from './components/log-in/log-in.component';
 import { HeaderComponent } from './components/header/header.component';
+import { AuthInterceptor } from './helpers/auth.interceptor';
 
 
 export function LoadConfiguration(configservice: PortfolioService){
@@ -39,9 +44,7 @@ export function LoadConfiguration(configservice: PortfolioService){
     providers: [
         PortfolioService, 
         {
-            provide: APP_INITIALIZER,
-            useFactory: LoadConfiguration,
-            deps: [PortfolioService],
+            provide: HTTP_INTERCEPTORS, useClass:AuthInterceptor,
             multi: true,
         }
     ],
@@ -53,9 +56,13 @@ export function LoadConfiguration(configservice: PortfolioService){
         AppRoutingModule,
         HttpClientModule,
 <<<<<<< HEAD
+<<<<<<< HEAD
         ReactiveFormsModule,
 =======
 >>>>>>> 0f1035e79c3aaef1443053f11f9a60218c258dd6
+=======
+        ReactiveFormsModule,
+>>>>>>> develop
     ]
 })
 export class AppModule {

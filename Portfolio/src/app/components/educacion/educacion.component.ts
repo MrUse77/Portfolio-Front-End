@@ -1,11 +1,18 @@
-import { NgClass } from '@angular/common';
-import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
+import { NgClass, CommonModule  } from '@angular/common';
+import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Educacion, TipoEducacion } from 'src/app/Modelo/Educacion';
+import { Usuario } from 'src/app/Modelo/Usuario';
+import { AutenticacionService } from 'src/app/service/autenticacion.service';
+import { DatosService } from 'src/app/service/datos.service';
+
 
 @Component({
   selector: 'app-educacion',
   templateUrl: './educacion.component.html',
   styleUrls: ['./educacion.component.scss']
 })
+<<<<<<< HEAD
 export class EducacionComponent {
   secu= ["EEST N°8", "TECNICO EN ELECTRONICA", "2016-2022"];
   curso = [
@@ -38,38 +45,88 @@ export class EducacionComponent {
 
   constructor(private render2: Renderer2,
     ){
-  }
-  
-  ShowInfo(num: string){
-    const info1 = this.info1.nativeElement;
-    const info2 = this.info2.nativeElement;
-    const info3 = this.info3.nativeElement;
-    const info4 = this.info4.nativeElement;
-    const imagen = this.imagen.nativeElement;
-    const imagen2 = this.imagen2.nativeElement;
-    const imagen3 = this.imagen3.nativeElement;
-    const imagen4 = this.imagen4.nativeElement;
-
-    if(num == 'escuela'){
-    
-      this.render2.setStyle(info1,'opacity','1');
-      this.render2.setStyle(info1,'top','107px');
-      this.render2.setStyle(info1,'visibility','visible');
-      this.render2.setStyle(imagen,'visibility','hidden');
-      this.render2.setStyle(imagen,'opacity','0');
-      this.render2.setStyle(imagen,'top','70%');
-      this.show++;
-
-      if(this.show ==2){
-        this.show = 0;
-        this.render2.setStyle(info1, 'opacity', '0');
-        this.render2.setStyle(info1,'top','70%');
-        this.render2.setStyle(info1, 'visibility', 'hidden');
-        this.render2.setStyle(imagen,'top','150px');
-        this.render2.setStyle(imagen,'opacity','1');
-        this.render2.setStyle(imagen,'visibility','visible');
+=======
+export class EducacionComponent implements OnInit{
+  edu:  Educacion[] = [];
+  edu2:Educacion[] = [];
+  edu1:Educacion[] = [];
+  tipo_educacion: TipoEducacion[] = [];
+  usuario: Usuario[] = [];
+  @ViewChild('agregar') agregar!:ElementRef;
+  @ViewChild('edit') edit!:ElementRef;
+  @ViewChild('editar') editar!:ElementRef;
+  @ViewChild('edicion') edicion!:ElementRef;
+  @ViewChild('newEdu') newEdu!:ElementRef;
+  @ViewChild('newEdu2') newEdu2!:ElementRef;
+  @ViewChild ('signup') signup !: ElementRef;
+  @ViewChild ('edition') edition !: ElementRef;
+  form:FormGroup;
+  form2:FormGroup;
+  renderer: any;
+  token = localStorage.getItem('token');
+  constructor(private render2: Renderer2, private service:DatosService,private formBuilder:FormBuilder,private service2:AutenticacionService){
+    this.form=this.formBuilder.group(
+      {
+      nombreEducacion:['',[Validators.required]],
+      titulo:['',[Validators.required]],
+      fechaInicio:['',[Validators.required]],
+      fechaFin:['',[Validators.required]], 
+      logo:['',[Validators.required]],
+      persona:this.formBuilder.group({
+      id:['1']
+      }),
+      tipo_Educacion: this.formBuilder.group({
+        id: ['',[Validators.required]], // asumiendo que id es un número
+      })
       }
+    )
+    this.form2=this.formBuilder.group(
+      {
+      nombreEducacion:['',[Validators.required]],
+      titulo:['',[Validators.required]],
+      fechaInicio:['',[Validators.required]],
+      fechaFin:['',[Validators.required]], 
+      tipo_Educacion: this.formBuilder.group({
+        id: ['',[Validators.required]],
+        nombre_tipo: ['',[Validators.required]], // asumiendo que id es un número
+      }),
+      }
+    )
+>>>>>>> develop
+  }
+  ObtenerDatos(){
+    this.service.DatosEducacion().subscribe(data => {
+      this.edu = data;
+      console.log(data);
+      this.edu1 = this.edu.filter(edu => edu.tipo_Educacion?.id == 1 || edu.tipo_Educacion?.id == 2 );
+      console.log(this.edu1);
+      this.edu2 = this.edu.filter(edu => edu.tipo_Educacion?.id == 3);
+      console.log(this.edu2);
+    });
+    
+    this.service.tipoE().subscribe(data2=>{
+      this.tipo_educacion=data2;
+    })
+  }
+  ngOnInit(): void {
+    this.ObtenerDatos();
+  }  
+  ngAfterViewInit(): void {
+    const token = localStorage.getItem('token');
+    if (token) {
+      const signup = this.signup.nativeElement;
+      const newEdu2 = this.newEdu2.nativeElement;
+      this.render2.removeClass(newEdu2, 'ocultar');
+      this.render2.setStyle(signup, 'display', 'none');
+
+    } else {
+  
+      const signup = this.signup.nativeElement;
+      const newEdu2 = this.newEdu2.nativeElement;
+      this.render2.setStyle(newEdu2, 'display', 'none');
+      this.render2.setStyle(signup, 'display', 'none');
     }
+<<<<<<< HEAD
     if(num == 'utn'){
       this.render2.setStyle(info2,'opacity','1');
       this.render2.setStyle(info2,'top','107px');
@@ -138,11 +195,37 @@ EditInfo(){
   const edit = this.edit.nativeElement;
   const editar = this.editar.nativeElement;
   const edicion = this.edicion.nativeElement;
+=======
+  }
+>>>>>>> develop
 
-  this.render2.setStyle(edit, 'display', 'block');
-  this.render2.setStyle(editar, 'display', 'none');
-  this.render2.setStyle(edicion, 'display', 'flex');
+NewEdu(form: Educacion){
+  this.service.CrearEducacion(form).subscribe((data2)=>{
+    console.log(data2);
+    const newEdu = this.newEdu.nativeElement;
+    this.render2.setStyle(newEdu, 'display', 'none');
+    this.ObtenerDatos();
+  }),(error: any)=>{
+    
+    console.error(error);
 }
+}
+agregarEducacion (){
+  const newEdu = this.newEdu.nativeElement;
+  this.render2.setStyle(newEdu, 'display', 'flex');
+}
+cerrarVentana(){
+  const newEdu = this.newEdu.nativeElement;
+  this.render2.setStyle(newEdu, 'display', 'none');
+}
+  async EditarEducacion(id: number,form2: Educacion){
+  console.log('ID del Educacion a editar:', id);
+  await this.service.EditarEducacion(id, form2);
+  this.ObtenerDatos();
+}
+<<<<<<< HEAD
 =======
 >>>>>>> 0f1035e79c3aaef1443053f11f9a60218c258dd6
+=======
+>>>>>>> develop
 }

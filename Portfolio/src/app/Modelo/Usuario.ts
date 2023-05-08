@@ -1,8 +1,7 @@
-export class Usuario {
-    id: Number | undefined;
-    user: string | undefined;
-    mail: string | undefined;
-    password: string | undefined;
-    offers: boolean = false;
-    terms: boolean = false;
+export interface Usuario{
+    id: Number;
+    user: string;
+    mail: string;
+    password: string;
+    genero: boolean;
 }

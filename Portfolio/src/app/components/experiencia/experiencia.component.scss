@@ -49,13 +49,12 @@ header{
     position: relative;
     border-style:  solid;
     border-color: #1e80b1;
-    margin-right: 20px;
     min-width: 300px;
     max-width: 300px;
     height: 400px;
     background-image:radial-gradient( #1e80b1, #206487);
     z-index: 1;
-    overflow: hidden;
+
 }
 .img:hover{
     background-image:linear-gradient(90deg, #4eccfa,#4ec5ff);
@@ -109,6 +108,21 @@ svg:hover{
 }
 .mod1{
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    position: absolute;
+    height: 40px;
+    width: 150px;
+    margin:12px;
+    color: white;
+    background: rgba(243, 243, 243, 0.1);
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.3);
+    border: none;
+    text-decoration: none;
+    z-index: 2;
+}
+.mod1--crear{
+>>>>>>> develop
     position: relative;
     height: 40px;
     width: 150px;
@@ -118,11 +132,28 @@ svg:hover{
     text-shadow: 1px 1px 0px rgba(0,0,0,0.3);
     border: none;
     text-decoration: none;
+    z-index: 2;
+}
+.mod1--borrar{
+    position: relative;
+    height: 40px;
+    width: 150px;
+    margin:12px;
+    color: white;
+    background: rgba(243, 243, 243, 0.1);
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.3);
+    border: none;
+    text-decoration: none;
+    z-index: 2;
+}
+.mod1--borrar:hover{
+    background-image: linear-gradient(90deg, #194766, #206487, #194766);
 }
 .mod1:hover{
     background-image: linear-gradient(90deg, #194766, #206487, #194766);
 }
 .mod svg{
+<<<<<<< HEAD
 =======
     position: absolute;
     display: flex;
@@ -139,17 +170,23 @@ svg:hover{
 .mod1 svg{
     display: flex;
 >>>>>>> 0f1035e79c3aaef1443053f11f9a60218c258dd6
+=======
+>>>>>>> develop
     align-items: center;
     fill: #1A9FFF;
     width: 20px;
     height: 20px;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> develop
     margin: 10px;
 }
 .mod{
     position: relative;
 }
 .edit{
+    position: relative;
     height: 400px;
     width: 300px;
     align-items: center;
@@ -161,13 +198,13 @@ svg:hover{
     position: relative;
     background-color: #206487;
     border: none;
-    width: 300px;
 }
 .nombre{
     position: relative;
     display: flex;
     align-items: flex-start;
     height: 50px;
+<<<<<<< HEAD
 =======
 }
 .mod svg{
@@ -212,18 +249,28 @@ svg:hover{
     width: 80%;
     left: 10%;
 >>>>>>> 0f1035e79c3aaef1443053f11f9a60218c258dd6
+=======
+    border: solid hsl(200, 71%, 41%);
+    border-radius: 5px;
+}
+.trabajo{
+    position: relative;
+    height: 100px;
+    margin-top: 1px;
+>>>>>>> develop
     border: solid #1e80b1;
     border-radius: 5px;
 }
 .fecha{
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> develop
     position: relative;
     height: 100px;
     margin-top: 1px;
-    margin-right: 10px;
-    margin-left: 10px;
-    width: 50%;
     height: max-content;
+<<<<<<< HEAD
 =======
     position: absolute;
     height: 100px;
@@ -232,6 +279,8 @@ svg:hover{
     width: 80%;
     left: 10%;
 >>>>>>> 0f1035e79c3aaef1443053f11f9a60218c258dd6
+=======
+>>>>>>> develop
     border: solid #1e80b1;
     border-radius: 5px;
 }
@@ -241,6 +290,9 @@ svg:hover{
     display: flex;
     overflow: auto;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> develop
 }
 .rol{
     position: relative;
@@ -248,9 +300,52 @@ svg:hover{
     margin-top: 1px;
     margin-right: 5px;
     margin-left: 5px;
-    width: 75%;
     height: max-content;
+    border: solid #1e80b1;
     border-radius: 5px;
+<<<<<<< HEAD
 =======
 >>>>>>> 0f1035e79c3aaef1443053f11f9a60218c258dd6
+=======
+}
+.div_new{
+    position: absolute;
+    z-index: 10;
+    height: 70%;
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    top:0;
+    z-index: 5;
+    background-color: rgba(0, 0, 0, 0.264);
+}
+.new__add{
+    position: relative;
+    background-color: #194766;
+    width: 400px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: solid #1e80b1;
+    z-index: 6;
+}
+.new__add--form{
+    border-radius: 5px;
+    border: solid #1e80b1;
+}
+.menu__button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: transparent;
+    border: none;
+    width:25px;
+    z-index: 0;
+}
+.menu__button svg{
+    z-index: 10;
+>>>>>>> develop
 }

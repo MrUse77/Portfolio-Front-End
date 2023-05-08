@@ -1,16 +1,18 @@
 export interface Educacion {
     id:              number;
-    fechaInicio:     Date;
     nombreEducacion: string;
-    logo:            string;
-    fechaFin:        Date | null;
     titulo:          string;
+    fechaInicio:     Date;
+    fechaFin:        Date;
+    logo:            Blob;
     tipo_Educacion:  TipoEducacion;
     persona:         Persona;
+    selected: boolean;
+    edit: boolean;
 }
 
 export interface Persona {
-    id:       number;
+    id:       string;
     user:     string;
     mail:     string;
     password: string;

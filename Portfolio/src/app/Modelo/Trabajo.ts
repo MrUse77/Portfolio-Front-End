@@ -1,16 +1,17 @@
 export interface Trabajo {
-    id:            number;
-    nombreEmpresa: string;
-    descripcion:   string;
-    fechaInicio:   Date;
-    fechaFin:      Date;
-    logo:          string;
-    persona:       Persona;
-    tipo_Trabajo:  TipoTrabajo;
+    id: number;
+    nombreEmpresa: string; 
+    descripcion:   string ;
+    fechaInicio:   Date  ;
+    fechaFin:      Date ;
+    logo:          string ;
+    persona:       Persona ;
+    tipoTrabajo: TipoTrabajo;
+    selected: boolean;
+    edit: boolean;
 }
-
 export interface Persona {
-    id:       number;
+    id:       string;
     user:     string;
     mail:     string;
     password: string;

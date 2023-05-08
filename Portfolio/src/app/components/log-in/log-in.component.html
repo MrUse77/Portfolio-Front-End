@@ -11,11 +11,19 @@
 </header>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 <form [formGroup]="form" class="session" action="" method="post" >
         <p>
         Usuario
         </p>
         <label for="user"><input [ngClass]="{'is-invalid': user?.errors && user?.touched, 'is-valid':!user?.errors && user?.touched}" class="relleno form-control" type="text" name="user" maxlength="50" id="user" formControlName="user"/></label>
+=======
+<form (ngSubmit)="Login(form)" #form="ngForm" class="session" action=""  >
+        <p>
+        Usuario
+        </p>
+        <label for="user"><input [ngClass]="{'is-invalid': user?.errors && user?.touched, 'is-valid':!user?.errors && user?.touched}" class="relleno form-control" type="text" name="user" maxlength="50" id="user" [(ngModel)]="usuarios.user" /></label>
+>>>>>>> develop
         <div *ngIf="user?.errors && user?.touched">
           <p *ngIf="user?.hasError('required')" class="text-danger">
             usuario requerido
@@ -24,12 +32,13 @@
         <p>
         Contraseña:
         </p>
-        <label for="password"><input [ngClass]="{'is-invalid': password?.errors && password?.touched, 'is-valid':!password?.errors && password?.touched}" class="relleno form-control" type="password" name="password" maxlength="50" id="password" formControlName="password"/></label>
+        <label for="password"><input [ngClass]="{'is-invalid': password?.errors && password?.touched, 'is-valid':!password?.errors && password?.touched}" class="relleno form-control" type="password" name="password" maxlength="50" id="password" [(ngModel)]="usuarios.password"/></label>
       <div *ngIf="password?.errors && password?.touched">
         <p *ngIf="password?.hasError('required')" class="text-danger">
           Contraseña requerida
         </p>
       </div>
+<<<<<<< HEAD
 =======
 <form class="session" action="" method="post" >
         <p>
@@ -41,10 +50,10 @@
         </p>
         <label for="password"><input class="relleno form-control" type="password" name="password" maxlength="50" id="password"   /></label>
 >>>>>>> 0f1035e79c3aaef1443053f11f9a60218c258dd6
+=======
+>>>>>>> develop
 <p>
-    <button type="submit" class="hola">
-        <a routerLink="/" id="login">Iniciar Sesion</a>
-    </button>
+    <input type="submit" class="hola" value="INICIAR SESION">
 </p>
 </form>
 <app-footer></app-footer>

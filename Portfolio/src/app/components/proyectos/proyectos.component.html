@@ -1,14 +1,58 @@
 <app-header [label]="'PROYECTOS'"></app-header>
-<div class="eduw" id="1">
-    <div class="proyectos">
-        <button class="img">
-            <div class="agregar">
-                <svg class="agregar" #agregar xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="#1A9FFF" class="bi bi-plus-circle" viewBox="0 0 16 16">
-                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                </svg>
-            </div>
-        </button>
+<div class="eduw" id="3">
+    <div #newPro class="div_new" >
+        <div class="new__add container">
+            <form (ngSubmit)="NewPro(form.value)" class="new__add--form" [formGroup]="form" action="" method="post">
+            <div class="edit"style="width: 400px; height: 500px; display:flex;flex-wrap: wrap;">
+                <div class="menu__button"><input class="menu__button" type="button" (click)="cerrarVentana()" value=""/><svg style="z-index: 1" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                    </svg></div>    
+                <h5 class="text-center" style="width: 100%">Nombre deL Proyecto</h5><label for="nombreProyecto"><input class="form-control edicion nombre" type="text" id="nombreProyecto" formControlName="nombreProyecto"></label>
+                <h5 class="text-center" style="width: 100%">Descripcion</h5><label for="descripcion"><input class="form-control edicion trabajo" type="text" id="descripcion" formControlName="descripcion"></label>
+                <h5 class="text-center" style="width: 100%">Fecha de Lanzamiento</h5><label for="fecha_Lanz" style="width: 50%"><input class="form-control edicion fecha" type="date" [min]="1900-01-01" style="margin-right: 5px;" id="fecha_Lanz" formControlName="fecha_Lanz"></label>
+                <h5 class="text-center" style="width: 100%">Url del proyecto</h5><label for="url" style="width: 75%"><input class="form-control edicion nombre" type="url" style="margin-left: 5px;" id="url" formControlName="url"></label>  
+                <div style="width: 100%; display: flex; justify-content: center;"><input class="mod1--crear" type="submit" value="CREAR">
+                    </div>
+                </div>
+        </form>
+        </div>
     </div>
-</div>
+        <div  class="container-fluid" style="min-height: 400px;">
+            <button *ngIf="(token)" (click)="agregarProyectos()" class="container img col" style=" margin-left: 10px; margin-right: 5px;">
+                <div class="agregar">
+                    <svg class="agregar" #agregar xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="#1A9FFF" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                    </svg>
+                </div>
+            </button>
+        <div *ngFor="let pro of pro" class="container" style="width: 300px; margin-left: 10px; margin-right: 5px; height: 400px;" >
+            <button (click)="pro.selected = !pro.selected" [ngStyle]="{'display': pro.edit? 'none':'block'}" #trabajo class="img col">
+                <button *ngIf="(token)" #editar (click)="pro.edit = !pro.edit" [ngStyle]="{'display': pro.edit? 'none':'block'}" class="mod1">
+                    <p>EDITAR</p>
+                </button>
+                <h1 class="imagen" [ngStyle]="{ 'visibility': pro.selected ? 'hidden' : 'visible', 'opacity': pro.selected? '0':'1','top': pro.selected? '70%': '150px' }"  style="position: absolute; z-index: 0;">{{pro.nombreProyecto}}</h1>                <div class="info" [ngStyle]="{ 'visibility': pro.selected ? 'visible' : 'hidden', 'opacity': pro.selected? '1':'0','top': pro.selected? '107px': '70%' }" style="position: absolute; z-index: 0;">
+                    <p>{{pro.nombreProyecto}}</p>
+                    <H6 style="width: 100%;">{{pro.descripcion}}</H6>
+                    <h6>Lanzamiento: {{pro.fecha_Lanz}}</h6>
+                    <button (click)="redireccionar(pro.url)" class="mod1--url">IR AL SITIO</button>
+                </div>
+            </button>
+            <form (ngSubmit)="EditarProyectos(pro.id,form2.value)" [formGroup]="form2" action="" method="put" #edicion class="edit" [ngStyle]="{'display': pro.edit? 'flex':'none', 'z-index': pro.edit? '2':'-1'}" style="display: none; z-index: 10;">
+                <div class="menu__button"><input class="menu__button" type="button" (click)="pro.edit = !pro.edit"value=""/><svg style="z-index: 1" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                    </svg></div> 
+                <label for="nombreProyecto"><input class="form-control edicion nombre" type="text" id="nombreProyecto" formControlName="nombreProyecto"></label>
+                <label for="descripcion"><input class="form-control edicion trabajo" type="text" id="descripcion" formControlName="descripcion"></label>
+                <label for="fecha_Lanz" style="width: 45%"><input class="form-control edicion fecha" type="date" [min]="1900-01-01" style="margin-right: 5px;" id="fecha_Lanz" formControlName="fecha_Lanz"></label>
+                <label for="logo"><input class="edicion imagen" type="text"  id="logo" formControlName="logo"> </label>  
+                <label for="url"><input class="form-control edicion nombre" style="width: 200px;" type="url"  id="url" formControlName="url"  ></label>
+                <button class="mod1--borrar">
+                    <p>GUARDAR</p>
+                </button>
+            </form>
+        </div>
+        </div>
+        </div>
+
 <app-footer></app-footer>
