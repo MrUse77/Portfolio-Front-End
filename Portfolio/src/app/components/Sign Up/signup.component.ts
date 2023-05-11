@@ -9,7 +9,7 @@ import Long from 'long';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
+  styleUrls: ['./signup.component.scss']
 })
 
 export class SignUpComponent implements OnInit{
@@ -42,13 +42,8 @@ export class SignUpComponent implements OnInit{
     get terms(){
       return this.form.get('terms');
     }
-    onSignUp(form: Usuario){
-      this.service.SignUp(form).subscribe((data2)=>{
-        console.log(data2);
-        this.ruta.navigate(['/']);
-      }),(error: any)=>{
-        console.error(error);
-    }
+    async onSignUp(form: Usuario){
+    await this.service.SignUp(form)
     };
   }
 

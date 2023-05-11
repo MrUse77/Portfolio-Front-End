@@ -12,7 +12,7 @@ import { Usuario } from '../Modelo/Usuario';
 })
 export class DatosService {
   exp: Trabajo[] = [];
-  urlApi="http://localhost:8080";
+  urlApi = "https://portfolio-fwdy.onrender.com";
   constructor(private http:HttpClient,) { 
     console.log("todo ok");
   }
@@ -31,8 +31,6 @@ export class DatosService {
     return this.http.get<TipoTrabajo[]>(this.urlApi+"/tipotrabajo/traer");
   }
   EditarTrabajo=async(id:number, Trabajo:Trabajo)=>{
-    console.log('id:', id);
-    console.log('Trabajo:', Trabajo);
     const response = await fetch(`${this.urlApi}/trabajos/editar/${id}`,{
     method: 'PUT',
     headers: {
@@ -61,7 +59,7 @@ export class DatosService {
   EditarEducacion=async(id:number, Educacion:Educacion)=>{
     console.log('id:', id);
     console.log('proyectos:', Educacion);
-    const response = await fetch(`http://localhost:8080/educacion/editar/${id}`,{
+    const response = await fetch(`${this.urlApi}/educacion/editar/${id}`,{
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json'
@@ -87,7 +85,7 @@ export class DatosService {
   EditarProyecto=async(id:number, Proyectos:Proyectos)=>{
     console.log('id:', id);
     console.log('proyectos:', Proyectos);
-    const response = await fetch(`http://localhost:8080/proyectos/editar/${id}`,{
+    const response = await fetch(`${this.urlApi}/proyectos/editar/${id}`,{
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json'

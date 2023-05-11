@@ -14,11 +14,6 @@ export interface Educacion {
 export interface Persona {
     id:       string;
     user:     string;
-    mail:     string;
-    password: string;
-    genero:   boolean;
-    offers:   boolean;
-    terms:    boolean;
 }
 
 export interface TipoEducacion {

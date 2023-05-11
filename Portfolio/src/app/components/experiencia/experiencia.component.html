@@ -38,7 +38,8 @@
                     <p>EDITAR</p>
                 </button>
             <button (click)="exp.selected = !exp.selected" [ngStyle]="{'display': exp.edit? 'none':'block'}" #trabajo class="img col" >
-                <h1 class="imagen" [ngStyle]="{ 'visibility': exp.selected ? 'hidden' : 'visible', 'opacity': exp.selected? '0':'1','top': exp.selected? '70%': '150px' }"  style="position: absolute; z-index: 0;">{{exp.nombreEmpresa}}</h1>                <div class="info" [ngStyle]="{ 'visibility': exp.selected ? 'visible' : 'hidden', 'opacity': exp.selected? '1':'0','top': exp.selected? '107px': '70%' }" style="position: absolute; z-index: 0;">
+                <h1 class="imagen" [ngStyle]="{ 'visibility': exp.selected ? 'hidden' : 'visible', 'opacity': exp.selected? '0':'1','top': exp.selected? '70%': '150px' }"  style="position: absolute; z-index: 0;">{{exp.nombreEmpresa}}</h1>                
+                <div class="info" [ngStyle]="{ 'visibility': exp.selected ? 'visible' : 'hidden', 'opacity': exp.selected? '1':'0','top': exp.selected? '107px': '70%' }" style="position: absolute; z-index: 0;">
                     <p>{{exp.nombreEmpresa}}</p>
                     <H5 style="width: 100%;">{{exp.descripcion}}</H5>
                     <h6>Inicio:{{exp.fechaInicio}}</h6>

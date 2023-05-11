@@ -13,15 +13,17 @@ import { HttpClient } from '@angular/common/http';
 export class AppComponent implements OnInit{
   susbcription?: Subscription;
 
+  urlApi="https://portfolio-fwdy.onrender.com"
 constructor(
   private PortfolioService: PortfolioService,
   private router: Router,
-  private http:HttpClient
+  private http:HttpClient,
 ){
 
 }
 
 ngOnInit(): void {
+  
 }
 toggleInterface(){
   this.PortfolioService.toggleInterface();

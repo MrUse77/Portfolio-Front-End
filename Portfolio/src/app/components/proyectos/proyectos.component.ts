@@ -1,5 +1,6 @@
 import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { Proyectos } from 'src/app/Modelo/Proyectos';
 import { AutenticacionService } from 'src/app/service/autenticacion.service';
 import { DatosService } from 'src/app/service/datos.service';
@@ -19,8 +20,14 @@ export class ProyectosComponent {
   @ViewChild('trabajo') trabajo!:ElementRef;
   form:FormGroup;
   form2:FormGroup;
+  persona:FormGroup;
   token = localStorage.getItem('token');
-  constructor(private render2: Renderer2, private service:DatosService,private formBuilder:FormBuilder,private service2:AutenticacionService){
+  
+  constructor(private render2: Renderer2, private service:DatosService,private formBuilder:FormBuilder,private service2:AutenticacionService,private toast:ToastrService){
+    this.persona=this.formBuilder.group({
+      id: ['', Validators.required],
+      user: ['', Validators.required],
+    }),
     this.form=this.formBuilder.group(
       {
       nombreProyecto:['',[Validators.required]],
@@ -28,8 +35,13 @@ export class ProyectosComponent {
       fecha_Lanz:['',[Validators.required]],
       url:['',[Validators.required]],
       logo:['',[Validators.required]],
+      persona:this.persona,
       }
     )
+    this.persona.patchValue({
+      id: 1,
+      user:'MrUse77'
+    });
     this.form2=this.formBuilder.group(
       {
       nombreProyecto:['',[Validators.required]],

@@ -1,4 +1,5 @@
 
+import { Token } from '@angular/compiler';
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { Proyectos } from 'src/app/Modelo/Proyectos';
 import { Usuario } from 'src/app/Modelo/Usuario';
@@ -25,8 +26,9 @@ export class HomeComponent implements OnInit{
   @ViewChild ('lvl') lvl !: ElementRef;
   @ViewChild ('signup') signup !: ElementRef;
   @ViewChild ('login') login !: ElementRef;
+  @ViewChild ('signup2') signup2 !: ElementRef;
+  @ViewChild ('login2') login2 !: ElementRef;
   @ViewChild ('user') user !: ElementRef;
-  @ViewChild ('sesion') sesion !: ElementRef;
   desc = ['Técnico electrónico y desarrollador web full stack'];
   menus=0;
   menu2=0;
@@ -53,20 +55,24 @@ export class HomeComponent implements OnInit{
     if (token) {
       const login = this.login.nativeElement;
       const signup = this.signup.nativeElement;
-      const sesion = this.sesion.nativeElement; // corregido el typo
       const user = this.user.nativeElement;
+      const login2 = this.login2.nativeElement;
+      const signup2 = this.signup2.nativeElement;
       this.render2.setStyle(login, 'display', 'none');
       this.render2.setStyle(signup, 'display', 'none');
-      this.render2.setStyle(sesion, 'display', 'none');
+      this.render2.setStyle(login2, 'display','none');
+      this.render2.setStyle(signup2, 'display','none');
       this.render2.setStyle(user, 'display', 'block');
     } else {
       const login = this.login.nativeElement;
       const signup = this.signup.nativeElement;
-      const sesion = this.sesion.nativeElement;
       const user = this.user.nativeElement;
+      const login2 = this.login2.nativeElement;
+      const signup2 = this.signup2.nativeElement;
       this.render2.setStyle(login, 'display', 'block');
       this.render2.setStyle(signup, 'display', 'block');
-      this.render2.setStyle(sesion, 'display', 'block');
+      this.render2.setStyle(login2, 'display','block');
+      this.render2.setStyle(signup2, 'display','block');
       this.render2.setStyle(user, 'display', 'none');
     }
   }
@@ -75,11 +81,13 @@ export class HomeComponent implements OnInit{
     localStorage.removeItem('user');
     const login = this.login.nativeElement;
     const signup = this.signup.nativeElement;
-    const sesion = this.signup.nativeElement;
+    const login2 = this.login2.nativeElement;
+    const signup2 = this.signup2.nativeElement;
     const user = this.user.nativeElement;
     this.render2.setStyle(login, 'display','block');
     this.render2.setStyle(signup, 'display','block');
-    this.render2.setStyle(sesion, 'display','block');
+    this.render2.setStyle(login2, 'display','block');
+    this.render2.setStyle(signup2, 'display','block');
     this.render2.setStyle(user, 'display','none');
   }
   showMenu(){

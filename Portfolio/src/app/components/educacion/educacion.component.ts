@@ -28,9 +28,14 @@ export class EducacionComponent implements OnInit{
   @ViewChild ('edition') edition !: ElementRef;
   form:FormGroup;
   form2:FormGroup;
+  persona:FormGroup;
   renderer: any;
   token = localStorage.getItem('token');
   constructor(private render2: Renderer2, private service:DatosService,private formBuilder:FormBuilder,private service2:AutenticacionService){
+    this.persona=this.formBuilder.group({
+      id: ['', Validators.required],
+      user: ['', Validators.required],
+    }),
     this.form=this.formBuilder.group(
       {
       nombreEducacion:['',[Validators.required]],
@@ -38,14 +43,17 @@ export class EducacionComponent implements OnInit{
       fechaInicio:['',[Validators.required]],
       fechaFin:['',[Validators.required]], 
       logo:['',[Validators.required]],
-      persona:this.formBuilder.group({
-      id:['1']
-      }),
+      persona:this.persona,
       tipo_Educacion: this.formBuilder.group({
-        id: ['',[Validators.required]], // asumiendo que id es un número
+        id: ['',[Validators.required]],
+        nombre_tipo: ['',[Validators.required]], // asumiendo que id es un número
       })
       }
     )
+    this.persona.patchValue({
+      id: 1,
+      user:'MrUse77'
+    });
     this.form2=this.formBuilder.group(
       {
       nombreEducacion:['',[Validators.required]],

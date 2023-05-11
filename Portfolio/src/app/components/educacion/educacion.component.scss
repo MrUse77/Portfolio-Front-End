@@ -260,3 +260,13 @@ svg:hover{
     visibility: hidden;
     opacity: 0;
 }
+@media(max-width:950px) {
+    .eduw{
+        min-height: 61vh;
+    }
+    .container-fluid{
+        transform: scale(0.75);
+        overflow-x: scroll;overflow-y: hidden;
+        flex-wrap: nowrap;
+    }
+}

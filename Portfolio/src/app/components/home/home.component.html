@@ -82,38 +82,30 @@
                         <h1> EDUCACION </h1>
                     </button>
                 </li>
-                <ul #sesion class="nav__ul nav__ul--menu">
-                    <li>
+                <ul class="nav__ul nav__ul--menu">
+                    <li #signup style="width: max-content;">
                         <button routerLink="/SignUp" class="ul__boton ul__boton--adentro">Registrarse</button>
                     </li>
-                    <li>
+                    <li  #login style="width: max-content;">
                         <button routerLink="/LogIn" class="ul__boton ul__boton--adentro">Iniciar Sesion</button>
                     </li>
                 </ul>
-            </ul>
-            <ul class="row nav-menu">
-                <li class="col" style="width: 150px;">
-                    <button routerLink="/SignUp" class="boton nav-link" >Registrarse</button>
-                </li>
-                <li class="col" style="width: 150px;">
-                    <button routerLink="/LogIn" class="boton nav-link">Iniciar Sesion</button>
-                </li>
             </ul>
         </div>
     </section>
     <nav class="header__nav">
         <h1 class="nav__yoprogramo">Curso #YoProgramo</h1>
-        <ul class="nav__ul">
-            <li #signup>
+        <ul class="nav__ul nav__ul--inicio">
+            <li #signup2>
                 <button  routerLink="/SignUp" class="ul__boton ul__boton--fuera">Registrarse</button>
             </li>
-            <li #login>
+            <li #login2>
                 <button routerLink="/LogIn" class="ul__boton ul__boton--fuera">Iniciar Sesion</button>
             </li>
-            <li #user style="display: none;">
+            <li #user class="ul__boton--logout" style="display: none;">
                 <button (click)="logout()" class="ul__boton "> Hola, Bienvenido </button>
             </li>
-            <li>
+            <li class="ul__boton--logout ul__boton--menu">
                 <button (click)="showMenu()" class="ul__boton ul__boton--movil">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>

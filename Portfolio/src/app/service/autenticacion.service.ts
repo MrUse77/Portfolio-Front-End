@@ -4,6 +4,7 @@ import { map } from 'rxjs/operators';
 import { BehaviorSubject, Observable } from 'rxjs';
 import  {Usuario}  from '../Modelo/Usuario';
 import { UsuarioLogin } from '../Modelo/UsuarioLogin';
+import { ToastrService } from 'ngx-toastr';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -14,8 +15,8 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AutenticacionService {
-  urlApi="http://localhost:8080"
-  constructor(private http:HttpClient) { 
+  urlApi="https://portfolio-fwdy.onrender.com"
+  constructor(private http:HttpClient, private toastr:ToastrService) { 
     console.log("todo ok");
   }
   
@@ -34,8 +35,20 @@ export class AutenticacionService {
   getToken(){
     return localStorage.getItem('token');
   }
-  SignUp(form: Usuario){
+  async SignUp(form: Usuario){
   let direccion = this.urlApi+"/personas/crear"
-  return this.http.post(direccion, form,{responseType: 'text'});
+  try{
+    const response = await fetch(`${direccion}`,{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(form),
+    });
+    const data = await response.json();
+    return data;
+  }catch(error){
+    this.toastr.error("Login Failed");
+  }
   }
 }

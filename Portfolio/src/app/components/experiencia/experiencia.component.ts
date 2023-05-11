@@ -29,8 +29,13 @@ export class ExperienciaComponent implements OnInit{
   usuario: Usuario[] = [];
   form:FormGroup;
   form2:FormGroup;
+  persona:FormGroup;
   constructor(private render2: Renderer2,private service:DatosService,private formBuilder:FormBuilder,private service2:AutenticacionService
     ){
+      this.persona=this.formBuilder.group({
+        id: ['', Validators.required],
+        user: ['', Validators.required],
+      }),
       this.form=this.formBuilder.group(
         {
         nombreEmpresa:['',[Validators.required]],
@@ -38,9 +43,14 @@ export class ExperienciaComponent implements OnInit{
         fechaInicio:['',[Validators.required]],
         fechaFin:['',[Validators.required]], 
         logo:['',[Validators.required]],
+        persona:this.persona,
         tipo_Trabajo:['',[Validators.required]],
         }
       )
+      this.persona.patchValue({
+        id: 1,
+        user:'MrUse77'
+      });
       this.form2=this.formBuilder.group(
         {
         nombreEmpresa:['',[Validators.required]],

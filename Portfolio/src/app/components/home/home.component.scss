@@ -488,7 +488,7 @@ position: fixed;
 }
 
 /* RESPONSIVE-CELULAR */
-@media (max-width:500px) {
+@media (max-width:950px) {
 ul{
     padding: 0;
 }
@@ -554,13 +554,22 @@ ul{
 
 .li__container{
     display: flex;
-    flex-direction: column;
+    width:100%;
+    flex-direction: row;
     justify-content: flex-start;
 }
 .li__container--expand{
     overflow: scroll;
     height: 20vh;
-    align-items: flex-end;
+    align-items: center;
+}
+.li__container .col{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex-direction: column;
+    min-width:150px;
+
 }
 /* HEADER*/
 .nav__yoprogramo{
@@ -613,7 +622,7 @@ ul{
     z-index: 0;
 }
 .borde{
-display: none;
+display: block;
 }
 
 /* informacion */
@@ -648,4 +657,32 @@ display: none;
     margin-bottom: 3%;
 }
 
+}
+@media (max-width:500px){
+    .nav__ul--inicio{
+        margin-top: 10px;
+        width: 160px;
+        height:max-content;
+        margin-right: 0;
+        flex-wrap: wrap;
+        list-style: none;
+        padding:0;
+    }
+    .ul__boton--logout{
+        display: flex;
+        width: 160px;
+        justify-content: end;
+        margin-bottom: 10px;
+    }
+    .nav__ul--menu{
+        display: flex;
+        list-style: none;
+        margin-top: 20px;
+        padding-right: 1%;
+        padding-left: 1%;
+        min-height: 80px;
+    }
+.header__perfil{
+    padding-top: 20px;
+}
 }

@@ -15,6 +15,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LogInComponent } from './components/log-in/log-in.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AuthInterceptor } from './helpers/auth.interceptor';
+import { ToastrModule } from 'ngx-toastr';
 
 
 export function LoadConfiguration(configservice: PortfolioService){
@@ -48,6 +49,8 @@ export function LoadConfiguration(configservice: PortfolioService){
         AppRoutingModule,
         HttpClientModule,
         ReactiveFormsModule,
+        ToastrModule.forRoot({      positionClass: 'toast-top-right',
+        preventDuplicates: true,}), 
     ]
 })
 export class AppModule {
