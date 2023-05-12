@@ -15,30 +15,31 @@ Se utilizo como plataforma para el desarrollo del FrontEnd, Angular. Utilizando 
 Mediante el uso del backend: https://github.com/MrUse77/Portfolio-BackEnd.git y peticiones http se logro hacer un registro de sesion e inicio de sesion dentro de la pagina para poder:
 
 - Añandir proyectos, experiencias laborales y estudios:
-
   - Ejemplo:
-    urlApi = "https://portfolio-fwdy.onrender.com";
-    CrearProyectos(form: Proyectos){
-    let direccion = this.urlApi+"/proyectos/crear"
-    return this.http.post(direccion, form,{responseType: 'text'});
-    }
+  
+        urlApi = "https://portfolio-fwdy.onrender.com";
+        CrearProyectos(form: Proyectos){
+          let direccion = this.urlApi+"/proyectos/crear"
+          return this.http.post(direccion, form,{responseType: 'text'});
+        }
 
 - Edicion de esos proyectos, experiencias laborales y estudios:
   - Ejemplo:
-    urlApi = "https://portfolio-fwdy.onrender.com";
-    EditarProyecto=async(id:number, Proyectos:Proyectos)=>{
-    console.log('id:', id);
-    console.log('proyectos:', Proyectos);
-    const response = await fetch(`${this.urlApi}/proyectos/editar/${id}`,{
-    method: 'PUT',
-    headers: {
-    'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(Proyectos),
-    });
-    if (!response.ok) {
-    throw new Error('Error al actualizar los datos');
-    }
+                       
+          urlApi = "https://portfolio-fwdy.onrender.com";
+          EditarProyecto=async(id:number, Proyectos:Proyectos)=>{
+            console.log('id:', id);
+            console.log('proyectos:', Proyectos);
+            const response = await fetch(`${this.urlApi}/proyectos/editar/${id}`,{
+              method: 'PUT',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+            body: JSON.stringify(Proyectos),
+            });
+          if (!response.ok) {
+          throw new Error('Error al actualizar los datos');
+          }
 
 ### Visualizacion del contenido
 
