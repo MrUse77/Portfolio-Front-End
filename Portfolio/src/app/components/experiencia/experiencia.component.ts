@@ -30,41 +30,35 @@ export class ExperienciaComponent implements OnInit{
   form:FormGroup;
   form2:FormGroup;
   persona:FormGroup;
-  constructor(private render2: Renderer2,private service:DatosService,private formBuilder:FormBuilder,private service2:AutenticacionService
-    ){
-      this.persona=this.formBuilder.group({
-        id: ['', Validators.required],
-        user: ['', Validators.required],
-      }),
-      this.form=this.formBuilder.group(
-        {
-        nombreEmpresa:['',[Validators.required]],
-        descripcion:['',[Validators.required]],
-        fechaInicio:['',[Validators.required]],
-        fechaFin:['',[Validators.required]], 
-        logo:['',[Validators.required]],
-        persona:this.persona,
-        tipo_Trabajo:['',[Validators.required]],
-        }
-      )
-      this.persona.patchValue({
-        id: 1,
-        user:'MrUse77'
-      });
-      this.form2=this.formBuilder.group(
-        {
-        nombreEmpresa:['',[Validators.required]],
-        descripcion:['',[Validators.required]],
-        fechaInicio:['',[Validators.required]],
-        fechaFin:['',[Validators.required]], 
-        tipo_Trabajo:['',[Validators.required]],
-        logo:['',[Validators.required]],
-        }
-      )
+  constructor(private render2: Renderer2,private service:DatosService,private formBuilder:FormBuilder,private service2:AutenticacionService){
+    this.persona=this.formBuilder.group({
+      id: ['', Validators.required],
+      user: ['', Validators.required],
+    }),
+    this.form=this.formBuilder.group({
+      nombreEmpresa:['',[Validators.required]],
+      descripcion:['',[Validators.required]],
+      fechaInicio:['',[Validators.required]],
+      fechaFin:['',[Validators.required]], 
+      logo:['',[Validators.required]],
+      persona:this.persona,
+      tipo_Trabajo:['',[Validators.required]],
+    })
+    this.persona.patchValue({
+      id: 1,
+      user:'MrUse77'
+    });
+    this.form2=this.formBuilder.group({
+      nombreEmpresa:['',[Validators.required]],
+      descripcion:['',[Validators.required]],
+      fechaInicio:['',[Validators.required]],
+      fechaFin:['',[Validators.required]], 
+      tipo_Trabajo:['',[Validators.required]],
+      logo:['',[Validators.required]],
+    })
   }
   ObtenerDatos(){
     this.service.DatosTrabajo().subscribe(data=>{
-      console.log(data);
       this.exp=data;
     })
     this.service.tipoT().subscribe(data2=>{
@@ -72,52 +66,49 @@ export class ExperienciaComponent implements OnInit{
     })
   }
   ngOnInit(): void {
-  this.ObtenerDatos()
+    this.ObtenerDatos()
   }
-    EditInfo(){
-      const edit = this.edit.nativeElement;
-      const editar = this.editar.nativeElement;
-      const edicion = this.edicion.nativeElement;
-      const trabajo = this.trabajo.nativeElement;
-      this.render2.setStyle(edit, 'display', 'block');
-      this.render2.setStyle(editar, 'display', 'none');
-      this.render2.setStyle(edicion, 'display', 'flex');
-      this.render2.setStyle(trabajo, 'z-index', '-1');
-      this.render2.setStyle(trabajo, 'display', 'none');
+  EditInfo(){
+    const edit = this.edit.nativeElement;
+    const editar = this.editar.nativeElement;
+    const edicion = this.edicion.nativeElement;
+    const trabajo = this.trabajo.nativeElement;
+    this.render2.setStyle(edit, 'display', 'block');
+    this.render2.setStyle(editar, 'display', 'none');
+    this.render2.setStyle(edicion, 'display', 'flex');
+    this.render2.setStyle(trabajo, 'z-index', '-1');
+    this.render2.setStyle(trabajo, 'display', 'none');
     }
-    SaveInfo(){
-      const edit = this.edit.nativeElement;
-      const editar = this.editar.nativeElement;
-      const edicion = this.edicion.nativeElement;
-      const trabajo = this.trabajo.nativeElement;
-      this.render2.setStyle(edit, 'display', 'none');
-      this.render2.setStyle(editar, 'display', 'block');
-      this.render2.setStyle(edicion, 'display', 'none');
-      this.render2.setStyle(trabajo, 'z-index', '0');
-      this.render2.setStyle(trabajo, 'display', 'block');
-    }
-    agregarTrabajo(){
-      const newWork = this.newWork.nativeElement;
-      this.render2.setStyle(newWork, 'display', 'flex');
-    }
-    NewWork(form: Trabajo){
-      this.service.CrearTrabajo(form).subscribe((data2)=>{
-        console.log(data2);
-        const newWork = this.newWork.nativeElement;
-        this.render2.setStyle(newWork, 'display', 'none');
-        this.ObtenerDatos
-      }),(error: any)=>{
-        console.error(error);
-    }
-    }
-
-    cerrarVentana(){
+  SaveInfo(){
+    const edit = this.edit.nativeElement;
+    const editar = this.editar.nativeElement;
+    const edicion = this.edicion.nativeElement;
+    const trabajo = this.trabajo.nativeElement;
+    this.render2.setStyle(edit, 'display', 'none');
+    this.render2.setStyle(editar, 'display', 'block');
+    this.render2.setStyle(edicion, 'display', 'none');
+    this.render2.setStyle(trabajo, 'z-index', '0');
+    this.render2.setStyle(trabajo, 'display', 'block');
+  }
+  agregarTrabajo(){
+    const newWork = this.newWork.nativeElement;
+    this.render2.setStyle(newWork, 'display', 'flex');
+  }
+  NewWork(form: Trabajo){
+    this.service.CrearTrabajo(form).subscribe((data2)=>{
       const newWork = this.newWork.nativeElement;
       this.render2.setStyle(newWork, 'display', 'none');
-    }
-    EditarTrabajo(id: number,form2: Trabajo){
-      console.log('ID del trabajo a editar:', id);
-      this.service.EditarTrabajo(id, form2);
-      this.ObtenerDatos();
+      this.ObtenerDatos
+    }),(error: any)=>{
+      console.error(error);
     }
   }
+  cerrarVentana(){
+    const newWork = this.newWork.nativeElement;
+    this.render2.setStyle(newWork, 'display', 'none');
+  }
+  EditarTrabajo(id: number,form2: Trabajo){
+    this.service.EditarTrabajo(id, form2);
+    this.ObtenerDatos();
+  }
+}

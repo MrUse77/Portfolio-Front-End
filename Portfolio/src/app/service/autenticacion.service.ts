@@ -17,7 +17,6 @@ const httpOptions = {
 export class AutenticacionService {
   urlApi="https://portfolio-fwdy.onrender.com"
   constructor(private http:HttpClient, private toastr:ToastrService) { 
-    console.log("todo ok");
   }
   
   IniciarSesion(Form: UsuarioLogin){
@@ -36,19 +35,19 @@ export class AutenticacionService {
     return localStorage.getItem('token');
   }
   async SignUp(form: Usuario){
-  let direccion = this.urlApi+"/personas/crear"
-  try{
-    const response = await fetch(`${direccion}`,{
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(form),
-    });
-    const data = await response.json();
-    return data;
-  }catch(error){
-    this.toastr.error("Login Failed");
-  }
+    let direccion = this.urlApi+"/personas/crear"
+    try{
+      const response = await fetch(`${direccion}`,{
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(form),
+      });
+      const data = await response.json();
+      return data;
+    }catch(error){
+      this.toastr.error("Login Failed");
+    }
   }
 }

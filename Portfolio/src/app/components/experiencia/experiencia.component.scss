@@ -253,7 +253,7 @@ svg:hover{
 }
 @media(max-width:950px) {
     .eduw{
-        min-height: 61vh;
+        max-height: 61vh;
     }
     .container-fluid{
         transform: scale(0.75);

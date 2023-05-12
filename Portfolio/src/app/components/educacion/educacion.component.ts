@@ -36,26 +36,23 @@ export class EducacionComponent implements OnInit{
       id: ['', Validators.required],
       user: ['', Validators.required],
     }),
-    this.form=this.formBuilder.group(
-      {
-      nombreEducacion:['',[Validators.required]],
-      titulo:['',[Validators.required]],
-      fechaInicio:['',[Validators.required]],
-      fechaFin:['',[Validators.required]], 
-      logo:['',[Validators.required]],
-      persona:this.persona,
-      tipo_Educacion: this.formBuilder.group({
-        id: ['',[Validators.required]],
-        nombre_tipo: ['',[Validators.required]], // asumiendo que id es un número
+    this.form=this.formBuilder.group({
+        nombreEducacion:['',[Validators.required]],
+        titulo:['',[Validators.required]],
+        fechaInicio:['',[Validators.required]],
+        fechaFin:['',[Validators.required]], 
+        logo:['',[Validators.required]],
+        persona:this.persona,
+        tipo_Educacion: this.formBuilder.group({
+          id: ['',[Validators.required]],
+          nombre_tipo: ['',[Validators.required]], // asumiendo que id es un número
+        })
       })
-      }
-    )
     this.persona.patchValue({
       id: 1,
       user:'MrUse77'
     });
-    this.form2=this.formBuilder.group(
-      {
+    this.form2=this.formBuilder.group({
       nombreEducacion:['',[Validators.required]],
       titulo:['',[Validators.required]],
       fechaInicio:['',[Validators.required]],
@@ -63,18 +60,14 @@ export class EducacionComponent implements OnInit{
       tipo_Educacion: this.formBuilder.group({
         id: ['',[Validators.required]],
         nombre_tipo: ['',[Validators.required]], // asumiendo que id es un número
-      }),
-      }
-    )
+        }),
+      })
   }
   ObtenerDatos(){
     this.service.DatosEducacion().subscribe(data => {
       this.edu = data;
-      console.log(data);
       this.edu1 = this.edu.filter(edu => edu.tipo_Educacion?.id == 1 || edu.tipo_Educacion?.id == 2 );
-      console.log(this.edu1);
       this.edu2 = this.edu.filter(edu => edu.tipo_Educacion?.id == 3);
-      console.log(this.edu2);
     });
     
     this.service.tipoE().subscribe(data2=>{
@@ -91,38 +84,32 @@ export class EducacionComponent implements OnInit{
       const newEdu2 = this.newEdu2.nativeElement;
       this.render2.removeClass(newEdu2, 'ocultar');
       this.render2.setStyle(signup, 'display', 'none');
-
     } else {
-  
       const signup = this.signup.nativeElement;
       const newEdu2 = this.newEdu2.nativeElement;
       this.render2.setStyle(newEdu2, 'display', 'none');
       this.render2.setStyle(signup, 'display', 'none');
     }
   }
-
-NewEdu(form: Educacion){
-  this.service.CrearEducacion(form).subscribe((data2)=>{
-    console.log(data2);
+  NewEdu(form: Educacion){
+    this.service.CrearEducacion(form).subscribe((data2)=>{
+      const newEdu = this.newEdu.nativeElement;
+      this.render2.setStyle(newEdu, 'display', 'none');
+      this.ObtenerDatos();
+    }),(error: any)=>{
+      console.error(error);
+    }
+  }
+  agregarEducacion (){
+    const newEdu = this.newEdu.nativeElement;
+    this.render2.setStyle(newEdu, 'display', 'flex');
+    }
+  cerrarVentana(){
     const newEdu = this.newEdu.nativeElement;
     this.render2.setStyle(newEdu, 'display', 'none');
-    this.ObtenerDatos();
-  }),(error: any)=>{
-    
-    console.error(error);
-}
-}
-agregarEducacion (){
-  const newEdu = this.newEdu.nativeElement;
-  this.render2.setStyle(newEdu, 'display', 'flex');
-}
-cerrarVentana(){
-  const newEdu = this.newEdu.nativeElement;
-  this.render2.setStyle(newEdu, 'display', 'none');
-}
+  }
   async EditarEducacion(id: number,form2: Educacion){
-  console.log('ID del Educacion a editar:', id);
-  await this.service.EditarEducacion(id, form2);
-  this.ObtenerDatos();
-}
+    await this.service.EditarEducacion(id, form2);
+    this.ObtenerDatos();
+  }
 }

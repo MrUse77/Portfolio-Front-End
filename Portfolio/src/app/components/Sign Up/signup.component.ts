@@ -16,35 +16,26 @@ export class SignUpComponent implements OnInit{
   form:FormGroup;
   usuarios: Usuario[] = [];
   constructor(private formBuilder:FormBuilder, private service:AutenticacionService, private ruta:Router){
-    this.form=this.formBuilder.group(
-      {
+    this.form=this.formBuilder.group({
       id: Number,
       user:['',[Validators.required]],
       password:['',[Validators.required,Validators.minLength(8)]],
       mail:['',[Validators.required,Validators.email]],
-      offers:['',[Validators.required]],
-      terms:['',[Validators.required]],
-      }
-    )
+      })
   }
-  ngOnInit(): void {
-  console.log(this.form);
-    }
-    get user(){
-      return this.form.get('user');
-    }
-    get mail(){
-      return this.form.get('mail');
-    }
-    get password(){
-      return this.form.get('password');
-    }
-    get terms(){
-      return this.form.get('terms');
-    }
-    async onSignUp(form: Usuario){
+  ngOnInit(): void {}
+  get user(){
+    return this.form.get('user');
+  }
+  get mail(){
+    return this.form.get('mail');
+  }
+  get password(){
+    return this.form.get('password');
+  }
+  async onSignUp(form: Usuario){
     await this.service.SignUp(form)
-    };
-  }
+  };
+}
 
 

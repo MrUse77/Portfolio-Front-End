@@ -14,12 +14,11 @@ export class DatosService {
   exp: Trabajo[] = [];
   urlApi = "https://portfolio-fwdy.onrender.com";
   constructor(private http:HttpClient,) { 
-    console.log("todo ok");
   }
   DatosPersonas(): Observable<Usuario[]>{
     return this.http.get<Usuario[]>(this.urlApi+"/personas/traer");
   }
-  //funciones trabajo
+    //funciones trabajo
   DatosTrabajo(){
     return this.http.get<Trabajo[]>(this.urlApi+"/trabajos/traer");
   }
@@ -32,20 +31,19 @@ export class DatosService {
   }
   EditarTrabajo=async(id:number, Trabajo:Trabajo)=>{
     const response = await fetch(`${this.urlApi}/trabajos/editar/${id}`,{
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(Trabajo),
-  });
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(Trabajo),
+    });
     if (!response.ok) {
       throw new Error('Error al actualizar los datos');
     }
     const resultado = await response.json();
-    console.log(resultado);
     return resultado;
   }
-  //funciones educacion
+    //funciones educacion
   DatosEducacion(){
     return this.http.get<Educacion[]>(this.urlApi+"/educacion/traer");
   }
@@ -57,23 +55,19 @@ export class DatosService {
     return this.http.get<TipoEducacion[]>(this.urlApi+"/tipoeducacion/traer");
   }
   EditarEducacion=async(id:number, Educacion:Educacion)=>{
-    console.log('id:', id);
-    console.log('proyectos:', Educacion);
     const response = await fetch(`${this.urlApi}/educacion/editar/${id}`,{
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(Educacion),
-  });
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(Educacion),
+    });
     if (!response.ok) {
       throw new Error('Error al actualizar los datos');
     }
     const resultado = await response.json();
-    console.log(resultado);
     return resultado;
   }
-  
     //funciones proyectos
   DatosProyectos(){
     return this.http.get<Proyectos[]>(this.urlApi+"/proyectos/traer");
@@ -83,22 +77,17 @@ export class DatosService {
     return this.http.post(direccion, form,{responseType: 'text'});
   }
   EditarProyecto=async(id:number, Proyectos:Proyectos)=>{
-    console.log('id:', id);
-    console.log('proyectos:', Proyectos);
     const response = await fetch(`${this.urlApi}/proyectos/editar/${id}`,{
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(Proyectos),
-  });
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(Proyectos),
+    });
     if (!response.ok) {
       throw new Error('Error al actualizar los datos');
     }
-  
     const resultado = await response.json();
-    console.log(resultado);
     return resultado;
   }
-
 }

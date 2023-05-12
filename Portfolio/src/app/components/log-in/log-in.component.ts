@@ -18,7 +18,6 @@ export class LogInComponent {
     password:''
   };
   form:FormGroup;
-  
   constructor(private formBuilder:FormBuilder, private service:AutenticacionService, private ruta:Router, private toast:ToastrService){
     this.form=this.formBuilder.group(
       {
@@ -27,24 +26,21 @@ export class LogInComponent {
       }
       )
   }
-
   ngOnInit(): void {
     }
-    Login(form: NgForm){
-      this.service.IniciarSesion(this.usuarios)
-      .subscribe(() =>{
-        this.toast.success(`Login Correcto`)
-        this.ruta.navigate(['/'])
-      }), (error: any) =>{
-        console.error
-        this.toast.error(`Login Incorrecto`,error)
-      }
+  Login(form: NgForm){
+    this.service.IniciarSesion(this.usuarios).subscribe(() =>{
+      this.toast.success(`Login Correcto`)
+      this.ruta.navigate(['/'])
+    }), (error: any) =>{
+      console.error
+      this.toast.error(`Login Incorrecto`,error)
     }
-    get user(){
-      return this.form.get('user');
-    }
-    get password(){
-      return this.form.get('password');
-    }
-  
+  }
+  get user(){
+    return this.form.get('user');
+  }
+  get password(){
+    return this.form.get('password');
+  }
 }

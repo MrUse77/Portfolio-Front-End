@@ -22,48 +22,42 @@ export class ProyectosComponent {
   form2:FormGroup;
   persona:FormGroup;
   token = localStorage.getItem('token');
-  
   constructor(private render2: Renderer2, private service:DatosService,private formBuilder:FormBuilder,private service2:AutenticacionService,private toast:ToastrService){
     this.persona=this.formBuilder.group({
       id: ['', Validators.required],
       user: ['', Validators.required],
     }),
-    this.form=this.formBuilder.group(
-      {
+    this.form=this.formBuilder.group({
       nombreProyecto:['',[Validators.required]],
       descripcion:['',[Validators.required]],
       fecha_Lanz:['',[Validators.required]],
       url:['',[Validators.required]],
       logo:['',[Validators.required]],
       persona:this.persona,
-      }
-    )
+      })
     this.persona.patchValue({
       id: 1,
       user:'MrUse77'
     });
-    this.form2=this.formBuilder.group(
-      {
+    this.form2=this.formBuilder.group({
       nombreProyecto:['',[Validators.required]],
       descripcion:['',[Validators.required]],
       fecha_Lanz:['',[Validators.required]],
       url:['',[Validators.required]],
       logo:['',[Validators.required]],
-      }
-    )
+    })
   }
   ObtenerDatos(){
-  this.service.DatosProyectos().subscribe(data => {
-    this.pro = data;
-    console.log(data);
-  });
-}
+    this.service.DatosProyectos().subscribe(data => {
+      this.pro = data;
+      console.log(data);
+    });
+  }
   ngOnInit(): void {
     this.ObtenerDatos();
   }
   showMenu(){
     const ocultar = this.trabajo.nativeElement;
-
     this.render2.addClass(ocultar,'ocultar');
   }
   SaveInfo(){
@@ -78,20 +72,18 @@ export class ProyectosComponent {
     const edit = this.edit.nativeElement;
     const editar = this.editar.nativeElement;
     const edicion = this.edicion.nativeElement;
-  
     this.render2.setStyle(edit, 'display', 'block');
     this.render2.setStyle(editar, 'display', 'none');
     this.render2.setStyle(edicion, 'display', 'flex');
   }
   NewPro(form: Proyectos){
     this.service.CrearProyectos(form).subscribe((data2)=>{
-      console.log(data2);
       const newPro = this.newPro.nativeElement;
       this.render2.setStyle(newPro, 'display', 'none');
       this.ObtenerDatos();
     }),(error: any)=>{
       console.error(error);
-  }
+    }
   }
   agregarProyectos(){
     const newPro = this.newPro.nativeElement;
@@ -101,7 +93,7 @@ export class ProyectosComponent {
     const newPro = this.newPro.nativeElement;
     this.render2.setStyle(newPro, 'display', 'none');
   }
-    async EditarProyectos(id: number,form2: Proyectos){
+  async EditarProyectos(id: number,form2: Proyectos){
     console.log('ID del Proyectos a editar:', id);
     await this.service.EditarProyecto(id,form2);
     this.ObtenerDatos();
@@ -109,5 +101,4 @@ export class ProyectosComponent {
   redireccionar(url: any) {
     window.location.href = `${url}`;
   }
-  
 }

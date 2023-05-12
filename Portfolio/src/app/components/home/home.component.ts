@@ -36,18 +36,14 @@ export class HomeComponent implements OnInit{
   redireccionar(url: any) {
     window.open(url,'_blank');
   }
-  constructor(private render2: Renderer2, private service:DatosService
-  ){
+  constructor(private render2: Renderer2, private service:DatosService){
   }
   ngOnInit(): void {
-    
     this.service.DatosPersonas().subscribe(data2 => {
       this.users = data2;
-      console.log(data2);
     })
-  this.service.DatosProyectos().subscribe(data => {
+    this.service.DatosProyectos().subscribe(data => {
       this.pro = data;
-      console.log(data);
     });
   }
   ngAfterViewInit(): void {
@@ -93,7 +89,6 @@ export class HomeComponent implements OnInit{
   showMenu(){
     const menu = this.menu.nativeElement;
     const ocultar = this.ocultar.nativeElement;
-    console.log(this.menu);
     this.render2.addClass(menu,'menu__button--mostrar');    
     this.render2.addClass(ocultar,'ocultar');
   }
@@ -141,12 +136,10 @@ showIcons2(){
     this.render2.setStyle(logo,'opacity', '0');
     this.render2.setStyle(dato,'opacity', '100%');
     this.render2.setStyle(lvl,'opacity', '100%');
-    
   }
   skillOF(dato = this.datos.nativeElement, logo = this.datos.nativeElement, lvl = this.lvl.nativeElement){
     this.render2.setStyle(dato,'opacity', '0');
     this.render2.setStyle(logo,'opacity', '100%');
     this.render2.setStyle(lvl,'opacity', '0');
   }
-
 }

@@ -261,10 +261,7 @@ svg:hover{
     opacity: 0;
 }
 @media(max-width:950px) {
-    .eduw{
-        min-height: 61vh;
-    }
-    .container-fluid{
+    .content{
         transform: scale(0.75);
         overflow-x: scroll;overflow-y: hidden;
         flex-wrap: nowrap;
