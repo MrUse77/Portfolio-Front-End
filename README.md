@@ -86,8 +86,6 @@ Se realizo un menu en donde se encuentran las opciones:
 
 Se realizo un apartado donde se pueden ver las habilidades para reconocer cuales son las aptitudes, ademas se utilizo `(mouseover)` para que a la hora de pasar por encima con el mouse (pulsando sobre la habilidad en el celular), poder usar una funcion y mostrar cual es el conocimiento que se tiene de dicha habilidad
 
-# Imagenes
-
 # Cosas a implementar
 
 Cosas que se implementaran en un futuro que por falta de tiempo y estudios no se llegaron a realizar todavia
