@@ -2,6 +2,11 @@
 
 FrontEnd de mi portfolio para el curso de desarrollo web full stack argentina programa
 
+# Ultimos cambios
+
+- Se ajusto el diseño reponsive en algunas partes de la aplicacion
+- El footer ahora esta mas centrado y no tan pegado a los extremos
+
 # Plataforma de desarrollo: Angular
 
 ![](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.7DsZgLizBt_wk8ndOAPzQAHaGs%26pid%3DApi&f=1&ipt=7d4101ef2247568b4f56ede31842731a4442cd801bce87be5c46af35338e559b&ipo=images)
@@ -15,8 +20,9 @@ Se utilizo como plataforma para el desarrollo del FrontEnd, Angular. Utilizando 
 Mediante el uso del backend: https://github.com/MrUse77/Portfolio-BackEnd.git y peticiones http se logro hacer un registro de sesion e inicio de sesion dentro de la pagina para poder:
 
 - Añandir proyectos, experiencias laborales y estudios:
+
   - Ejemplo:
-  
+
         urlApi = "https://portfolio-fwdy.onrender.com";
         CrearProyectos(form: Proyectos){
           let direccion = this.urlApi+"/proyectos/crear"
@@ -25,7 +31,6 @@ Mediante el uso del backend: https://github.com/MrUse77/Portfolio-BackEnd.git y 
 
 - Edicion de esos proyectos, experiencias laborales y estudios:
   - Ejemplo:
-                       
           urlApi = "https://portfolio-fwdy.onrender.com";
           EditarProyecto=async(id:number, Proyectos:Proyectos)=>{
             console.log('id:', id);

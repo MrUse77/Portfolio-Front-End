@@ -22,6 +22,7 @@ export class ExperienciaComponent implements OnInit{
   @ViewChild('edicion') edicion!:ElementRef;
   @ViewChild('trabajo') trabajo!:ElementRef;
   @ViewChild('newWork') newWork!:ElementRef;
+  @ViewChild ('body') body  !: ElementRef;
   token = localStorage.getItem('token');
   show=0;
   exp: Trabajo[] = [];
@@ -40,9 +41,11 @@ export class ExperienciaComponent implements OnInit{
       descripcion:['',[Validators.required]],
       fechaInicio:['',[Validators.required]],
       fechaFin:['',[Validators.required]], 
-      logo:['',[Validators.required]],
       persona:this.persona,
-      tipo_Trabajo:['',[Validators.required]],
+      tipo_Trabajo: this.formBuilder.group({
+        id: ['',[Validators.required]],
+        rol: ['',[Validators.required]], // asumiendo que id es un número
+      })
     })
     this.persona.patchValue({
       id: 1,
@@ -53,8 +56,11 @@ export class ExperienciaComponent implements OnInit{
       descripcion:['',[Validators.required]],
       fechaInicio:['',[Validators.required]],
       fechaFin:['',[Validators.required]], 
-      tipo_Trabajo:['',[Validators.required]],
-      logo:['',[Validators.required]],
+      persona:this.persona,
+      tipo_Trabajo: this.formBuilder.group({
+        id: ['',[Validators.required]],
+        rol: ['',[Validators.required]], // asumiendo que id es un número
+      }),
     })
   }
   ObtenerDatos(){
@@ -93,9 +99,11 @@ export class ExperienciaComponent implements OnInit{
   agregarTrabajo(){
     const newWork = this.newWork.nativeElement;
     this.render2.setStyle(newWork, 'display', 'flex');
+    const body = this.body.nativeElement;
+    this.render2.setStyle(body, 'position', 'fixed')
   }
   NewWork(form: Trabajo){
-    this.service.CrearTrabajo(form).subscribe((data2)=>{
+    this.service.CrearTrabajo(form).subscribe(()=>{
       const newWork = this.newWork.nativeElement;
       this.render2.setStyle(newWork, 'display', 'none');
       this.ObtenerDatos
@@ -106,6 +114,8 @@ export class ExperienciaComponent implements OnInit{
   cerrarVentana(){
     const newWork = this.newWork.nativeElement;
     this.render2.setStyle(newWork, 'display', 'none');
+    const body = this.body.nativeElement;
+    this.render2.setStyle(body, 'position', 'static')
   }
   EditarTrabajo(id: number,form2: Trabajo){
     this.service.EditarTrabajo(id, form2);

@@ -1,9 +1,9 @@
+<body #body>
 <app-header [label]="'PROYECTOS'"></app-header>
 <div class="eduw" id="3">
     <div #newPro class="div_new" >
-        <div class="new__add container">
-            <form (ngSubmit)="NewPro(form.value)" class="new__add--form" [formGroup]="form" action="" method="post">
-                <div class="edit"style="width: 400px; height: 500px; display:flex;flex-wrap: wrap;">
+            <form (ngSubmit)="NewPro(form.value)" class="new__add" [formGroup]="form" action="" method="post">
+                <div class="edit edit-new container-fluid" style="width: 400px; height: 500px; display:flex;flex-wrap: wrap;">
                     <div class="menu__button"><input class="menu__button" type="button" (click)="cerrarVentana()" value=""/>
                         <svg style="z-index: 1" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
                             <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
@@ -30,9 +30,8 @@
                     </div>
                 </div>
             </form>
-        </div>
     </div>
-    <div class="container-fluid" style="min-height: 400px;">
+    <div class="content container-fluid" style="min-height: 400px;">
         <button *ngIf="(token)" (click)="agregarProyectos()" class="container img col" style=" margin-left: 10px; margin-right: 5px;">
             <div class="agregar">
                 <svg class="agregar" #agregar xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="#1A9FFF" class="bi bi-plus-circle" viewBox="0 0 16 16">
@@ -83,3 +82,4 @@
     </div>
 </div>
 <app-footer></app-footer>
+</body>

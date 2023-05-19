@@ -24,8 +24,8 @@ export class EducacionComponent implements OnInit{
   @ViewChild('edicion') edicion!:ElementRef;
   @ViewChild('newEdu') newEdu!:ElementRef;
   @ViewChild('newEdu2') newEdu2!:ElementRef;
-  @ViewChild ('signup') signup !: ElementRef;
   @ViewChild ('edition') edition !: ElementRef;
+  @ViewChild ('body') body  !: ElementRef;
   form:FormGroup;
   form2:FormGroup;
   persona:FormGroup;
@@ -80,21 +80,19 @@ export class EducacionComponent implements OnInit{
   ngAfterViewInit(): void {
     const token = localStorage.getItem('token');
     if (token) {
-      const signup = this.signup.nativeElement;
       const newEdu2 = this.newEdu2.nativeElement;
       this.render2.removeClass(newEdu2, 'ocultar');
-      this.render2.setStyle(signup, 'display', 'none');
     } else {
-      const signup = this.signup.nativeElement;
       const newEdu2 = this.newEdu2.nativeElement;
       this.render2.setStyle(newEdu2, 'display', 'none');
-      this.render2.setStyle(signup, 'display', 'none');
     }
   }
   NewEdu(form: Educacion){
     this.service.CrearEducacion(form).subscribe((data2)=>{
       const newEdu = this.newEdu.nativeElement;
+      const body = this.body.nativeElement;
       this.render2.setStyle(newEdu, 'display', 'none');
+      this.render2.setStyle(body, 'position', 'fixed');
       this.ObtenerDatos();
     }),(error: any)=>{
       console.error(error);
@@ -103,10 +101,14 @@ export class EducacionComponent implements OnInit{
   agregarEducacion (){
     const newEdu = this.newEdu.nativeElement;
     this.render2.setStyle(newEdu, 'display', 'flex');
+    const body = this.body.nativeElement;
+    this.render2.setStyle(body, 'position', 'fixed');
     }
   cerrarVentana(){
     const newEdu = this.newEdu.nativeElement;
     this.render2.setStyle(newEdu, 'display', 'none');
+    const body = this.body.nativeElement;
+    this.render2.setStyle(body, 'position', 'static');
   }
   async EditarEducacion(id: number,form2: Educacion){
     await this.service.EditarEducacion(id, form2);

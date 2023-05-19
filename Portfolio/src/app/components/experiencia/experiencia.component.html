@@ -1,10 +1,10 @@
+<body #body>
 <app-header [label]="'EXPERIENCIA'">
 </app-header>
 <div class="eduw" id="2">
     <div #newWork class="div_new" >
-        <div class="new__add">
-            <form (ngSubmit)="NewWork(form.value)" class="new__add--form" [formGroup]="form" action="" method="post">
-                <div class="edit container-fluid" style="width: 400px; height: 500px;">
+            <form (ngSubmit)="NewWork(form.value)" class="new__add" [formGroup]="form" action="" method="post">
+                <div class="edit edit-new container-fluid" style="width: 400px; height: 500px;">
                     <div class="menu__button">
                         <input class="menu__button" type="button" (click)="cerrarVentana()"/>
                         <svg style="z-index: 1" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
@@ -26,19 +26,18 @@
                         <h5 class="text-center">Fecha final</h5>
                         <input class="form-control edicion fecha " type="date" style="margin-left: 5px;" id="fechaFin" formControlName="fechaFin">
                     </label>
-                    <label for="tipo_Trabajo">
+                    <label formGroupName="tipo_Trabajo">
                         <h5 class="text-center">Tipo de trabajo</h5>
-                        <input class="form-control edicion rol" type="text" list="input" id="tipo_Trabajo" formControlName="tipo_Trabajo">
+                        <input class="form-control edicion rol" type="text" list="input" id="id" formControlName="id">
                         <datalist id="input" style="z-index: 11" >
-                            <option *ngFor="let tipo_trabajo of tipo_Trabajo" value="{{tipo_trabajo.rol}}">{{tipo_trabajo.rol}}</option>
+                            <option *ngFor="let tipo_trabajo of tipo_Trabajo" value="{{tipo_trabajo.id}}">{{tipo_trabajo.id}}:{{tipo_trabajo.rol}}</option>
                         </datalist>
                     </label>
                     <input class="mod1--crear" type="submit" value="CREAR">
                 </div>
             </form>
-        </div>
     </div>
-    <div class="container-fluid" style="min-height: 400px;">
+    <div class="content container-fluid" style="min-height: 400px;">
         <div *ngIf="(token)">
             <button (click)="agregarTrabajo()" class="container img col">
                 <div class="agregar">
@@ -79,10 +78,10 @@
                 <label for="fechaFin" style="width: 45%">
                     <input class="form-control edicion fecha " type="date" style="margin-left: 5px;"  id="fechaFin" formControlName="fechaFin"  >
                 </label>
-                <label for="tipo_Trabajo">
-                    <input class="form-control edicion rol" type="text" list="input"  id="tipo_Trabajo" formControlName="tipo_Trabajo">
-                    <datalist id="input" style="z-index: 10">
-                        <option *ngFor="let tipo_trabajo of tipo_Trabajo" value="{{tipo_trabajo.rol}}">{{tipo_trabajo.rol}}</option>
+                <label formGroupName="tipo_Trabajo">
+                    <input class="form-control edicion rol" type="text" list="input" id="id" formControlName="id">
+                    <datalist id="input" style="z-index: 11" >
+                        <option *ngFor="let tipo_trabajo of tipo_Trabajo" value="{{tipo_trabajo.id}}">{{tipo_trabajo.id}}:{{tipo_trabajo.rol}}</option>
                     </datalist>
                 </label>
                 <button class="mod1--borrar">
@@ -93,3 +92,4 @@
     </div>
 </div>
 <app-footer></app-footer>
+</body>

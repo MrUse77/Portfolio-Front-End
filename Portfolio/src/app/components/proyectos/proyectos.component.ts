@@ -18,6 +18,7 @@ export class ProyectosComponent {
   @ViewChild('edicion') edicion!:ElementRef;
   @ViewChild('newPro') newPro!:ElementRef;
   @ViewChild('trabajo') trabajo!:ElementRef;
+  @ViewChild ('body') body  !: ElementRef;
   form:FormGroup;
   form2:FormGroup;
   persona:FormGroup;
@@ -50,7 +51,6 @@ export class ProyectosComponent {
   ObtenerDatos(){
     this.service.DatosProyectos().subscribe(data => {
       this.pro = data;
-      console.log(data);
     });
   }
   ngOnInit(): void {
@@ -88,10 +88,14 @@ export class ProyectosComponent {
   agregarProyectos(){
     const newPro = this.newPro.nativeElement;
     this.render2.setStyle(newPro, 'display', 'flex');
+    const body = this.body.nativeElement;
+    this.render2.setStyle(body, 'position', 'fixed')
   }
   cerrarVentana(){
     const newPro = this.newPro.nativeElement;
     this.render2.setStyle(newPro, 'display', 'none');
+        const body = this.body.nativeElement;
+    this.render2.setStyle(body, 'position', 'static')
   }
   async EditarProyectos(id: number,form2: Proyectos){
     console.log('ID del Proyectos a editar:', id);
