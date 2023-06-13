@@ -23,7 +23,7 @@ export class DatosService {
     return this.http.get<Trabajo[]>(this.urlApi+"/trabajos/traer");
   }
   CrearTrabajo(form: Trabajo){
-    let direccion = this.urlApi+"/trabajos/crear"
+    let direccion = this.urlApi+"/trabajos/crear/"
     return this.http.post(direccion, form,{responseType: 'text'});
   }
   tipoT(){
@@ -48,7 +48,7 @@ export class DatosService {
     return this.http.get<Educacion[]>(this.urlApi+"/educacion/traer");
   }
   CrearEducacion(form: Educacion){
-    let direccion = this.urlApi+"/educacion/crear"
+    let direccion = this.urlApi+"/educacion/crear/"
     return this.http.post(direccion,form,{responseType:'text'});
   }
   tipoE(){
@@ -73,7 +73,7 @@ export class DatosService {
     return this.http.get<Proyectos[]>(this.urlApi+"/proyectos/traer");
   }
   CrearProyectos(form: Proyectos){
-    let direccion = this.urlApi+"/proyectos/crear"
+    let direccion = this.urlApi+"/proyectos/crear/"
     return this.http.post(direccion, form,{responseType: 'text'});
   }
   EditarProyecto=async(id:number, Proyectos:Proyectos)=>{

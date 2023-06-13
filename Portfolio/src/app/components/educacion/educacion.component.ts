@@ -66,18 +66,17 @@ export class EducacionComponent implements OnInit{
   ObtenerDatos(){
     this.service.DatosEducacion().subscribe(data => {
       this.edu = data;
-      this.edu1 = this.edu.filter(edu => edu.tipo_Educacion?.id == 1 || edu.tipo_Educacion?.id == 2 );
-      this.edu2 = this.edu.filter(edu => edu.tipo_Educacion?.id == 3);
+      console.log(this.edu2)
     });
-    
+
     this.service.tipoE().subscribe(data2=>{
       this.tipo_educacion=data2;
     })
   }
   ngOnInit(): void {
-    this.ObtenerDatos();
   }  
   ngAfterViewInit(): void {
+    this.ObtenerDatos();
     const token = localStorage.getItem('token');
     if (token) {
       const newEdu2 = this.newEdu2.nativeElement;
@@ -112,6 +111,5 @@ export class EducacionComponent implements OnInit{
   }
   async EditarEducacion(id: number,form2: Educacion){
     await this.service.EditarEducacion(id, form2);
-    this.ObtenerDatos();
   }
 }

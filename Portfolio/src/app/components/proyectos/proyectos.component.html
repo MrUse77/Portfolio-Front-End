@@ -45,7 +45,8 @@
                 <button *ngIf="(token)" #editar (click)="pro.edit = !pro.edit" [ngStyle]="{'display': pro.edit? 'none':'block'}" class="mod1">
                     <p>EDITAR</p>
                 </button>
-                <h1 class="imagen" [ngStyle]="{ 'visibility': pro.selected ? 'hidden' : 'visible', 'opacity': pro.selected? '0':'1','top': pro.selected? '70%': '150px' }"  style="position: absolute; z-index: 0;">{{pro.nombreProyecto}}</h1>                <div class="info" [ngStyle]="{ 'visibility': pro.selected ? 'visible' : 'hidden', 'opacity': pro.selected? '1':'0','top': pro.selected? '107px': '70%' }" style="position: absolute; z-index: 0;">
+                <h1 class="imagen" [ngStyle]="{ 'visibility': pro.selected ? 'hidden' : 'visible', 'opacity': pro.selected? '0':'1','top': pro.selected? '70%': '150px' }"  style="position: absolute; z-index: 0;">{{pro.nombreProyecto}}</h1>                
+                <div class="info" [ngStyle]="{ 'visibility': pro.selected ? 'visible' : 'hidden', 'opacity': pro.selected? '1':'0','top': pro.selected? '0': '70%' }" style="position: absolute; z-index: 0;">
                     <p>{{pro.nombreProyecto}}</p>
                     <H6 style="width: 100%;">{{pro.descripcion}}</H6>
                     <h6>Lanzamiento: {{pro.fecha_Lanz}}</h6>
