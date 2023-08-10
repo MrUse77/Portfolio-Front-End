@@ -1,0 +1,91 @@
+form {
+  position: relative;
+  min-height: 50vh;
+  width: 50vh;
+  display: flex;
+  flex-direction: column;
+}
+form.session {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  font-size: 20px;
+  color: #b8bcbf;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
+}
+
+p {
+  padding-right: 30%;
+  margin-bottom: 0%;
+}
+.relleno {
+  border: none;
+  border-radius: 3px;
+  background: #32353c;
+  width: 350px;
+  height: 30px;
+  color: white;
+  font-family: sans-serif;
+  font-size: 20px;
+  outline: 1px;
+  border-bottom: 1px solid white;
+}
+.box {
+  font-size: 15px;
+}
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 150px;
+  color: white;
+  background-image: linear-gradient(90deg, #00bbff, #1a9fff);
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+  border: none;
+  text-decoration: none;
+}
+.login:hover {
+  background-image: linear-gradient(90deg, #4eccfa, #4ec5ff);
+  color: white;
+}
+button {
+  border: none;
+}
+svg {
+  fill: #4eccfa;
+}
+svg:hover {
+  fill: #1a9fff;
+}
+.header-login {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-bottom: 5%;
+  min-height: 100px !important;
+  width: 100%;
+}
+.edu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1%;
+}
+.cerrar {
+  margin: 2%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loginCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.exit {
+  margin: auto;
+  transform: scale(1.5);
+}

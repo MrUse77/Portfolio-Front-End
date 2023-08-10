@@ -1,0 +1,35 @@
+a {
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  line-height: 2.5rem;
+}
+.offcanvas-body ul {
+  display: block;
+}
+.div {
+  background-color: aqua;
+  border-color: black;
+  border-style: ridge;
+}
+.offcanvas {
+  background-color: rgba(6, 46, 72, 0.8);
+}
+.offcanvas.offcanvas-end {
+  width: 30vw;
+}
+.buttonHeader {
+  position: relative;
+  height: 2.5rem;
+  width: 9.375rem;
+  margin-right: 0.625rem;
+  color: white;
+  background: rgba(243, 243, 243, 0.1);
+  text-shadow: 0.0625rem 0.0625rem 0 rgba(0, 0, 0, 0.3);
+  border: none;
+  text-decoration: none;
+  border-radius: var(--bs-border-radius);
+}
+.buttonHeader:hover {
+  background-image: linear-gradient(90deg, #194766, #206487, #194766);
+}

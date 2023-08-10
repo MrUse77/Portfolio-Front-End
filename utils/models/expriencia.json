@@ -1,0 +1,13 @@
+{
+  "experiencia": [
+    {
+      "id": 1,
+      "nameEnterprise": "Biomedic",
+      "Description": "Confeccion de cables de ECG, Ergometria y reparacion de los mismos",
+      "dateInit": "2018-01-01",
+      "dateEnd": "2018-12-01",
+      "Type": "Practicas Profesionalizantes",
+      "mediaId": "src/assets/imagenes/biomedic.png"
+    }
+  ]
+}

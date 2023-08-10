@@ -1,0 +1,42 @@
+.container {
+  margin-left: 10%;
+  margin-right: 0;
+  margin-top: 6.25rem;
+  width: 90% !important;
+  max-width: 100% !important;
+}
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(150px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
+  justify-items: center;
+  gap: 1.25rem;
+}
+h5 {
+  margin: 0;
+}
+.titulo {
+  padding-top: 1.25rem;
+  margin-bottom: 2rem;
+}
+.card {
+  height: 100%;
+}
+.menu-Cat {
+  display: flex;
+
+  align-items: center;
+  margin-bottom: 1.25rem;
+  margin-top: 1rem;
+}
+@media (max-width: 950px) {
+  .menu-Cat {
+    justify-content: end;
+  }
+}

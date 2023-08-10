@@ -1,0 +1,40 @@
+.card {
+  width: 12.5rem;
+  height: 9.375rem;
+  padding: 0.625rem;
+}
+.col-auto {
+  width: 12.5rem !important;
+  margin-bottom: 0.625rem !important;
+  padding: 0;
+}
+.g-4.row {
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+}
+.card-img-top {
+  width: max-content;
+  height: 5.3125rem;
+  margin: 0 auto;
+}
+.card {
+  background-color: #2e9bd113;
+  color: white;
+}
+.card-title {
+  margin: 0;
+}
+.card-body {
+  padding: 0.625rem;
+}
+
+@media (max-width: 950px) {
+  .cont .row {
+    overflow: auto;
+  }
+  .g-4.row.row {
+    width: max-content;
+    max-width: max-content;
+  }
+}

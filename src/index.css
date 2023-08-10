@@ -1,0 +1,38 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+body {
+  position: relative;
+  background-image: linear-gradient(to bottom, #063e61, #032a43);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+h1 {
+  color: aliceblue;
+}
+h2 {
+  color: aliceblue;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: aliceblue;
+  margin: 0;
+}
+.gw {
+  margin-top: 2px;
+}
+.g {
+  margin: 0;
+}
+#root {
+  height: 100vh;
+}

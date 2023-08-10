@@ -1,0 +1,19 @@
+ul {
+  list-style: none;
+}
+ul li {
+  display: flex;
+}
+ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+}
+ul li a:hover {
+  color: #1456e4;
+  text-decoration: none;
+  font-size: 22px;
+}
+.icons {
+  margin-right: 10px;
+}

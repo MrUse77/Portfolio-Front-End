@@ -1,0 +1,31 @@
+{
+  "educacion": [
+    {
+      "id": 1,
+      "nameInstitution": "EEST N8",
+      "Title": "Tecnico en electronica",
+      "dateInit": "2008",
+      "dateEnd": "2013",
+      "Type": "Secundario",
+      "mediaId": "src/assets/imagenes/eest8.jpg"
+    },
+    {
+      "id": 2,
+      "nameInstitution": "UNLAM",
+      "Title": "Ingeniero en informatica",
+      "dateInit": "2023",
+      "dateEnd": "",
+      "Type": "Universidad",
+      "mediaId": "src/assets/imagenes/unlam.png"
+    },
+    {
+      "id": 3,
+      "nameInstitution": "UTN",
+      "Title": "Reparacion de PC",
+      "dateInit": "2008",
+      "dateEnd": "2008",
+      "Type": "Cursos",
+      "mediaId": "src/assets/imagenes/utn.png"
+    }
+  ]
+}
