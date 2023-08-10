@@ -20,16 +20,16 @@ const front = [
   "Angular",
   "CSS",
   "HTML",
-  "JS",
+  "JavaScript",
   "react",
   "bootstrap",
-  "typescript",
+  "TypeScript",
   "git",
   "github",
   "nodejs",
   "npm",
 ];
-const back = ["SpringBoot", "mysql", "expressjs", "mongodb"];
+const back = ["SpringBoot", "MySQL", "expressjs", "mongodb"];
 const tools = ["c", "arduino"];
 const rutas = [
   "proyectos",
@@ -59,7 +59,7 @@ export function Home() {
         <div className="perfil__img row text-center">
           <img
             className="image rounded-5 img-fluid  mx-auto d-block"
-            src="/src/assets/imagenes/IMG_20221212_221947_944.png"></img>
+            src="../assets/imagenes/IMG_20221212_221947_944.png"></img>
           <h1>AGUSTIN FRANCISCO DORICICH</h1>
           <h4>Técnico electrónico y desarrollador web full stack</h4>
         </div>
@@ -93,11 +93,7 @@ export function Home() {
       <footer>
         <div className="footer-power">
           <h4>Powered by React</h4>
-          <img
-            className="power"
-            src="src/assets/imagenes/react.png"
-            alt="asd"
-          />
+          <img className="power" src="../assets/imagenes/react.png" alt="asd" />
         </div>
         <div className="footer-copy">
           <BootstrapIcons name={"c-circle"}></BootstrapIcons>

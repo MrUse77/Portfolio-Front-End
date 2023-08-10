@@ -15,7 +15,7 @@ export function Skills({ img }) {
           <Card>
             <Card.Img
               variant="top"
-              src={`/src/assets/imagenes/${img[idx]}.png`}
+              src={`../assets/imagenes/${img[idx]}.png`}
               alt={img[idx]}
             />
             <Card.Body>
