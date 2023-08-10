@@ -46,7 +46,7 @@ export function Menu() {
         <Offcanvas.Header closeButton data-bs-theme="dark"></Offcanvas.Header>
         <Offcanvas.Body>
           <ul>
-            <Options2 option={"INICIO"} link={"/"}></Options2>
+            <Options2 option={"INICIO"}></Options2>
             <Options option={"CONTACTO"}></Options>
             <Options option={"REDES"}></Options>
             <Options2 option={"EDUCACION"} link={"educacion"}></Options2>

@@ -77,7 +77,7 @@ export function Options2({ option, link }) {
   return (
     <li className="categories">
       <Accordion className="no-icon">
-        <a href={`/${link}`}>
+        <a href={`https://portfolio-eta-red-34.vercel.app/${link}`}>
           <Accordion.Button className="btn-no-icon">{option}</Accordion.Button>
         </a>
       </Accordion>
