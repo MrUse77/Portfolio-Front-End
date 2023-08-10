@@ -8,6 +8,9 @@ export function Buttons({ name, route }) {
   ) {
     route = `/${route}`;
   }
+  if (name === "CONTACTO") {
+    route = "https:wa.me/5491144729261";
+  }
   return (
     <a className="button" href={route}>
       <h1>{name}</h1>
