@@ -11,7 +11,7 @@ const opciones = [
   "DESCARGAR CV",
 ];
 const rutas = [
-  "https://portfolio-eta-red-34.vercel.app",
+  "https://agusdoricich.vercel.app",
   "/proyectos",
   "/experiencia",
   "/educacion",
