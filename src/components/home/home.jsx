@@ -59,7 +59,7 @@ export function Home() {
         <div className="perfil__img row text-center">
           <img
             className="image rounded-5 img-fluid  mx-auto d-block"
-            src="../src/assets/imagenes/IMG_20221212_221947_944.png"></img>
+            src="/src/assets/imagenes/IMG_20221212_221947_944.png"></img>
           <h1>AGUSTIN FRANCISCO DORICICH</h1>
           <h4>Técnico electrónico y desarrollador web full stack</h4>
         </div>
