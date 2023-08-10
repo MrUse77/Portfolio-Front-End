@@ -11,7 +11,7 @@ const opciones = [
   "DESCARGAR CV",
 ];
 const rutas = [
-  "/",
+  "",
   "/proyectos",
   "/experiencia",
   "/educacion",
