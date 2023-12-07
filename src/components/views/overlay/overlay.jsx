@@ -3,7 +3,7 @@ import { BootstrapIcons } from "../../../../utils/BootstrapIcons/BootstrapIcons"
 import { Button } from "react-bootstrap";
 import { useState } from "react";
 
-export function Overlays({ info, onClose }) {
+export function Overlays({ info, onClose, show }) {
   const date = new Date(info.date).toLocaleDateString();
   const dateEnd = () => {
     if (info.dateEnd) {
@@ -12,9 +12,10 @@ export function Overlays({ info, onClose }) {
       return "Aun en formacion";
     }
   };
+  console.log(show);
   const dateInit = new Date(info.dateInit).toLocaleDateString();
   return (
-    <div className="fondo">
+    <div className={show ? "fondo show" : "fondo"}>
       <div className="overlay">
         <section className="section--header">
           <Button onClick={onClose}>
@@ -55,7 +56,7 @@ export function Overlays({ info, onClose }) {
           )}
           {info.link ? (
             <div className="link ">
-              <a className="btn btn-primary" type="button" href={"/"}>
+              <a className="btn btn-primary" type="button" href={info.link}>
                 Ir a proyecto
               </a>
             </div>

@@ -26,10 +26,9 @@ const front = [
   "TypeScript",
   "git",
   "github",
-  "nodejs",
   "npm",
 ];
-const back = ["SpringBoot", "MySQL", "expressjs", "mongodb"];
+const back = ["SpringBoot", "MySQL", "expressjs", "mongodb", "nodejs"];
 const tools = ["c", "arduino"];
 const rutas = [
   "proyectos",

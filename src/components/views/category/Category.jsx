@@ -23,15 +23,18 @@ export function Category({ show, title }) {
     }
   };
   const fetchDataAndShow = async () => {
-    if (show === "educacion") {
-      const dato = await getData(show);
-      setCategory(dato);
-    } else if (show === "experiencia") {
-      const dato = await getData(show);
-      setCategory(dato);
-    } else if (show === "proyectos") {
-      const dato = await getData(show);
-      setCategory(dato);
+    let dato;
+    switch (show) {
+      case "educacion":
+        dato = await getData(show);
+        setCategory(dato);
+        break;
+      case "experiencia":
+        dato = await getData(show);
+        setCategory(dato);
+      case "proyectos":
+        dato = await getData(show);
+        setCategory(dato);
     }
   };
   useEffect(() => {

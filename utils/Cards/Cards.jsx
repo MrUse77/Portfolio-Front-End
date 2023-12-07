@@ -39,7 +39,9 @@ export function Cards({ category }) {
           </Card>
         </li>
       ))}
-      {show && <Overlays info={show} onClose={notShowing}></Overlays>}
+      {show && (
+        <Overlays info={show} onClose={notShowing} show={show}></Overlays>
+      )}
     </>
   );
 }

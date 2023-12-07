@@ -2,17 +2,19 @@
   padding: 1rem;
 }
 .fondo {
+  display: flex;
+  animation: all 5s ease-in-out;
   position: fixed;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 99;
   width: 100vw;
   height: 100vh;
-  display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   top: 0;
   left: 0;
+  opacity: 0;
 }
 .section--header {
   display: flex;
@@ -81,6 +83,11 @@ picture img {
   display: flex;
   justify-content: center;
 }
+
+.show {
+  opacity: 1;
+}
+
 @media (max-width: 950px) {
   .overlay {
     transform: scale(0.95);
