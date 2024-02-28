@@ -1,5 +1,6 @@
+
 import "./Category.css";
-import { Cards, CreateCard } from "../../../../utils/Cards/Cards";
+import { Cards } from "../../../../utils/Cards/Cards";
 import { Container } from "react-bootstrap";
 import { Menu } from "../../options/header/buttonsHeader";
 import { Menu2 } from "../../options/menu/menu";
@@ -17,7 +18,8 @@ export function Category({ show, title }) {
       );
       const datos = await response.data;
       return datos;
-    } catch {
+    } catch (e) {
+      console.log(e);
     } finally {
       setLoading(false);
     }
@@ -32,9 +34,11 @@ export function Category({ show, title }) {
       case "experiencia":
         dato = await getData(show);
         setCategory(dato);
+        break;
       case "proyectos":
         dato = await getData(show);
         setCategory(dato);
+        break;
     }
   };
   useEffect(() => {

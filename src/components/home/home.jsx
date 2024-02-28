@@ -1,4 +1,4 @@
-import { Sesion, Menu } from "../options/header/buttonsHeader";
+import { Menu } from "../options/header/buttonsHeader";
 import { Buttons } from "../options/botones/botones";
 import { Skills } from "../views/skills/Skills";
 import "./home.css";
@@ -21,15 +21,23 @@ const front = [
   "CSS",
   "HTML",
   "JavaScript",
-  "react",
-  "bootstrap",
+  "React",
+  "Bootstrap",
   "TypeScript",
-  "git",
-  "github",
-  "npm",
 ];
-const back = ["SpringBoot", "MySQL", "expressjs", "mongodb", "nodejs"];
-const tools = ["c", "arduino"];
+const back = ["ExpressJS", "MongoDB", "NodeJS", "SpringBoot", "MySQL"];
+const tools = [
+  "C",
+  "Arduino",
+  "Git",
+  "GitHub",
+  "Linux",
+  "VScode",
+  "NPM",
+  "PNPM",
+  "Postman",
+  "GitKraken",
+];
 const rutas = [
   "proyectos",
   "experiencia",
@@ -70,7 +78,7 @@ export function Home() {
           ))}
         </div>
         <Borde></Borde>
-        <h1>MIS HABILIDADES</h1>
+        <h1>TECNOLOGIAS</h1>
         <Container bsPrefix="cont">
           <h2>FRONT END</h2>
           <Borde></Borde>
@@ -82,7 +90,7 @@ export function Home() {
           <Row>
             <Skills img={back}></Skills>
           </Row>
-          <h2>OTRAS TECNOLOGIAS</h2>
+          <h2>OTRAS Y HERRAMIENTAS</h2>
           <Borde></Borde>
           <Row>
             <Skills img={tools}></Skills>
