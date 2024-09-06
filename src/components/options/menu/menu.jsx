@@ -15,7 +15,7 @@ const rutas = [
   "/proyectos",
   "/experiencia",
   "/educacion",
-  "https://drive.google.com/file/d/1qkKzHjsZg2LdFp1Xm-kOcsThatk-NA19/view?usp=drive_link",
+  "https://drive.google.com/file/d/1W-0ukrzQY8IWh6QBh8YRON46SmCjJBwa/view?usp=sharing",
 ];
 
 export function Options({ option }) {
