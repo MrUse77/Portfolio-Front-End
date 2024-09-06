@@ -100,7 +100,7 @@ export function Home() {
       <footer>
         <div className="footer-power">
           <h4>Powered by React</h4>
-          <img className="power" src="../assets/imagenes/react.png" alt="asd" />
+          <img className="power" src="../assets/imagenes/React.png" alt="React Icon" />
         </div>
         <div className="footer-copy">
           <BootstrapIcons name={"c-circle"}></BootstrapIcons>
