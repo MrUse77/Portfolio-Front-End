@@ -42,7 +42,7 @@ const rutas = [
   "proyectos",
   "experiencia",
   "educacion",
-  "https://drive.google.com/file/d/1W-0ukrzQY8IWh6QBh8YRON46SmCjJBwa/view?usp=sharing",
+  "https://1drv.ms/b/c/173b124f09490dbe/Eb4NSQlPEjsggBfzRAAAAAABmWDJVW6JKQl9P9AHvynGWg?e=kZdU0W",
   "https://api.whatsapp.com/send/?phone=5491144729261&text&type=phone_number&app_absent=0&text=Enviame%20un%20mensaje",
 ];
 export function Home() {
