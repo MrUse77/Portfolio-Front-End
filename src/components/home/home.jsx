@@ -17,7 +17,6 @@ const opciones = [
   "CONTACTO",
 ];
 const front = [
-  "Angular",
   "CSS",
   "HTML",
   "JavaScript",
@@ -25,7 +24,7 @@ const front = [
   "Bootstrap",
   "TypeScript",
 ];
-const back = ["ExpressJS", "MongoDB", "NodeJS", "SpringBoot", "MySQL"];
+const back = ["ExpressJS", "MongoDB", "NodeJS", "MySQL"];
 const tools = [
   "C",
   "Arduino",
