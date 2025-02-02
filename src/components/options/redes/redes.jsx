@@ -3,9 +3,9 @@ import "./redes.css";
 const redes = ["Instagram", "Linkedin", "Github"];
 const redesIcons = ["instagram", "linkedin", "github"];
 const links = [
-  "https://www.instagram.com/agus_doricich/",
-  "https://www.linkedin.com/in/agustin-doricich-96891b211/",
-  "https://github.com/MrUse77",
+  import.meta.env.VITE_URL_INSTAGRAM,
+  import.meta.env.VITE_URL_LINKEDIN,
+  import.meta.env.VITE_URL_GITHUB,
 ];
 
 export function Redes() {

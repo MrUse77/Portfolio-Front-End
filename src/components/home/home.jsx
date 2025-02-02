@@ -16,14 +16,7 @@ const opciones = [
   "DESCARGAR CV",
   "CONTACTO",
 ];
-const front = [
-  "CSS",
-  "HTML",
-  "JavaScript",
-  "React",
-  "Bootstrap",
-  "TypeScript",
-];
+const front = ["CSS", "HTML", "JavaScript", "React", "Bootstrap", "TypeScript"];
 const back = ["ExpressJS", "MongoDB", "NodeJS", "MySQL"];
 const tools = [
   "C",
@@ -41,8 +34,8 @@ const rutas = [
   "proyectos",
   "experiencia",
   "educacion",
-  "https://1drv.ms/b/c/173b124f09490dbe/Eb4NSQlPEjsggBfzRAAAAAABmWDJVW6JKQl9P9AHvynGWg?e=kZdU0W",
-  "https://api.whatsapp.com/send/?phone=5491144729261&text&type=phone_number&app_absent=0&text=Enviame%20un%20mensaje",
+  import.meta.env.VITE_URL_CV,
+  import.meta.env.VITE_URL_WHATSAPP,
 ];
 export function Home() {
   return (
@@ -99,7 +92,11 @@ export function Home() {
       <footer>
         <div className="footer-power">
           <h4>Powered by React</h4>
-          <img className="power" src="../assets/imagenes/React.png" alt="React Icon" />
+          <img
+            className="power"
+            src="../assets/imagenes/React.png"
+            alt="React Icon"
+          />
         </div>
         <div className="footer-copy">
           <BootstrapIcons name={"c-circle"}></BootstrapIcons>
