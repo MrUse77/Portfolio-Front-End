@@ -1,9 +1,9 @@
 import "../redes/redes.css";
 import { BootstrapIcons } from "../../../../utils/BootstrapIcons/BootstrapIcons.jsx";
-const contact = ["agusdor14@gmail.com", "1144729261"];
+const contact = ["Correo Electronico", "Whatsapp"];
 const links2 = [
   "mailto:agusdor14@hotmail.com",
-  "https://api.whatsapp.com/send/?phone=5491144729261&text&type=phone_number&app_absent=0&text=Enviame%20un%20mensaje",
+  import.meta.env.VITE_URL_WHATSAPP,
 ];
 const contactIcons = ["envelope", "whatsapp"];
 
