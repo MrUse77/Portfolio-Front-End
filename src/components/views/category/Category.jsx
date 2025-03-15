@@ -1,4 +1,3 @@
-
 import "./Category.css";
 import { Cards } from "../../../../utils/Cards/Cards";
 import { Container } from "react-bootstrap";
@@ -14,7 +13,7 @@ export function Category({ show, title }) {
   const getData = async (data) => {
     try {
       const response = await axios(
-        `https://portfolio-five-bay-61.vercel.app/api/${data}/get`
+        `${import.meta.env.VITE_API_BACK}/${data}/get`
       );
       const datos = await response.data;
       return datos;
