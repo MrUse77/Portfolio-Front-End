@@ -11,11 +11,11 @@ const opciones = [
   "DESCARGAR CV",
 ];
 const rutas = [
-  "https://agusdoricich.vercel.app",
+  "https://agusdoricich.dev",
   "/proyectos",
   "/experiencia",
   "/educacion",
-  "https://1drv.ms/b/c/173b124f09490dbe/Eb4NSQlPEjsggBfzRAAAAAABmWDJVW6JKQl9P9AHvynGWg?e=kZdU0W",
+  import.meta.env.VITE_URL_CV,
 ];
 
 export function Options({ option }) {

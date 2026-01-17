@@ -2,7 +2,7 @@ import "../redes/redes.css";
 import { BootstrapIcons } from "../../../../utils/BootstrapIcons/BootstrapIcons.jsx";
 const contact = ["Correo Electronico", "Whatsapp"];
 const links2 = [
-  "mailto:agusdor14@hotmail.com",
+  import.meta.env.VITE_URL_MAIL,
   import.meta.env.VITE_URL_WHATSAPP,
 ];
 const contactIcons = ["envelope", "whatsapp"];

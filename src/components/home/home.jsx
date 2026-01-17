@@ -35,7 +35,7 @@ const rutas = [
   "experiencia",
   "educacion",
   import.meta.env.VITE_URL_CV,
-  import.meta.env.VITE_URL_WHATSAPP,
+  import.meta.env.VITE_URL_MAIL,
 ];
 export function Home() {
   return (
